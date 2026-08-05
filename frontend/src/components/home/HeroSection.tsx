@@ -44,8 +44,8 @@ export default function HeroSection() {
       <div className="absolute inset-0 dot-grid-bg opacity-20 pointer-events-none" />
 
       {/* Ambient glow blobs */}
-      <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-steel/20 rounded-full blur-[120px] pointer-events-none" />
-      <div className="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] bg-amber/10 rounded-full blur-[100px] pointer-events-none" />
+      <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-ocean-royal/30 rounded-full blur-[120px] pointer-events-none animate-glow-pulse" />
+      <div className="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] bg-ocean-bright/20 rounded-full blur-[100px] pointer-events-none animate-glow-pulse" style={{ animationDelay: '1.5s' }} />
 
       {/* Parallax floating engineering images */}
       <Floating sensitivity={-0.5} className="h-full">

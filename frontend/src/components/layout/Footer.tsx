@@ -43,7 +43,7 @@ export default function Footer() {
   return (
     <footer className="bg-navy border-t border-white/5">
       {/* CTA Banner */}
-      <div className="bg-gradient-to-r from-steel to-navy-700 border-y border-amber/20">
+      <div className="bg-gradient-to-r from-ocean-deep via-ocean-royal to-ocean-deep border-y border-ocean-bright/25 relative overflow-hidden">
         <div className="container-xl py-10 flex flex-col md:flex-row items-center justify-between gap-6">
           <div>
             <h3 className="font-heading font-bold text-2xl text-white">

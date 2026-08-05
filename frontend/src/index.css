@@ -40,14 +40,21 @@
     background: rgba(255, 255, 255, 0.05);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(144, 224, 239, 0.15);
   }
 
   .glass-dark {
-    background: rgba(10, 22, 40, 0.75);
+    background: rgba(3, 4, 94, 0.82);
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
-    border: 1px solid rgba(245, 158, 11, 0.15);
+    border: 1px solid rgba(144, 224, 239, 0.2);
+  }
+
+  .glass-ocean {
+    background: linear-gradient(135deg, rgba(3, 4, 94, 0.85) 0%, rgba(0, 119, 182, 0.45) 100%);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(0, 180, 216, 0.25);
   }
 
   .section-pad {
@@ -64,29 +71,37 @@
 
   .btn-primary {
     @apply inline-flex items-center gap-2 bg-amber text-navy font-heading font-bold px-6 py-3 rounded-lg
-      hover:bg-amber-400 active:bg-amber-600 transition-all duration-200 shadow-glow-amber
-      hover:shadow-lg hover:-translate-y-0.5;
+      hover:bg-amber-400 active:bg-amber-600 transition-all duration-300 shadow-glow-amber
+      hover:shadow-glow-cyan hover:-translate-y-0.5 active:translate-y-0 cursor-pointer;
   }
 
   .btn-secondary {
-    @apply inline-flex items-center gap-2 border-2 border-white text-white font-heading font-semibold px-6 py-3 rounded-lg
-      hover:bg-white hover:text-navy transition-all duration-200 hover:-translate-y-0.5;
+    @apply inline-flex items-center gap-2 border-2 border-white/80 text-white font-heading font-semibold px-6 py-3 rounded-lg
+      hover:bg-white hover:text-navy transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5 cursor-pointer;
   }
 
   .btn-outline {
     @apply inline-flex items-center gap-2 border-2 border-amber text-amber font-heading font-semibold px-6 py-3 rounded-lg
-      hover:bg-amber hover:text-navy transition-all duration-200 hover:-translate-y-0.5;
+      hover:bg-amber hover:text-navy transition-all duration-300 hover:shadow-glow-amber hover:-translate-y-0.5 cursor-pointer;
   }
 
   .text-gradient {
-    background: linear-gradient(135deg, #F59E0B 0%, #FBBF24 100%);
+    background: linear-gradient(135deg, #00B4D8 0%, #90E0EF 50%, #CAF0F8 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .text-gradient-ocean {
+    background: linear-gradient(135deg, #0077B6 0%, #00B4D8 50%, #90E0EF 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
 
   .card-hover {
-    @apply transition-all duration-300 hover:-translate-y-1.5 hover:shadow-card-hover;
+    @apply transition-all duration-300 hover:-translate-y-2 hover:shadow-card-hover hover:border-amber/40;
+    transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
   }
 
   .section-label {
@@ -98,7 +113,7 @@
   }
 
   .dot-grid-bg {
-    background-image: radial-gradient(circle, rgba(255,255,255,0.05) 1px, transparent 1px);
+    background-image: radial-gradient(circle, rgba(144, 224, 239, 0.12) 1px, transparent 1px);
     background-size: 28px 28px;
   }
 }
