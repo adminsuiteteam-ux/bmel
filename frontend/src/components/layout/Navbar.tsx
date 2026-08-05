@@ -253,7 +253,7 @@ export default function Navbar() {
               exit={{ opacity: 0 }}
               transition={{ duration: 0.2 }}
               onClick={() => setMobileOpen(false)}
-              className="fixed inset-0 bg-black/70 backdrop-blur-xs z-50 lg:hidden"
+              className="fixed inset-0 bg-black/80 backdrop-blur-md z-[9998] lg:hidden"
             />
 
             {/* Drawer */}
@@ -262,7 +262,7 @@ export default function Navbar() {
               animate={{ x: 0 }}
               exit={{ x: '100%' }}
               transition={{ type: 'spring', damping: 28, stiffness: 280 }}
-              className="fixed top-0 right-0 bottom-0 w-80 max-w-[85vw] bg-navy border-l border-white/10 z-50 lg:hidden shadow-2xl flex flex-col justify-between overflow-y-auto"
+              className="fixed top-0 right-0 bottom-0 w-80 max-w-[85vw] bg-[#03045E] border-l border-white/10 z-[9999] lg:hidden shadow-2xl flex flex-col justify-between overflow-y-auto"
             >
               <div>
                 {/* Header */}
