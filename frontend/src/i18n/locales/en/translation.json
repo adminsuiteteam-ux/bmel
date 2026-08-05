@@ -90,5 +90,35 @@
       "certifications": "Certifications",
       "faq": "FAQ"
     }
+  },
+  "contact": {
+    "connect": "Connect",
+    "title": "Contact Our Sales & Support Team",
+    "subtitle": "We are available for consultations, site visits, and support requests.",
+    "corporate_offices": "Corporate Offices",
+    "head_office_title": "Head Office — Lagos",
+    "head_office_address": "No. 32 Eylaro Street, Ogudu Ojota, Lagos",
+    "branch_office_title": "Branch Office — Bayelsa",
+    "branch_office_address": "No. 21 Daewoo Road, Ox-Bow Lake, Yenagoa, Bayelsa State",
+    "phone": "07063332335",
+    "email": "brownfortemechanical@gmail.com",
+    "hours": "Business Hours: Mon – Fri, 8AM – 6PM WAT",
+    "form_heading": "Send Us a Message",
+    "success_title": "Message Sent!",
+    "success_message": "Thank you. Your message has been routed to our sales and engineering support department. We will respond within 24 hours.",
+    "label_name": "Your Name *",
+    "placeholder_name": "Enter your name",
+    "label_phone": "Phone Number *",
+    "placeholder_phone": "e.g., +234 80 1234 5678",
+    "label_email": "Email Address *",
+    "placeholder_email": "name@company.com",
+    "label_subject": "Subject *",
+    "placeholder_subject": "What is this regarding?",
+    "label_message": "Message *",
+    "placeholder_message": "Detail your inquiry...",
+    "turnstile_protected": "Protected by Cloudflare Turnstile Anti-Spam",
+    "turnstile_required": "Please complete the Cloudflare security verification before submitting.",
+    "sending": "Sending...",
+    "send_button": "Send Message"
   }
 }
