@@ -119,7 +119,7 @@ export default function Navbar() {
 
           {/* Logo */}
           <Link to="/" className="flex items-center gap-3 group flex-shrink-0">
-            <img src="/logo.svg" alt="BMEL Logo" className="w-10 h-10 rounded-lg group-hover:scale-105 transition-transform shadow-glow-blue" />
+            <img src={`${import.meta.env.BASE_URL}logo.svg`} alt="BMEL Logo" className="w-10 h-10 rounded-lg group-hover:scale-105 transition-transform shadow-glow-blue" />
             <div className="hidden sm:block">
               <div className="text-white font-heading font-bold text-base leading-tight">{t('navbar.logo_name')}</div>
               <div className="text-amber text-[10px] font-medium tracking-widest uppercase leading-tight">

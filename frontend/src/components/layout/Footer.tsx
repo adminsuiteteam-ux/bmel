@@ -68,7 +68,7 @@ export default function Footer() {
         {/* Brand Column */}
         <div className="lg:col-span-1">
           <Link to="/" className="flex items-center gap-3 mb-5">
-            <img src="/logo.svg" alt="BMEL Logo" className="w-10 h-10 rounded-lg shadow-glow-blue" />
+            <img src={`${import.meta.env.BASE_URL}logo.svg`} alt="BMEL Logo" className="w-10 h-10 rounded-lg shadow-glow-blue" />
             <div>
               <div className="text-white font-heading font-bold text-base">{t('footer.logo_name')}</div>
               <div className="text-amber text-[10px] tracking-widest uppercase">{t('footer.logo_tagline')}</div>
