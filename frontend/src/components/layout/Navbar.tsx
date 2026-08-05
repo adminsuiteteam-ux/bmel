@@ -242,51 +242,93 @@ export default function Navbar() {
         </div>
       </header>
 
-      {/* Mobile Menu */}
+      {/* Mobile Side Drawer Overlay & Panel */}
       <AnimatePresence>
         {mobileOpen && (
-          <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: 'auto' }}
-            exit={{ opacity: 0, height: 0 }}
-            transition={{ duration: 0.25 }}
-            className="lg:hidden bg-navy border-b border-white/10 overflow-hidden z-40 relative"
-          >
-            <nav className="container-xl py-4 flex flex-col gap-1">
-              <MobileLink to="/">{t('navbar.nav_home')}</MobileLink>
-              <MobileLink to="/about">{t('navbar.mobile_about')}</MobileLink>
-              <div className="px-3 py-2">
-                <p className="text-amber/60 text-xs uppercase tracking-widest mb-2 font-semibold">{t('navbar.mobile_services_label')}</p>
-                {services.map(s => (
-                  <MobileLink key={s.slug} to={`/services/${s.slug}`} indent>{t(`navbar.services.${s.key}`)}</MobileLink>
-                ))}
+          <>
+            {/* Backdrop */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.2 }}
+              onClick={() => setMobileOpen(false)}
+              className="fixed inset-0 bg-black/70 backdrop-blur-xs z-50 lg:hidden"
+            />
+
+            {/* Drawer */}
+            <motion.div
+              initial={{ x: '100%' }}
+              animate={{ x: 0 }}
+              exit={{ x: '100%' }}
+              transition={{ type: 'spring', damping: 28, stiffness: 280 }}
+              className="fixed top-0 right-0 bottom-0 w-80 max-w-[85vw] bg-navy border-l border-white/10 z-50 lg:hidden shadow-2xl flex flex-col justify-between overflow-y-auto"
+            >
+              <div>
+                {/* Header */}
+                <div className="flex items-center justify-between p-5 border-b border-white/10">
+                  <Link to="/" onClick={() => setMobileOpen(false)} className="flex items-center gap-2.5">
+                    <img src={`${import.meta.env.BASE_URL}logo.svg`} alt="BMEL Logo" className="w-8 h-8 rounded-lg" />
+                    <div>
+                      <div className="text-white font-heading font-bold text-sm leading-tight">{t('navbar.logo_name')}</div>
+                      <div className="text-amber text-[9px] font-medium tracking-widest uppercase">{t('navbar.logo_tagline')}</div>
+                    </div>
+                  </Link>
+                  <button
+                    onClick={() => setMobileOpen(false)}
+                    className="w-9 h-9 flex items-center justify-center text-white/70 hover:text-white rounded-lg hover:bg-white/10 transition-colors"
+                    aria-label="Close menu"
+                  >
+                    <X size={20} />
+                  </button>
+                </div>
+
+                {/* Nav Links */}
+                <nav className="p-5 flex flex-col gap-1">
+                  <MobileLink to="/" onClick={() => setMobileOpen(false)}>{t('navbar.nav_home')}</MobileLink>
+                  <MobileLink to="/about" onClick={() => setMobileOpen(false)}>{t('navbar.nav_about')}</MobileLink>
+                  <MobileLink to="/services" onClick={() => setMobileOpen(false)}>{t('navbar.nav_services')}</MobileLink>
+                  <MobileLink to="/projects" onClick={() => setMobileOpen(false)}>{t('navbar.nav_projects')}</MobileLink>
+                  <MobileLink to="/industries" onClick={() => setMobileOpen(false)}>{t('navbar.nav_industries')}</MobileLink>
+                  <MobileLink to="/gallery" onClick={() => setMobileOpen(false)}>{t('navbar.mobile_gallery')}</MobileLink>
+                  <MobileLink to="/blog" onClick={() => setMobileOpen(false)}>{t('navbar.mobile_blog')}</MobileLink>
+                  <MobileLink to="/careers" onClick={() => setMobileOpen(false)}>{t('navbar.mobile_careers')}</MobileLink>
+                  <MobileLink to="/downloads" onClick={() => setMobileOpen(false)}>{t('navbar.mobile_downloads')}</MobileLink>
+                  <MobileLink to="/contact" onClick={() => setMobileOpen(false)}>{t('navbar.nav_contact')}</MobileLink>
+                </nav>
               </div>
-              <MobileLink to="/projects">{t('navbar.nav_projects')}</MobileLink>
-              <MobileLink to="/industries">{t('navbar.nav_industries')}</MobileLink>
-              <MobileLink to="/gallery">{t('navbar.mobile_gallery')}</MobileLink>
-              <MobileLink to="/blog">{t('navbar.mobile_blog')}</MobileLink>
-              <MobileLink to="/careers">{t('navbar.mobile_careers')}</MobileLink>
-              <MobileLink to="/downloads">{t('navbar.mobile_downloads')}</MobileLink>
-              <MobileLink to="/contact">{t('navbar.nav_contact')}</MobileLink>
-              <div className="pt-3 pb-1">
-                <Link to="/contact" className="btn-primary w-full justify-center">{t('navbar.get_free_quote')}</Link>
+
+              {/* Bottom Actions */}
+              <div className="p-5 border-t border-white/10 space-y-3">
+                <Link to="/contact" onClick={() => setMobileOpen(false)} className="btn-primary w-full justify-center text-sm py-3">
+                  {t('navbar.get_free_quote')}
+                </Link>
+                <div className="flex flex-col gap-2 pt-2 text-xs text-white/50">
+                  <a href="tel:07063332335" className="flex items-center gap-2 hover:text-amber transition-colors">
+                    <Phone size={13} className="text-amber" /> 07063332335
+                  </a>
+                  <a href="mailto:brownfortemechanical@gmail.com" className="flex items-center gap-2 hover:text-amber transition-colors">
+                    <Mail size={13} className="text-amber" /> brownfortemechanical@gmail.com
+                  </a>
+                </div>
               </div>
-            </nav>
-          </motion.div>
+            </motion.div>
+          </>
         )}
       </AnimatePresence>
     </>
   )
 }
 
-function MobileLink({ to, children, indent }: { to: string; children: React.ReactNode; indent?: boolean }) {
+function MobileLink({ to, children, indent, onClick }: { to: string; children: React.ReactNode; indent?: boolean; onClick?: () => void }) {
   return (
     <NavLink
       to={to}
+      onClick={onClick}
       className={({ isActive }) =>
-        `block px-3 py-2.5 rounded-lg text-sm font-medium transition-colors ${
+        `block px-3.5 py-3 rounded-lg text-sm font-medium transition-colors ${
           indent ? 'pl-6' : ''
-        } ${isActive ? 'bg-amber/10 text-amber' : 'text-white/70 hover:text-white hover:bg-white/5'}`
+        } ${isActive ? 'bg-amber/10 text-amber font-semibold' : 'text-white/80 hover:text-white hover:bg-white/5'}`
       }
     >
       {children}
