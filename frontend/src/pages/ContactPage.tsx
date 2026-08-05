@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import SEO from '@/components/ui/SEO'
-import { MapPin, Phone, Mail, Clock, CheckCircle2, AlertCircle } from 'lucide-react'
+import TurnstileWidget from '@/components/ui/TurnstileWidget'
+import { MapPin, Phone, Mail, Clock, CheckCircle2, ShieldCheck, AlertCircle } from 'lucide-react'
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -12,10 +13,19 @@ export default function ContactPage() {
   })
   const [submitted, setSubmitted] = useState(false)
   const [submitting, setSubmitting] = useState(false)
+  const [turnstileToken, setTurnstileToken] = useState<string | null>(null)
+  const [turnstileError, setTurnstileError] = useState(false)
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
+
+    if (!turnstileToken) {
+      setTurnstileError(true)
+      return
+    }
+
     setSubmitting(true)
+    setTurnstileError(false)
 
     // Simulate API request
     setTimeout(() => {
@@ -167,6 +177,30 @@ export default function ContactPage() {
                       className="w-full bg-white border border-slate-200 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:border-amber/50 resize-none"
                       placeholder="Detail your inquiry..."
                     />
+                  </div>
+
+                  {/* Cloudflare Turnstile Anti-Spam Protection */}
+                  <div className="pt-2">
+                    <div className="flex items-center gap-1.5 text-xs text-slate-500 mb-1">
+                      <ShieldCheck size={14} className="text-emerald-500" />
+                      <span>Protected by Cloudflare Turnstile Anti-Spam</span>
+                    </div>
+
+                    <TurnstileWidget
+                      onVerify={(token) => {
+                        setTurnstileToken(token)
+                        setTurnstileError(false)
+                      }}
+                      onExpire={() => setTurnstileToken(null)}
+                      onError={() => setTurnstileToken(null)}
+                    />
+
+                    {turnstileError && (
+                      <div className="flex items-center gap-2 text-xs text-rose-600 font-medium bg-rose-50 p-2.5 rounded-lg border border-rose-200 mt-2">
+                        <AlertCircle size={14} className="flex-shrink-0" />
+                        Please complete the Cloudflare security verification before submitting.
+                      </div>
+                    )}
                   </div>
 
                   <button
