@@ -47,8 +47,8 @@ export default function HeroSection() {
       <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-ocean-royal/30 rounded-full blur-[120px] pointer-events-none animate-glow-pulse" />
       <div className="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] bg-ocean-bright/20 rounded-full blur-[100px] pointer-events-none animate-glow-pulse" style={{ animationDelay: '1.5s' }} />
 
-      {/* Parallax floating engineering images */}
-      <Floating sensitivity={-0.5} className="h-full">
+      {/* Parallax floating engineering images (desktop only to prevent clutter on mobile) */}
+      <Floating sensitivity={-0.5} className="h-full hidden md:block">
 
         <FloatingElement depth={0.5} className="top-[12%] left-[1%] md:top-[20%] md:left-[3%]">
           <motion.img
@@ -108,7 +108,7 @@ export default function HeroSection() {
       </Floating>
 
       {/* Centre content */}
-      <div className="flex flex-col justify-center items-center w-[280px] sm:w-[360px] md:w-[560px] lg:w-[740px] z-50 pointer-events-auto px-4 py-20">
+      <div className="flex flex-col justify-center items-center w-full max-w-4xl z-10 pointer-events-auto px-5 py-16 md:py-24">
 
         {/* Badge */}
         <motion.div
@@ -125,20 +125,20 @@ export default function HeroSection() {
 
         {/* Headline with TextRotate */}
         <motion.h1
-          className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl text-center w-full justify-center items-center flex flex-col whitespace-pre leading-tight font-heading font-black tracking-tight space-y-2 md:space-y-3"
+          className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl text-center w-full justify-center items-center flex flex-col leading-tight font-heading font-black tracking-tight space-y-1 sm:space-y-2 md:space-y-3"
           animate={{ opacity: 1, y: 0 }}
           initial={{ opacity: 0, y: 20 }}
           transition={{ duration: 0.3, ease: 'easeOut', delay: 0.3 }}
         >
           <span className="text-white">Engineering Solutions</span>
           <LayoutGroup>
-            <motion.span layout className="flex whitespace-pre items-center justify-center">
+            <motion.span layout className="flex flex-wrap items-center justify-center gap-x-2">
               <motion.span
                 layout
-                className="flex whitespace-pre text-white/70"
+                className="text-white/70"
                 transition={{ type: 'spring', damping: 30, stiffness: 400 }}
               >
-                that are{' '}
+                that are
               </motion.span>
               <TextRotate
                 texts={[
