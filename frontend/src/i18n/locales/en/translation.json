@@ -120,5 +120,48 @@
     "turnstile_required": "Please complete the Cloudflare security verification before submitting.",
     "sending": "Sending...",
     "send_button": "Send Message"
+  },
+  "testimonials": {
+    "reviews_label": "Reviews",
+    "title": "Client Testimonials",
+    "subtitle": "Hear from developers, manufacturers, and municipal consultants who rely on BMEL for mechanical utilities."
+  },
+  "projects": {
+    "portfolio_label": "Portfolio",
+    "title": "Engineering Portfolio",
+    "subtitle": "Explore our track record of water treatment plants, sectional storage panel tanks, and commercial plumbing projects.",
+    "no_matches": "No project case studies match your selection.",
+    "completed": "Completed:",
+    "not_found_title": "Project Study Not Found",
+    "not_found_subtitle": "The case study you requested is not listed.",
+    "overview": "Case Study Overview",
+    "equipment": "Equipment",
+    "client": "Client",
+    "location": "Location",
+    "completion_date": "Completion Date",
+    "industry": "Industry",
+    "status": "Project Status",
+    "services_rendered": "Services Rendered"
+  },
+  "pricing": {
+    "web_dev": "Web Development",
+    "packages": "Packages",
+    "total_setup": "Total Setup",
+    "delivery": "Delivery:",
+    "ideal_for": "Ideal For",
+    "cost_breakdown": "Cost Breakdown",
+    "monthly_support": "Monthly Support",
+    "annual_renewal": "Annual Renewal",
+    "side_by_side": "Side-by-Side",
+    "feature_comparison": "Feature Comparison",
+    "feature": "Feature",
+    "total_setup_cost": "Total Setup Cost",
+    "delivery_timeline": "Delivery Timeline",
+    "ongoing_support": "Ongoing Support",
+    "maintenance": "Maintenance",
+    "package": "Package",
+    "monthly_plan": "Monthly Plan",
+    "our_commitment": "Our Commitment",
+    "brownforte": "Brownforte"
   }
 }

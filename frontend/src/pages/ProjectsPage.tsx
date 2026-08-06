@@ -3,8 +3,10 @@ import SEO from '@/components/ui/SEO'
 import { Link } from 'react-router-dom'
 import { Calendar, MapPin, Search } from 'lucide-react'
 import { mockProjects } from '@/data/mockData'
+import { useTranslation } from 'react-i18next'
 
 export default function ProjectsPage() {
+  const { t } = useTranslation()
   const [filter, setFilter] = useState('All')
   const [search, setSearch] = useState('')
 
@@ -41,10 +43,10 @@ export default function ProjectsPage() {
       <section className="site-gradient-bg py-20 text-slate-900 border-b border-slate-200/60 relative">
         <div className="absolute inset-0 dot-grid-bg opacity-20 pointer-events-none" />
         <div className="container-xl relative z-10 text-center">
-          <span className="text-amber-600 font-heading font-bold text-xs uppercase tracking-widest">Portfolio</span>
-          <h1 className="text-4xl sm:text-5xl font-black text-navy mt-2">Engineering Portfolio</h1>
+          <span className="text-amber-600 font-heading font-bold text-xs uppercase tracking-widest">{t('projects.portfolio_label')}</span>
+          <h1 className="text-4xl sm:text-5xl font-black text-navy mt-2">{t('projects.title')}</h1>
           <p className="text-slate-600 text-lg max-w-xl mx-auto mt-4">
-            Demonstrating professional execution on major utility and fluid handling developments across Nigeria.
+            {t('projects.subtitle')}
           </p>
         </div>
       </section>
@@ -90,7 +92,7 @@ export default function ProjectsPage() {
           {/* Grid */}
           {filteredProjects.length === 0 ? (
             <div className="text-center py-20">
-              <p className="text-slate-500">No project case studies match your selection.</p>
+              <p className="text-slate-500">{t('projects.no_matches')}</p>
             </div>
           ) : (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -136,7 +138,7 @@ export default function ProjectsPage() {
                       </div>
                       <div className="flex items-center gap-2 text-xs text-slate-500">
                         <Calendar size={13} className="text-amber flex-shrink-0" />
-                        <span>Completed: {project.completionDate}</span>
+                        <span>{t('projects.completed')} {project.completionDate}</span>
                       </div>
                     </div>
                   </div>

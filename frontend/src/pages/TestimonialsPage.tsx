@@ -1,8 +1,11 @@
 import SEO from '@/components/ui/SEO'
 import { Star } from 'lucide-react'
 import { mockTestimonials } from '@/data/mockData'
+import { useTranslation } from 'react-i18next'
 
 export default function TestimonialsPage() {
+  const { t } = useTranslation()
+
   return (
     <>
       <SEO
@@ -14,10 +17,10 @@ export default function TestimonialsPage() {
       <section className="site-gradient-bg py-20 text-slate-900 border-b border-slate-200/60 relative">
         <div className="absolute inset-0 dot-grid-bg opacity-20 pointer-events-none" />
         <div className="container-xl relative z-10 text-center">
-          <span className="text-amber-600 font-heading font-bold text-xs uppercase tracking-widest">Reviews</span>
-          <h1 className="text-4xl sm:text-5xl font-black text-navy mt-2">Client Testimonials</h1>
+          <span className="text-amber-600 font-heading font-bold text-xs uppercase tracking-widest">{t('testimonials.reviews_label')}</span>
+          <h1 className="text-4xl sm:text-5xl font-black text-navy mt-2">{t('testimonials.title')}</h1>
           <p className="text-slate-600 text-lg max-w-xl mx-auto mt-4">
-            Hear from developers, manufacturers, and municipal consultants who rely on BMEL for mechanical utilities.
+            {t('testimonials.subtitle')}
           </p>
         </div>
       </section>

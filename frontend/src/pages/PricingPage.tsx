@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import SEO from '@/components/ui/SEO'
+import { useTranslation } from 'react-i18next'
 import {
   CheckCircle2,
   XCircle,
@@ -180,6 +181,7 @@ function BoolCell({ val }: { val: boolean | string }) {
 /* ─────────────────────────── Component ─────────────────────── */
 
 export default function PricingPage() {
+  const { t } = useTranslation()
   const [activeTab, setActiveTab] = useState<'cards' | 'compare'>('cards')
 
   return (
@@ -197,10 +199,10 @@ export default function PricingPage() {
         <div className="absolute -bottom-40 -right-40 w-[28rem] h-[28rem] bg-indigo-500/10 rounded-full blur-3xl pointer-events-none" />
 
         <div className="container-xl relative z-10 text-center">
-          <span className="section-label">Web Development</span>
+          <span className="section-label">{t('pricing.web_dev')}</span>
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-navy mt-3 leading-tight">
             Website Development
-            <span className="block text-amber-600">Packages & Pricing</span>
+            <span className="block text-amber-600">{t('pricing.packages')} & Pricing</span>
           </h1>
           <p className="text-slate-600 text-lg max-w-2xl mx-auto mt-5 leading-relaxed">
             Four tiers — from a polished 5-page site to a full-scale enterprise platform.
@@ -274,7 +276,7 @@ export default function PricingPage() {
                       <h2 className="text-2xl font-heading font-black leading-tight">{pkg.name}</h2>
                       <p className="text-white/70 text-xs mt-1 leading-snug">{pkg.subtitle}</p>
                       <div className="mt-5 border-t border-white/20 pt-4">
-                        <p className="text-white/60 text-xs uppercase tracking-wider font-heading">Total Setup</p>
+                        <p className="text-white/60 text-xs uppercase tracking-wider font-heading">{t('pricing.total_setup')}</p>
                         <p className="text-3xl font-black font-heading mt-1">{pkg.totalPrice}</p>
                       </div>
                     </div>
@@ -283,10 +285,10 @@ export default function PricingPage() {
                     <div className="bg-white border-b border-slate-100 px-5 py-3">
                       <div className="flex items-center gap-2 text-slate-500 text-xs mb-3">
                         <Clock size={12} className="text-amber flex-shrink-0" />
-                        <span className="font-semibold">Delivery:</span>
+                        <span className="font-semibold">{t('pricing.delivery')}</span>
                         <span>{pkg.delivery}</span>
                       </div>
-                      <p className="text-xs font-heading font-semibold text-slate-400 uppercase tracking-wider mb-1.5">Ideal For</p>
+                      <p className="text-xs font-heading font-semibold text-slate-400 uppercase tracking-wider mb-1.5">{t('pricing.ideal_for')}</p>
                       <div className="flex flex-wrap gap-1">
                         {pkg.idealFor.map(item => (
                           <span key={item} className="text-xs bg-slate-100 text-slate-600 rounded-full px-2 py-0.5">
@@ -298,7 +300,7 @@ export default function PricingPage() {
 
                     {/* Cost breakdown */}
                     <div className="bg-white px-5 py-4 flex-1">
-                      <p className="text-xs font-heading font-bold text-slate-400 uppercase tracking-wider mb-3">Cost Breakdown</p>
+                      <p className="text-xs font-heading font-bold text-slate-400 uppercase tracking-wider mb-3">{t('pricing.cost_breakdown')}</p>
                       <ul className="space-y-2">
                         {pkg.lineItems.map(item => (
                           <li key={item.label} className="flex items-start justify-between gap-2 text-xs">
@@ -316,7 +318,7 @@ export default function PricingPage() {
 
                       {/* Total row */}
                       <div className="mt-3 pt-3 border-t-2 border-amber/40 flex justify-between items-center">
-                        <span className="text-xs font-heading font-bold text-navy uppercase tracking-wider">Total Setup</span>
+                        <span className="text-xs font-heading font-bold text-navy uppercase tracking-wider">{t('pricing.total_setup')}</span>
                         <span className="font-heading font-black text-amber text-base">{pkg.totalPrice}</span>
                       </div>
                     </div>
@@ -324,11 +326,11 @@ export default function PricingPage() {
                     {/* Support & Renewal */}
                     <div className="bg-slate-50 border-t border-slate-100 px-5 py-3 text-xs space-y-1.5">
                       <div className="flex justify-between">
-                        <span className="text-slate-500">Monthly Support</span>
+                        <span className="text-slate-500">{t('pricing.monthly_support')}</span>
                         <span className="font-heading font-semibold text-slate-700">{pkg.monthlySupport}</span>
                       </div>
                       <div className="flex justify-between">
-                        <span className="text-slate-500">Annual Renewal</span>
+                        <span className="text-slate-500">{t('pricing.annual_renewal')}</span>
                         <span className="font-heading font-semibold text-slate-700">{pkg.annualRenewal}</span>
                       </div>
                     </div>
@@ -373,15 +375,15 @@ export default function PricingPage() {
         <section className="section-pad bg-gradient-to-b from-slate-50 to-white">
           <div className="container-xl">
             <div className="text-center mb-10">
-              <span className="section-label">Side-by-Side</span>
-              <h2 className="section-title text-navy mt-2">Feature Comparison</h2>
+              <span className="section-label">{t('pricing.side_by_side')}</span>
+              <h2 className="section-title text-navy mt-2">{t('pricing.feature_comparison')}</h2>
             </div>
 
             <div className="overflow-x-auto rounded-2xl border border-slate-200 shadow-card">
               <table className="w-full text-sm">
                 <thead>
                   <tr className="bg-navy text-white">
-                    <th className="text-left px-6 py-4 font-heading font-semibold text-xs uppercase tracking-wider w-[28%]">Feature</th>
+                    <th className="text-left px-6 py-4 font-heading font-semibold text-xs uppercase tracking-wider w-[28%]">{t('pricing.feature')}</th>
                     {packages.map(p => (
                       <th key={p.id} className="px-4 py-4 font-heading font-semibold text-xs uppercase tracking-wider text-center">
                         <div className="flex flex-col items-center gap-1">
@@ -406,7 +408,7 @@ export default function PricingPage() {
                   ))}
                   {/* Totals row */}
                   <tr className="bg-amber/10 border-t-2 border-amber/40">
-                    <td className="px-6 py-4 font-heading font-bold text-navy text-xs uppercase tracking-wider">Total Setup Cost</td>
+                    <td className="px-6 py-4 font-heading font-bold text-navy text-xs uppercase tracking-wider">{t('pricing.total_setup_cost')}</td>
                     {packages.map(p => (
                       <td key={p.id} className="px-4 py-4 text-center">
                         <span className="font-heading font-black text-navy text-sm">{p.totalPrice}</span>
@@ -414,19 +416,19 @@ export default function PricingPage() {
                     ))}
                   </tr>
                   <tr className="bg-white">
-                    <td className="px-6 py-3 font-semibold text-slate-700 text-xs">Monthly Support</td>
+                    <td className="px-6 py-3 font-semibold text-slate-700 text-xs">{t('pricing.monthly_support')}</td>
                     {packages.map(p => (
                       <td key={p.id} className="px-4 py-3 text-center text-xs font-semibold text-slate-600">{p.monthlySupport}</td>
                     ))}
                   </tr>
                   <tr className="bg-slate-50">
-                    <td className="px-6 py-3 font-semibold text-slate-700 text-xs">Annual Renewal</td>
+                    <td className="px-6 py-3 font-semibold text-slate-700 text-xs">{t('pricing.annual_renewal')}</td>
                     {packages.map(p => (
                       <td key={p.id} className="px-4 py-3 text-center text-xs font-semibold text-slate-600">{p.annualRenewal}</td>
                     ))}
                   </tr>
                   <tr className="bg-white">
-                    <td className="px-6 py-3 font-semibold text-slate-700 text-xs">Delivery Timeline</td>
+                    <td className="px-6 py-3 font-semibold text-slate-700 text-xs">{t('pricing.delivery_timeline')}</td>
                     {packages.map(p => (
                       <td key={p.id} className="px-4 py-3 text-center text-xs font-semibold text-amber">{p.delivery}</td>
                     ))}
@@ -446,8 +448,8 @@ export default function PricingPage() {
       <section className="section-pad bg-white border-t border-slate-100">
         <div className="container-xl">
           <div className="text-center mb-10">
-            <span className="section-label">Ongoing Support</span>
-            <h2 className="section-title text-navy mt-2">Maintenance & Support Plans</h2>
+            <span className="section-label">{t('pricing.ongoing_support')}</span>
+            <h2 className="section-title text-navy mt-2">{t('pricing.maintenance')} & Support Plans</h2>
             <p className="text-slate-500 text-base max-w-xl mx-auto mt-3">
               Keep your website secure, up-to-date, and performing at its best with one of our flexible support plans.
             </p>
@@ -458,8 +460,8 @@ export default function PricingPage() {
               <table className="w-full text-sm">
                 <thead>
                   <tr className="bg-navy text-white">
-                    <th className="text-left px-6 py-4 font-heading font-semibold text-xs uppercase tracking-wider">Package</th>
-                    <th className="px-6 py-4 font-heading font-semibold text-xs uppercase tracking-wider text-center">Monthly Plan</th>
+                    <th className="text-left px-6 py-4 font-heading font-semibold text-xs uppercase tracking-wider">{t('pricing.package')}</th>
+                    <th className="px-6 py-4 font-heading font-semibold text-xs uppercase tracking-wider text-center">{t('pricing.monthly_plan')}</th>
                     <th className="px-6 py-4 font-heading font-semibold text-xs uppercase tracking-wider text-center">
                       Annual Plan <span className="text-amber">(save 15%)</span>
                     </th>
@@ -505,9 +507,9 @@ export default function PricingPage() {
 
         <div className="container-xl relative z-10">
           <div className="text-center mb-14">
-            <span className="section-label">Our Commitment</span>
+            <span className="section-label">{t('pricing.our_commitment')}</span>
             <h2 className="section-title text-white mt-2">
-              Why Clients Choose <span className="text-gradient">Brownforte</span>
+              Why Clients Choose <span className="text-gradient">{t('pricing.brownforte')}</span>
             </h2>
           </div>
 

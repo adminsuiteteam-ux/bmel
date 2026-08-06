@@ -2,16 +2,18 @@ import { Link, useParams } from 'react-router-dom'
 import SEO from '@/components/ui/SEO'
 import { mockProjects } from '@/data/mockData'
 import { ArrowLeft, Calendar, User, MapPin, Tag, Activity, Wrench } from 'lucide-react'
+import { useTranslation } from 'react-i18next'
 
 export default function ProjectDetailPage() {
+  const { t } = useTranslation()
   const { slug } = useParams<{ slug: string }>()
   const project = mockProjects.find(p => p.slug === slug)
 
   if (!project) {
     return (
       <div className="min-h-[60vh] flex flex-col items-center justify-center p-6 text-center">
-        <h2 className="text-2xl font-bold text-navy">Project Study Not Found</h2>
-        <p className="text-slate-500 mt-2">The case study you requested is not listed.</p>
+        <h2 className="text-2xl font-bold text-navy">{t('projects.not_found_title')}</h2>
+        <p className="text-slate-500 mt-2">{t('projects.not_found_subtitle')}</p>
         <Link to="/projects" className="btn-primary mt-6">
           <ArrowLeft size={16} /> Back to Projects
         </Link>
@@ -58,7 +60,7 @@ export default function ProjectDetailPage() {
 
             {/* Overview */}
             <div>
-              <h2 className="text-2xl font-heading font-bold text-navy mb-4">Case Study Overview</h2>
+              <h2 className="text-2xl font-heading font-bold text-navy mb-4">{t('projects.overview')}</h2>
               <p className="text-slate-600 leading-relaxed text-base">{project.description}</p>
             </div>
 
@@ -66,7 +68,7 @@ export default function ProjectDetailPage() {
             <div className="bg-slate-50 border border-slate-100 rounded-xl p-8">
               <h3 className="text-lg font-heading font-bold text-navy mb-4 flex items-center gap-2">
                 <Wrench size={18} className="text-amber" />
-                <span>Equipment & Infrastructure Specs</span>
+                <span>{t('projects.equipment')} Infrastructure Specs</span>
               </h3>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 {project.equipmentUsed.map((eq, idx) => (
@@ -92,7 +94,7 @@ export default function ProjectDetailPage() {
                 <div className="flex items-start gap-3">
                   <User size={16} className="text-amber mt-0.5 flex-shrink-0" />
                   <div>
-                    <span className="text-[10px] text-slate-400 uppercase tracking-widest font-semibold block">Client</span>
+                    <span className="text-[10px] text-slate-400 uppercase tracking-widest font-semibold block">{t('projects.client')}</span>
                     <span className="text-sm font-semibold text-navy">{project.client}</span>
                   </div>
                 </div>
@@ -100,7 +102,7 @@ export default function ProjectDetailPage() {
                 <div className="flex items-start gap-3">
                   <MapPin size={16} className="text-amber mt-0.5 flex-shrink-0" />
                   <div>
-                    <span className="text-[10px] text-slate-400 uppercase tracking-widest font-semibold block">Location</span>
+                    <span className="text-[10px] text-slate-400 uppercase tracking-widest font-semibold block">{t('projects.location')}</span>
                     <span className="text-sm font-semibold text-navy">{project.location}</span>
                   </div>
                 </div>
@@ -108,7 +110,7 @@ export default function ProjectDetailPage() {
                 <div className="flex items-start gap-3">
                   <Calendar size={16} className="text-amber mt-0.5 flex-shrink-0" />
                   <div>
-                    <span className="text-[10px] text-slate-400 uppercase tracking-widest font-semibold block">Completion Date</span>
+                    <span className="text-[10px] text-slate-400 uppercase tracking-widest font-semibold block">{t('projects.completion_date')}</span>
                     <span className="text-sm font-semibold text-navy">{project.completionDate}</span>
                   </div>
                 </div>
@@ -116,7 +118,7 @@ export default function ProjectDetailPage() {
                 <div className="flex items-start gap-3">
                   <Tag size={16} className="text-amber mt-0.5 flex-shrink-0" />
                   <div>
-                    <span className="text-[10px] text-slate-400 uppercase tracking-widest font-semibold block">Industry</span>
+                    <span className="text-[10px] text-slate-400 uppercase tracking-widest font-semibold block">{t('projects.industry')}</span>
                     <span className="text-sm font-semibold text-navy">{project.industry}</span>
                   </div>
                 </div>
@@ -124,7 +126,7 @@ export default function ProjectDetailPage() {
                 <div className="flex items-start gap-3">
                   <Activity size={16} className="text-amber mt-0.5 flex-shrink-0" />
                   <div>
-                    <span className="text-[10px] text-slate-400 uppercase tracking-widest font-semibold block">Project Status</span>
+                    <span className="text-[10px] text-slate-400 uppercase tracking-widest font-semibold block">{t('projects.status')}</span>
                     <span className="text-sm font-semibold text-navy">{project.status}</span>
                   </div>
                 </div>
@@ -133,7 +135,7 @@ export default function ProjectDetailPage() {
 
             {/* Services Rendered Box */}
             <div className="border border-slate-100 rounded-xl p-6 shadow-card">
-              <h4 className="font-heading font-bold text-navy text-sm uppercase tracking-wide mb-4">Services Rendered</h4>
+              <h4 className="font-heading font-bold text-navy text-sm uppercase tracking-wide mb-4">{t('projects.services_rendered')}</h4>
               <div className="flex flex-wrap gap-2">
                 {project.servicesRendered.map((srv, idx) => (
                   <span key={idx} className="bg-navy/5 text-navy text-xs font-semibold px-3 py-1.5 rounded-lg border border-navy/5">
