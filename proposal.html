@@ -1098,7 +1098,7 @@
             })
             .then(async (response) => {
                 let json = await response.json();
-                if (response.status == 200) {
+                if (response.status === 200) {
                     statusBox.style.background = '#D1FAE5';
                     statusBox.style.color = '#065F46';
                     statusBox.innerHTML = `<i class="fa-solid fa-circle-check"></i> Thank you! Your proposal request was sent directly to dimacode0@gmail.com. We will be in touch shortly.`;
