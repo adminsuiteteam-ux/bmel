@@ -12,19 +12,19 @@ export default function ServicesPage() {
       />
 
       {/* Header */}
-      <section className="bg-navy py-20 text-white relative">
-        <div className="absolute inset-0 dot-grid-bg opacity-15 pointer-events-none" />
+      <section className="site-gradient-bg py-20 text-slate-900 border-b border-slate-200/60 relative">
+        <div className="absolute inset-0 dot-grid-bg opacity-20 pointer-events-none" />
         <div className="container-xl relative z-10 text-center">
-          <span className="text-amber font-heading font-semibold text-sm uppercase tracking-widest">Capabilities</span>
-          <h1 className="text-4xl sm:text-5xl font-black mt-2">Our Engineering Services</h1>
-          <p className="text-white/60 text-lg max-w-xl mx-auto mt-4">
+          <span className="text-amber-600 font-heading font-bold text-xs uppercase tracking-widest">Capabilities</span>
+          <h1 className="text-4xl sm:text-5xl font-black text-navy mt-2">Our Engineering Services</h1>
+          <p className="text-slate-600 text-lg max-w-xl mx-auto mt-4">
             Industrial, municipal, and commercial fluid engineering systems deployed by certified COREN engineers.
           </p>
         </div>
       </section>
 
       {/* Services Grid */}
-      <section className="section-pad bg-white">
+      <section className="section-pad site-gradient-bg">
         <div className="container-xl">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {mockServices.map((service, idx) => {

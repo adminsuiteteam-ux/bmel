@@ -1,15 +1,16 @@
 import { Link } from 'react-router-dom'
-import { motion } from 'framer-motion'
-import { Calendar, MapPin, ArrowRight, ArrowUpRight } from 'lucide-react'
+import { Calendar, MapPin, ArrowRight } from 'lucide-react'
 import { mockProjects } from '../../data/mockData'
-import SectionHeading from '../ui/SectionHeading'
+import { AnimatedCard, type CardColorVariant } from '../ui/AnimatedCard'
 
 export default function FeaturedProjects() {
   // Show only first 3 projects as featured on home
   const featured = mockProjects.slice(0, 3)
 
+  const variants: CardColorVariant[] = ['amber', 'emerald', 'cyan']
+
   return (
-    <section className="section-pad bg-white">
+    <section className="section-pad site-gradient-bg">
       <div className="container-xl">
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-12">
           <div className="max-w-2xl">
@@ -27,77 +28,35 @@ export default function FeaturedProjects() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {featured.map((project, idx) => (
-            <motion.div
-              key={project.slug}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: '-50px' }}
-              transition={{ duration: 0.5, delay: idx * 0.1 }}
-              className="bg-white rounded-xl overflow-hidden border border-slate-100 shadow-card card-hover flex flex-col h-full"
-            >
-              {/* Project Image */}
-              <div className="relative h-64 overflow-hidden group">
-                <img
-                  src={project.images[0]}
-                  alt={project.title}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                />
-                
-                {/* Status Badge */}
-                <div className="absolute top-4 right-4 z-10">
-                  <span className={`inline-block px-2.5 py-1 rounded text-xs font-heading font-bold uppercase tracking-wider ${
-                    project.status === 'Completed'
-                      ? 'bg-emerald-500 text-white'
-                      : 'bg-amber text-navy'
-                  }`}>
-                    {project.status}
-                  </span>
-                </div>
-
-                {/* Industry Label Overlay */}
-                <div className="absolute bottom-4 left-4 z-10">
-                  <span className="bg-navy/80 backdrop-blur-sm text-amber text-xs font-heading font-semibold px-2.5 py-1 rounded">
-                    {project.industry}
-                  </span>
-                </div>
-              </div>
-
-              {/* Project Body */}
-              <div className="p-6 flex-1 flex flex-col justify-between">
-                <div>
-                  <h3 className="font-heading font-bold text-navy text-xl mb-3 leading-tight hover:text-amber-600 transition-colors">
-                    <Link to={`/projects/${project.slug}`}>{project.title}</Link>
-                  </h3>
-                  <p className="text-sm text-slate-500 line-clamp-3 mb-6 leading-relaxed">
-                    {project.description}
-                  </p>
-                </div>
-
-                <div className="space-y-3 border-t border-slate-100 pt-4">
+            <Link key={project.slug} to={`/projects/${project.slug}`} className="block h-full">
+              <AnimatedCard
+                index={`PRJ-${String(idx + 1).padStart(3, '0')}`}
+                tag={project.status}
+                title={project.title}
+                description={project.description}
+                imageSrc={project.images[0]}
+                colorVariant={variants[idx % variants.length]}
+                darkTheme={false}
+                actionText="Read Case Study"
+                className="h-full"
+              >
+                <div className="mt-4 pt-3 border-t border-slate-100 space-y-2">
                   <div className="flex items-center gap-2 text-xs text-slate-500">
-                    <MapPin size={14} className="text-amber flex-shrink-0" />
+                    <MapPin size={14} className="text-amber-500 flex-shrink-0" />
                     <span>{project.location}</span>
                   </div>
                   <div className="flex items-center gap-2 text-xs text-slate-500">
-                    <Calendar size={14} className="text-amber flex-shrink-0" />
+                    <Calendar size={14} className="text-amber-500 flex-shrink-0" />
                     <span>Completed: {project.completionDate}</span>
                   </div>
-
-                  <div className="pt-2">
-                    <Link
-                      to={`/projects/${project.slug}`}
-                      className="inline-flex items-center gap-1.5 text-sm font-semibold text-navy hover:text-amber transition-colors"
-                    >
-                      Read Case Study <ArrowUpRight size={15} />
-                    </Link>
-                  </div>
                 </div>
-              </div>
-            </motion.div>
+              </AnimatedCard>
+            </Link>
           ))}
         </div>
       </div>
     </section>
   )
 }
+
 

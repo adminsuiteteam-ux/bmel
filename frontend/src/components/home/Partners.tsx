@@ -1,23 +1,26 @@
 export default function Partners() {
   const partners = [
-    'Grundfos',
-    'Veolia',
-    'GEA',
-    'Julius Berger',
-    'Bosch Engineering',
-    'Lowara Pumps',
-    'Schneider Electric',
-    'Danfoss'
+    'Julius Berger Nigeria',
+    'Dangote Industries',
+    'Nigerian Foundries Limited',
+    'BUA Group Africa',
+    'Tenaris Nigeria',
+    'Indorama Eleme Petrochemicals',
+    'Innoson Technical & Industrial',
+    'Lafarge Africa',
+    'Schneider Electric Nigeria & Africa',
+    'SMC Pumps Africa',
+    'Kavango Engineering & Piping'
   ]
 
   // Duplicate for seamless infinite loop scroll
   const scrollList = [...partners, ...partners]
 
   return (
-    <section className="py-12 bg-navy border-y border-white/5 overflow-hidden">
+    <section className="py-12 site-gradient-bg border-y border-slate-200/60 overflow-hidden">
       <div className="container-xl mb-6">
-        <p className="text-center text-white/40 text-xs font-heading font-semibold uppercase tracking-widest">
-          Suppliers & Technical Integrators
+        <p className="text-center text-slate-600 text-xs font-heading font-semibold uppercase tracking-widest">
+          Nigerian & African Technical Integrators & OEM Suppliers
         </p>
       </div>
 
@@ -26,7 +29,7 @@ export default function Partners() {
         {scrollList.map((partner, idx) => (
           <div
             key={idx}
-            className="flex-shrink-0 text-white/50 text-xl font-heading font-extrabold tracking-wider px-8 hover:text-amber transition-colors select-none"
+            className="flex-shrink-0 text-navy/80 text-xl font-heading font-extrabold tracking-wider px-8 hover:text-amber-600 transition-colors select-none"
           >
             {partner}
           </div>
@@ -35,4 +38,5 @@ export default function Partners() {
     </section>
   )
 }
+
 

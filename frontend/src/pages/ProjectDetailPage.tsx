@@ -27,13 +27,13 @@ export default function ProjectDetailPage() {
       />
 
       {/* Header */}
-      <section className="bg-navy py-20 text-white relative">
-        <div className="absolute inset-0 dot-grid-bg opacity-15 pointer-events-none" />
+      <section className="site-gradient-bg py-20 text-slate-900 border-b border-slate-200/60 relative">
+        <div className="absolute inset-0 dot-grid-bg opacity-20 pointer-events-none" />
         <div className="container-xl relative z-10">
-          <Link to="/projects" className="inline-flex items-center gap-1.5 text-xs text-amber font-semibold hover:underline mb-4">
+          <Link to="/projects" className="inline-flex items-center gap-1.5 text-xs text-amber-600 font-bold hover:underline mb-4">
             <ArrowLeft size={12} /> Back to Projects
           </Link>
-          <h1 className="text-3xl sm:text-5xl font-black max-w-4xl">{project.title}</h1>
+          <h1 className="text-3xl sm:text-5xl font-black text-navy max-w-4xl">{project.title}</h1>
         </div>
       </section>
 

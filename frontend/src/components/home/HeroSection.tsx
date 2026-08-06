@@ -38,14 +38,14 @@ const stats = [
 
 export default function HeroSection() {
   return (
-    <section className="w-full min-h-screen overflow-hidden flex flex-col items-center justify-center relative bg-navy text-white">
+    <section className="w-full min-h-screen overflow-hidden flex flex-col items-center justify-center relative site-gradient-bg text-slate-900">
 
       {/* Subtle dot grid background */}
-      <div className="absolute inset-0 dot-grid-bg opacity-20 pointer-events-none" />
+      <div className="absolute inset-0 dot-grid-bg opacity-25 pointer-events-none" />
 
       {/* Ambient glow blobs */}
-      <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-ocean-royal/30 rounded-full blur-[120px] pointer-events-none animate-glow-pulse" />
-      <div className="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] bg-ocean-bright/20 rounded-full blur-[100px] pointer-events-none animate-glow-pulse" style={{ animationDelay: '1.5s' }} />
+      <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-amber-400/15 rounded-full blur-[120px] pointer-events-none animate-glow-pulse" />
+      <div className="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] bg-sky-400/15 rounded-full blur-[100px] pointer-events-none animate-glow-pulse" style={{ animationDelay: '1.5s' }} />
 
       {/* Parallax floating engineering images (desktop only to prevent clutter on mobile) */}
       <Floating sensitivity={-0.5} className="h-full hidden md:block">
@@ -54,7 +54,7 @@ export default function HeroSection() {
           <motion.img
             src={heroImages[0].url}
             alt={heroImages[0].alt}
-            className="w-20 h-14 sm:w-28 sm:h-20 md:w-36 md:h-24 lg:w-40 lg:h-28 object-cover hover:scale-105 duration-200 cursor-pointer transition-transform -rotate-[3deg] shadow-2xl rounded-xl border border-white/10"
+            className="w-20 h-14 sm:w-28 sm:h-20 md:w-36 md:h-24 lg:w-40 lg:h-28 object-cover hover:scale-105 duration-200 cursor-pointer transition-transform -rotate-[3deg] shadow-xl rounded-xl border border-white/80"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.5 }}
@@ -65,7 +65,7 @@ export default function HeroSection() {
           <motion.img
             src={heroImages[1].url}
             alt={heroImages[1].alt}
-            className="w-36 h-28 sm:w-48 sm:h-36 md:w-56 md:h-44 lg:w-64 lg:h-48 object-cover hover:scale-105 duration-200 cursor-pointer transition-transform -rotate-[8deg] shadow-2xl rounded-xl border border-white/10"
+            className="w-36 h-28 sm:w-48 sm:h-36 md:w-56 md:h-44 lg:w-64 lg:h-48 object-cover hover:scale-105 duration-200 cursor-pointer transition-transform -rotate-[8deg] shadow-xl rounded-xl border border-white/80"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.7 }}
@@ -76,7 +76,7 @@ export default function HeroSection() {
           <motion.img
             src={heroImages[2].url}
             alt={heroImages[2].alt}
-            className="w-36 h-36 sm:w-48 sm:h-48 md:w-56 md:h-56 lg:w-64 lg:h-64 object-cover -rotate-[4deg] hover:scale-105 duration-200 cursor-pointer transition-transform shadow-2xl rounded-xl border border-white/10"
+            className="w-36 h-36 sm:w-48 sm:h-48 md:w-56 md:h-56 lg:w-64 lg:h-64 object-cover -rotate-[4deg] hover:scale-105 duration-200 cursor-pointer transition-transform shadow-xl rounded-xl border border-white/80"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.9 }}
@@ -87,7 +87,7 @@ export default function HeroSection() {
           <motion.img
             src={heroImages[3].url}
             alt={heroImages[3].alt}
-            className="w-36 h-32 sm:w-48 sm:h-40 md:w-56 md:h-48 lg:w-64 lg:h-52 object-cover hover:scale-105 duration-200 cursor-pointer transition-transform shadow-2xl rotate-[5deg] rounded-xl border border-white/10"
+            className="w-36 h-32 sm:w-48 sm:h-40 md:w-56 md:h-48 lg:w-64 lg:h-52 object-cover hover:scale-105 duration-200 cursor-pointer transition-transform shadow-xl rotate-[5deg] rounded-xl border border-white/80"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 1.1 }}
@@ -98,7 +98,7 @@ export default function HeroSection() {
           <motion.img
             src={heroImages[4].url}
             alt={heroImages[4].alt}
-            className="w-40 h-40 sm:w-56 sm:h-56 md:w-64 md:h-64 lg:w-72 lg:h-72 object-cover hover:scale-105 duration-200 cursor-pointer transition-transform shadow-2xl rotate-[14deg] rounded-xl border border-white/10"
+            className="w-40 h-40 sm:w-56 sm:h-56 md:w-64 md:h-64 lg:w-72 lg:h-72 object-cover hover:scale-105 duration-200 cursor-pointer transition-transform shadow-xl rotate-[14deg] rounded-xl border border-white/80"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 1.3 }}
@@ -112,13 +112,13 @@ export default function HeroSection() {
 
         {/* Badge */}
         <motion.div
-          className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/5 border border-amber/20 mb-8"
+          className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/80 backdrop-blur-md border border-navy/15 shadow-sm mb-8"
           animate={{ opacity: 1, y: 0 }}
           initial={{ opacity: 0, y: 20 }}
           transition={{ duration: 0.3, ease: 'easeOut', delay: 0.2 }}
         >
-          <span className="w-2 h-2 rounded-full bg-amber animate-pulse" />
-          <span className="text-xs uppercase tracking-widest font-semibold text-amber">
+          <span className="w-2.5 h-2.5 rounded-full bg-amber animate-pulse" />
+          <span className="text-xs uppercase tracking-widest font-bold text-navy">
             Nigeria's Trusted Engineering Partner
           </span>
         </motion.div>
@@ -130,12 +130,12 @@ export default function HeroSection() {
           initial={{ opacity: 0, y: 20 }}
           transition={{ duration: 0.3, ease: 'easeOut', delay: 0.3 }}
         >
-          <span className="text-white">Engineering Solutions</span>
+          <span className="text-navy">Engineering Solutions</span>
           <LayoutGroup>
             <motion.span layout className="flex flex-wrap items-center justify-center gap-x-2">
               <motion.span
                 layout
-                className="text-white/70"
+                className="text-slate-600"
                 transition={{ type: 'spring', damping: 30, stiffness: 400 }}
               >
                 that are
@@ -153,7 +153,7 @@ export default function HeroSection() {
                   'Innovative',
                   'Proven 🏆',
                 ]}
-                mainClassName="overflow-hidden pr-2 text-amber py-0 pb-1 md:pb-2 rounded-xl"
+                mainClassName="overflow-hidden pr-2 text-amber-600 font-black py-0 pb-1 md:pb-2 rounded-xl"
                 staggerDuration={0.03}
                 staggerFrom="last"
                 rotationInterval={2800}
@@ -165,7 +165,7 @@ export default function HeroSection() {
 
         {/* Sub-description */}
         <motion.p
-          className="text-sm sm:text-base md:text-lg lg:text-xl text-center text-white/60 pt-5 sm:pt-8 md:pt-10 leading-relaxed max-w-lg"
+          className="text-sm sm:text-base md:text-lg lg:text-xl text-center text-slate-600 font-medium pt-5 sm:pt-8 md:pt-10 leading-relaxed max-w-lg"
           animate={{ opacity: 1, y: 0 }}
           initial={{ opacity: 0, y: 20 }}
           transition={{ duration: 0.3, ease: 'easeOut', delay: 0.5 }}
@@ -176,14 +176,14 @@ export default function HeroSection() {
 
         {/* Trust checkmarks */}
         <motion.div
-          className="flex flex-col sm:flex-row gap-3 sm:gap-6 mt-6 text-xs sm:text-sm text-white/50"
+          className="flex flex-col sm:flex-row gap-3 sm:gap-6 mt-6 text-xs sm:text-sm text-slate-700 font-semibold"
           animate={{ opacity: 1, y: 0 }}
           initial={{ opacity: 0, y: 20 }}
           transition={{ duration: 0.3, ease: 'easeOut', delay: 0.6 }}
         >
           {['Certified ASME Fabrication', 'Full QA/QC Protocol', '24-Month Warranty'].map((item) => (
             <div key={item} className="flex items-center gap-1.5">
-              <CheckCircle2 size={14} className="text-amber flex-shrink-0" />
+              <CheckCircle2 size={15} className="text-amber-500 flex-shrink-0" />
               <span>{item}</span>
             </div>
           ))}
@@ -201,7 +201,7 @@ export default function HeroSection() {
           >
             <Link
               to="/contact"
-              className="btn-primary text-sm sm:text-base shadow-2xl"
+              className="btn-primary text-sm sm:text-base shadow-xl"
             >
               Request a Quote
               <ArrowRight size={16} />
@@ -212,7 +212,7 @@ export default function HeroSection() {
           >
             <Link
               to="/projects"
-              className="btn-secondary text-sm sm:text-base"
+              className="btn-secondary text-sm sm:text-base bg-white/80 border border-slate-300 text-slate-800 hover:bg-slate-100"
             >
               Explore Projects
             </Link>
@@ -221,17 +221,17 @@ export default function HeroSection() {
 
         {/* Stats row */}
         <motion.div
-          className="grid grid-cols-2 sm:grid-cols-4 gap-5 sm:gap-8 border-t border-white/10 mt-14 pt-10 w-full"
+          className="grid grid-cols-2 sm:grid-cols-4 gap-5 sm:gap-8 border-t border-slate-300/70 mt-14 pt-10 w-full"
           animate={{ opacity: 1 }}
           initial={{ opacity: 0 }}
           transition={{ duration: 0.8, delay: 0.9 }}
         >
           {stats.map((stat, i) => (
             <div key={i} className="flex flex-col items-center sm:items-start">
-              <span className="text-2xl sm:text-3xl font-heading font-black text-amber flex items-center">
+              <span className="text-2xl sm:text-3xl font-heading font-black text-navy flex items-center">
                 <AnimatedCounter end={stat.value} suffix={stat.suffix} />
               </span>
-              <span className="text-[11px] text-white/40 mt-1 font-medium tracking-wide uppercase text-center sm:text-left">
+              <span className="text-[11px] text-slate-500 mt-1 font-semibold tracking-wide uppercase text-center sm:text-left">
                 {stat.label}
               </span>
             </div>

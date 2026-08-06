@@ -191,18 +191,18 @@ export default function PricingPage() {
       />
 
       {/* ── Hero ── */}
-      <section className="bg-navy py-24 text-white relative overflow-hidden">
-        <div className="absolute inset-0 dot-grid-bg opacity-10 pointer-events-none" />
-        <div className="absolute -top-40 -left-40 w-[28rem] h-[28rem] bg-amber/10 rounded-full blur-3xl pointer-events-none" />
+      <section className="site-gradient-bg py-24 text-slate-900 border-b border-slate-200/60 relative overflow-hidden">
+        <div className="absolute inset-0 dot-grid-bg opacity-20 pointer-events-none" />
+        <div className="absolute -top-40 -left-40 w-[28rem] h-[28rem] bg-amber-400/10 rounded-full blur-3xl pointer-events-none" />
         <div className="absolute -bottom-40 -right-40 w-[28rem] h-[28rem] bg-indigo-500/10 rounded-full blur-3xl pointer-events-none" />
 
         <div className="container-xl relative z-10 text-center">
           <span className="section-label">Web Development</span>
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black mt-3 leading-tight">
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-navy mt-3 leading-tight">
             Website Development
-            <span className="block text-gradient">Packages & Pricing</span>
+            <span className="block text-amber-600">Packages & Pricing</span>
           </h1>
-          <p className="text-white/60 text-lg max-w-2xl mx-auto mt-5 leading-relaxed">
+          <p className="text-slate-600 text-lg max-w-2xl mx-auto mt-5 leading-relaxed">
             Four tiers — from a polished 5-page site to a full-scale enterprise platform.
             Transparent, all-inclusive pricing with no hidden fees.
           </p>

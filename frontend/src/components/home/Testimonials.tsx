@@ -20,7 +20,7 @@ export default function Testimonials() {
   const current = mockTestimonials[active]
 
   return (
-    <section className="section-pad bg-slate-50 overflow-hidden">
+    <section className="section-pad site-gradient-bg overflow-hidden">
       <div className="container-xl">
         <SectionHeading
           label="Testimonials"

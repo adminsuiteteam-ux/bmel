@@ -1,75 +1,89 @@
-import { ShieldCheck, Map, Clock, CheckSquare, Zap, Users } from 'lucide-react'
+import { ShieldCheck, Clock, CheckCircle2, Award, Truck, Headphones, Sliders } from 'lucide-react'
 import SectionHeading from '../ui/SectionHeading'
+import { AnimatedCard, type CardColorVariant } from '../ui/AnimatedCard'
 
-const features = [
+const features: Array<{ icon: any; title: string; desc: string; tag: string; variant: CardColorVariant }> = [
   {
-    icon: Users,
-    title: 'Professional COREN Engineers',
-    desc: 'Our design and installation projects are overseen by certified members of the Council for the Regulation of Engineering in Nigeria.',
+    icon: Award,
+    title: 'Experienced Engineering Professionals',
+    desc: 'Our team combines technical expertise with practical field experience to deliver solutions that meet international engineering standards.',
+    tag: 'EXPERTISE',
+    variant: 'amber',
+  },
+  {
+    icon: Truck,
+    title: 'End-to-End Project Delivery',
+    desc: 'From concept and design to installation, testing, commissioning, and maintenance, we manage every single stage.',
+    tag: 'FULL CYCLE',
+    variant: 'cyan',
+  },
+  {
+    icon: CheckCircle2,
+    title: 'Quality Materials & Proven Equipment',
+    desc: 'We utilize top-tier materials and field-tested machinery ensuring your engineering assets serve efficiently for decades.',
+    tag: 'QUALITY',
+    variant: 'emerald',
   },
   {
     icon: ShieldCheck,
-    title: 'HSE Safety Certified Workforce',
-    desc: 'Strict site safety policies with zero-incident goals. All technical staff are equipped with premium safety gear and protocols.',
-  },
-  {
-    icon: Map,
-    title: 'Nationwide Projects Execution',
-    desc: 'From Lagos state to Port Harcourt and northern industrial zones, we have logistics networks to deploy teams anywhere in Nigeria.',
-  },
-  {
-    icon: CheckSquare,
-    title: 'Quality Assurance Testing',
-    desc: 'Hydrostatic pressure tests on piping, material thickness verification, and weld inspections before commissioning.',
-  },
-  {
-    icon: Zap,
-    title: 'Fast & Precise Delivery',
-    desc: 'Pre-fabricated structural panels and standardized process piping modular layouts speed up deployment, reducing plant downtime.',
+    title: 'Strict Compliance with Standards',
+    desc: 'Every system is engineered and installed in strict compliance with safety codes and international engineering standards.',
+    tag: 'COMPLIANCE',
+    variant: 'steel',
   },
   {
     icon: Clock,
-    title: '24/7 Service Support Contracts',
-    desc: 'Dedicated technicians available on call to perform emergency repairs, pump replacements, or membrane cleaning.',
+    title: 'Timely Project Execution',
+    desc: 'We value your time and investments, maintaining rigorous timelines and streamlined field execution schedules.',
+    tag: 'TIMELY',
+    variant: 'amber',
+  },
+  {
+    icon: Headphones,
+    title: 'Responsive After-Sales Support',
+    desc: 'Dedicated technical team providing continuous facility maintenance, emergency response, and system checks.',
+    tag: 'SUPPORT',
+    variant: 'violet',
+  },
+  {
+    icon: Sliders,
+    title: 'Customized Solutions',
+    desc: 'We tailor every mechanical, water, and plumbing installation to address the unique conditions of your project.',
+    tag: 'TAILORED',
+    variant: 'emerald',
   },
 ]
 
 export default function WhyChooseUs() {
   return (
-    <section className="section-pad bg-slate-50 relative overflow-hidden">
+    <section className="section-pad site-gradient-bg relative overflow-hidden">
       <div className="container-xl">
         <SectionHeading
-          label="Why BMEL"
-          title="Engineered for Reliability, Built for Durability"
-          subtitle="Our clients choose us because we combine certified technical expertise with rigorous quality checking and countrywide logistics reach."
+          label="Why Choose Brownforte"
+          title="Engineering Excellence & Long-Term Reliability"
+          subtitle="Discover why clients trust Brownforte Mechanical Engineering Limited for residential, commercial, and industrial engineering projects."
           centered
         />
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {features.map((feature, idx) => (
-            <div
+            <AnimatedCard
               key={idx}
-              className="bg-white rounded-xl p-8 border border-slate-100 shadow-card hover:shadow-card-hover transition-all duration-300 relative group overflow-hidden"
-            >
-              {/* Corner decorative accent */}
-              <div className="absolute top-0 right-0 w-8 h-8 bg-amber/5 rounded-bl-xl group-hover:bg-amber/10 transition-colors" />
-
-              <div className="w-12 h-12 rounded-lg bg-navy/5 flex items-center justify-center mb-6 text-navy group-hover:bg-navy group-hover:text-amber transition-colors duration-300">
-                <feature.icon size={22} />
-              </div>
-
-              <h3 className="font-heading font-bold text-navy text-lg mb-3">
-                {feature.title}
-              </h3>
-              
-              <p className="text-sm text-slate-500 leading-relaxed">
-                {feature.desc}
-              </p>
-            </div>
+              index={`WHY-${String(idx + 1).padStart(2, '0')}`}
+              tag={feature.tag}
+              title={feature.title}
+              description={feature.desc}
+              colorVariant={feature.variant}
+              darkTheme={false}
+              icon={<feature.icon size={22} />}
+              className="h-full"
+            />
           ))}
         </div>
       </div>
     </section>
   )
 }
+
+
 

@@ -26,7 +26,7 @@ const certs = [
 
 export default function Certifications() {
   return (
-    <section className="section-pad bg-white">
+    <section className="section-pad site-gradient-bg">
       <div className="container-xl">
         <SectionHeading
           label="Accreditation"

@@ -1,52 +1,52 @@
-import { Fuel, Factory, Stethoscope, Building, Sprout, HardHat, Hotel, GraduationCap } from 'lucide-react'
+import { Home, Building2, Hotel, Stethoscope, GraduationCap, Factory, Landmark, Building, Sprout } from 'lucide-react'
 import SectionHeading from '../ui/SectionHeading'
+import { AnimatedCard, type CardColorVariant } from '../ui/AnimatedCard'
 
 const industries = [
-  { icon: Fuel, name: 'Oil & Gas', desc: 'Utility process loops, water injection assemblies, fire suppression storage setups.' },
-  { icon: Factory, name: 'Manufacturing', desc: 'Process water purification plants, stainless fabrication, factory boilers, piping.' },
-  { icon: Stethoscope, name: 'Healthcare', desc: 'Ultra-pure water treatment units, clinical piping, auxiliary mechanical setups.' },
-  { icon: Building, name: 'Government', desc: 'Municipal clean water networks, booster stations, public storage sectional tanks.' },
-  { icon: Sprout, name: 'Agriculture', desc: 'High-volume irrigation distribution lines, solar pumping setups, raw storage.' },
-  { icon: HardHat, name: 'Construction', desc: 'Subcontracting for high-rise building plumbing, structural supports, main risers.' },
-  { icon: Hotel, name: 'Hospitality', desc: 'Hot-water boilers installation, estate water filtration plants, storage tank towers.' },
-  { icon: GraduationCap, name: 'Education', desc: 'Campus mechanical lab piping loops, primary reservoir tanks, booster pump arrays.' },
+  { icon: Home, name: 'Residential Developments', desc: 'Custom plumbing, borehole drilling, water treatment, and swimming pool engineering for homes & estates.', variant: 'amber' as CardColorVariant },
+  { icon: Building2, name: 'Commercial Buildings', desc: 'Full mechanical utilities, high-pressure pumping, fire suppression, and facility maintenance.', variant: 'cyan' as CardColorVariant },
+  { icon: Hotel, name: 'Hotels & Hospitality', desc: 'Centralized hot/cold water distribution, pool engineering, and continuous water treatment plants.', variant: 'violet' as CardColorVariant },
+  { icon: Stethoscope, name: 'Healthcare Facilities', desc: 'Specialized clinical water treatment systems, medical facility plumbing, and reliable backup pumping.', variant: 'emerald' as CardColorVariant },
+  { icon: GraduationCap, name: 'Educational Institutions', desc: 'Campus-wide water storage, sewage treatment plants, and school facility plumbing infrastructure.', variant: 'amber' as CardColorVariant },
+  { icon: Factory, name: 'Industrial Facilities', desc: 'Heavy-duty pumping solutions, industrial water purification, process piping, and effluent treatment.', variant: 'cyan' as CardColorVariant },
+  { icon: Landmark, name: 'Government Projects', desc: 'Public infrastructure water systems, municipal boreholes, and institutional mechanical works.', variant: 'steel' as CardColorVariant },
+  { icon: Building, name: 'Real Estate Developments', desc: 'Turnkey utility designs, sectional storage panel tanks, and site-wide reticulation networks.', variant: 'emerald' as CardColorVariant },
+  { icon: Sprout, name: 'Agricultural & Irrigation', desc: 'Borehole systems, solar & electric pumping setups, and agricultural irrigation infrastructure.', variant: 'amber' as CardColorVariant },
 ]
 
 export default function Industries() {
   return (
-    <section className="section-pad bg-navy text-white relative overflow-hidden">
+    <section className="section-pad site-gradient-bg text-slate-900 relative overflow-hidden">
       {/* Decorative background visual */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-steel/10 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-sky-400/10 rounded-full blur-3xl pointer-events-none" />
 
       <div className="container-xl relative z-10">
         <SectionHeading
-          label="Sectors We Serve"
-          title="Engineered Solutions Across Key Industries"
-          subtitle="We specialize in providing high-pressure piping, water plants, and tanks customized to the operational demands of diverse markets."
+          label="Industries We Serve"
+          title="Tailored Engineering Solutions Across Sectors"
+          subtitle="Brownforte Mechanical Engineering Limited delivers compliant, end-to-end mechanical and water infrastructure for diverse industries."
           centered
-          light
         />
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {industries.map((ind, idx) => (
-            <div
+            <AnimatedCard
               key={idx}
-              className="bg-white/[0.02] border border-white/5 rounded-xl p-6 hover:bg-white/[0.04] transition-all hover:border-amber/25 group"
-            >
-              <div className="w-10 h-10 rounded-lg bg-amber/10 flex items-center justify-center mb-4 text-amber group-hover:bg-amber group-hover:text-navy transition-all duration-300">
-                <ind.icon size={20} />
-              </div>
-              <h3 className="font-heading font-bold text-white text-base mb-2 group-hover:text-amber transition-colors">
-                {ind.name}
-              </h3>
-              <p className="text-xs text-white/50 leading-relaxed">
-                {ind.desc}
-              </p>
-            </div>
+              index={`IND-${String(idx + 1).padStart(2, '0')}`}
+              tag="SECTOR"
+              title={ind.name}
+              description={ind.desc}
+              colorVariant={ind.variant}
+              darkTheme={false}
+              icon={<ind.icon size={20} />}
+              className="h-full"
+            />
           ))}
         </div>
       </div>
     </section>
   )
 }
+
+
 

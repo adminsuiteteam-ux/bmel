@@ -107,7 +107,7 @@ export const mockServices: Service[] = [
     ],
     process: [
       'System Hydraulics & Head Loss Calculation',
-      'Pump Specification & Selection (Grundfos, Lowara, etc.)',
+      'Pump Specification & Selection (SMC Pumps Africa, Heavy-Duty Centrifugal Assemblies)',
       'Control Panel Assembly (PLC/VFD Integration)',
       'Foundation Casting & Pump Alignment',
       'Piping Hookups & System Calibration'
@@ -229,7 +229,7 @@ export const mockProjects: Project[] = [
     duration: '14 Months',
     status: 'Completed',
     servicesRendered: ['Water Treatment Plants', 'Pumping Systems', 'Steel Panel Tanks', 'Installation Services'],
-    equipmentUsed: ['Reverse Osmosis Membranes', 'Grundfos Centrifugal Booster Pumps', 'Hot-dip Sectional Galvanized Steel Tanks', 'Variable Frequency Drives (VFD) Control Cabinets'],
+    equipmentUsed: ['Reverse Osmosis Membranes', 'Industrial Heavy Booster Pumps (SMC Pumps Africa)', 'Hot-dip Sectional Galvanized Steel Tanks', 'Variable Frequency Drives (VFD) Control Cabinets'],
     images: [
       'https://images.unsplash.com/photo-1581094719234-8c8efd9df737?auto=format&fit=crop&w=800&q=80',
       'https://images.unsplash.com/photo-1581094288338-2314dddb7ecc?auto=format&fit=crop&w=600&q=80'

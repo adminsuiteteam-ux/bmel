@@ -55,19 +55,19 @@ export default function ContactPage() {
       />
 
       {/* Header */}
-      <section className="bg-navy py-20 text-white relative">
-        <div className="absolute inset-0 dot-grid-bg opacity-15 pointer-events-none" />
+      <section className="site-gradient-bg py-20 text-slate-900 border-b border-slate-200/60 relative">
+        <div className="absolute inset-0 dot-grid-bg opacity-20 pointer-events-none" />
         <div className="container-xl relative z-10 text-center">
-          <span className="text-amber font-heading font-semibold text-sm uppercase tracking-widest">{t('contact.connect')}</span>
-          <h1 className="text-4xl sm:text-5xl font-black mt-2">{t('contact.title')}</h1>
-          <p className="text-white/60 text-lg max-w-xl mx-auto mt-4">
+          <span className="text-amber-600 font-heading font-bold text-xs uppercase tracking-widest">{t('contact.connect')}</span>
+          <h1 className="text-4xl sm:text-5xl font-black text-navy mt-2">{t('contact.title')}</h1>
+          <p className="text-slate-600 text-lg max-w-xl mx-auto mt-4">
             {t('contact.subtitle')}
           </p>
         </div>
       </section>
 
       {/* Layout */}
-      <section className="section-pad bg-white">
+      <section className="section-pad site-gradient-bg">
         <div className="container-xl grid grid-cols-1 lg:grid-cols-12 gap-12">
           
           {/* Left Column - Contact Details */}

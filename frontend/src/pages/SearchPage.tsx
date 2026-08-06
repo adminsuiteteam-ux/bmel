@@ -78,15 +78,15 @@ export default function SearchPage() {
       />
 
       {/* Header */}
-      <section className="bg-navy py-16 text-white relative">
-        <div className="absolute inset-0 dot-grid-bg opacity-15 pointer-events-none" />
+      <section className="site-gradient-bg py-16 text-slate-900 border-b border-slate-200/60 relative">
+        <div className="absolute inset-0 dot-grid-bg opacity-20 pointer-events-none" />
         <div className="container-xl relative z-10 text-center">
-          <h1 className="text-3xl sm:text-4xl font-black">Search Portal</h1>
+          <h1 className="text-3xl sm:text-4xl font-black text-navy">Search Portal</h1>
         </div>
       </section>
 
       {/* Content */}
-      <section className="section-pad bg-white">
+      <section className="section-pad site-gradient-bg">
         <div className="container-xl max-w-2xl">
           
           {/* Input Bar */}
