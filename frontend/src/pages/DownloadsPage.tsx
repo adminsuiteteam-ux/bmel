@@ -1,8 +1,11 @@
 import SEO from '@/components/ui/SEO'
+import { useTranslation } from 'react-i18next'
 import { FileText, Download } from 'lucide-react'
 import { mockDownloads } from '@/data/mockData'
 
 export default function DownloadsPage() {
+  const { t } = useTranslation()
+
   return (
     <>
       <SEO
@@ -14,10 +17,10 @@ export default function DownloadsPage() {
       <section className="site-gradient-bg py-20 text-slate-900 border-b border-slate-200/60 relative">
         <div className="absolute inset-0 dot-grid-bg opacity-20 pointer-events-none" />
         <div className="container-xl relative z-10 text-center">
-          <span className="text-amber-600 font-heading font-bold text-xs uppercase tracking-widest">Resources</span>
-          <h1 className="text-4xl sm:text-5xl font-black text-navy mt-2">Document Downloads</h1>
+          <span className="text-amber-600 font-heading font-bold text-xs uppercase tracking-widest">{t('downloads.resources_label', 'Resources')}</span>
+          <h1 className="text-4xl sm:text-5xl font-black text-navy mt-2">{t('downloads.title', 'Document Downloads')}</h1>
           <p className="text-slate-600 text-lg max-w-xl mx-auto mt-4">
-            Access our corporate brochures, ISO certificates, and mechanical design catalogs.
+            {t('downloads.subtitle', 'Access our corporate brochures, ISO certificates, and mechanical design catalogs.')}
           </p>
         </div>
       </section>
@@ -42,7 +45,7 @@ export default function DownloadsPage() {
                     <h3 className="font-heading font-bold text-navy text-base">
                       {doc.title}
                     </h3>
-                    <p className="text-xs text-slate-400 mt-1">File size: {doc.fileSize}</p>
+                    <p className="text-xs text-slate-400 mt-1">{t('downloads.file_size_label', 'File size')}: {doc.fileSize}</p>
                   </div>
                 </div>
 
@@ -51,7 +54,7 @@ export default function DownloadsPage() {
                     href={doc.fileUrl}
                     className="btn-outline text-xs py-2.5 px-4 flex items-center gap-1.5"
                   >
-                    <Download size={14} /> Download Document
+                    <Download size={14} /> {t('downloads.btn', 'Download Document')}
                   </a>
                 </div>
               </div>
@@ -62,4 +65,3 @@ export default function DownloadsPage() {
     </>
   )
 }
-

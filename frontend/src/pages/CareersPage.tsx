@@ -18,10 +18,10 @@ export default function CareersPage() {
       <section className="site-gradient-bg py-20 text-slate-900 border-b border-slate-200/60 relative">
         <div className="absolute inset-0 dot-grid-bg opacity-20 pointer-events-none" />
         <div className="container-xl relative z-10 text-center">
-          <span className="text-amber-600 font-heading font-bold text-xs uppercase tracking-widest">{t('careers.opportunities_label')}</span>
-          <h1 className="text-4xl sm:text-5xl font-black text-navy mt-2">{t('careers.title')}</h1>
+          <span className="text-amber-600 font-heading font-bold text-xs uppercase tracking-widest">{t('careers.opportunities_label', 'Opportunities')}</span>
+          <h1 className="text-4xl sm:text-5xl font-black text-navy mt-2">{t('careers.title', 'Join Our Engineering Team')}</h1>
           <p className="text-slate-600 text-lg max-w-xl mx-auto mt-4">
-            Build your professional engineering career at Nigeria's top mechanical fabrication and water infrastructure firm.
+            {t('careers.subtitle', 'Build your professional engineering career at Nigeria\'s top mechanical fabrication and water infrastructure firm.')}
           </p>
         </div>
       </section>
@@ -31,8 +31,8 @@ export default function CareersPage() {
         <div className="container-xl max-w-4xl">
           
           <div className="mb-12">
-            <h2 className="text-2xl font-heading font-bold text-navy">{t('careers.open_roles')}</h2>
-            <p className="text-sm text-slate-500 mt-1">{t('careers.open_roles_subtitle')}</p>
+            <h2 className="text-2xl font-heading font-bold text-navy">{t('careers.open_roles', 'Current Open Positions')}</h2>
+            <p className="text-sm text-slate-500 mt-1">{t('careers.open_roles_subtitle', 'Review active roles and submit your application online.')}</p>
           </div>
 
           <div className="space-y-6">
@@ -58,7 +58,7 @@ export default function CareersPage() {
                       <MapPin size={13} /> {job.location}
                     </span>
                     <span className="flex items-center gap-1">
-                      <Calendar size={13} /> Apply by: {job.deadline}
+                      <Calendar size={13} /> {t('careers.apply_by', 'Apply by')}: {job.deadline}
                     </span>
                   </div>
                 </div>
@@ -68,7 +68,7 @@ export default function CareersPage() {
                     to={`/careers/${job.id}`}
                     className="btn-primary text-xs py-2 px-4 group"
                   >
-                    View Details
+                    {t('careers.view_details', 'View Details')}
                     <ArrowRight size={14} className="transition-transform group-hover:translate-x-0.5" />
                   </Link>
                 </div>
@@ -81,4 +81,3 @@ export default function CareersPage() {
     </>
   )
 }
-
