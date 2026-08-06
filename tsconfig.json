@@ -8,9 +8,7 @@
     "skipLibCheck": true,
     "moduleResolution": "bundler",
     "allowImportingTsExtensions": true,
-    "typeRoots": ["./frontend/node_modules/@types", "./frontend/node_modules"],
-    "types": ["vite/client", "node"],
-    "baseUrl": ".",
+    "moduleDetection": "force",
     "paths": {
       "@/*": ["./frontend/src/*"]
     }
