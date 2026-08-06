@@ -112,7 +112,8 @@ const TextRotate = forwardRef<TextRotateRef, TextRotateProps>(
           const randomIndex = Math.floor(Math.random() * total)
           return Math.abs(randomIndex - index) * staggerDuration
         }
-        return Math.abs((staggerFrom as number) - index) * staggerDuration
+        const target = typeof staggerFrom === "number" ? staggerFrom : 0
+        return Math.abs(target - index) * staggerDuration
       },
       [staggerFrom, staggerDuration]
     )
