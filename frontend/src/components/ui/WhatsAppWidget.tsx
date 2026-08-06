@@ -1,21 +1,23 @@
 import { useState } from 'react'
 import { X, Send } from 'lucide-react'
+import { useTranslation } from 'react-i18next'
 
 export default function WhatsAppWidget() {
+  const { t } = useTranslation()
   const [isOpen, setIsOpen] = useState(false)
   const [message, setMessage] = useState('')
 
   const phoneNumber = '2347063332335' // BMEL Contact Number
 
   const quickMessages = [
-    'I would like to request a quote for engineering services.',
-    'I need information regarding water treatment systems.',
-    'I want to inquire about sectional panel tanks.',
-    'I have a maintenance or technical support request.'
+    t('whatsapp.quick_1', 'I would like to request a quote for engineering services.'),
+    t('whatsapp.quick_2', 'I need information regarding water treatment systems.'),
+    t('whatsapp.quick_3', 'I want to inquire about sectional panel tanks.'),
+    t('whatsapp.quick_4', 'I have a maintenance or technical support request.')
   ]
 
   const handleSend = (textToSend?: string) => {
-    const text = textToSend || message || 'Hello BMEL team, I would like to make an inquiry.'
+    const text = textToSend || message || t('whatsapp.default_msg', 'Hello BMEL team, I would like to make an inquiry.')
     const encodedText = encodeURIComponent(text)
     window.open(`https://wa.me/${phoneNumber}?text=${encodedText}`, '_blank', 'noopener,noreferrer')
     setIsOpen(false)
@@ -37,8 +39,8 @@ export default function WhatsAppWidget() {
                 <span className="absolute bottom-0 right-0 w-3 h-3 rounded-full bg-emerald-400 border-2 border-[#075E54]" />
               </div>
               <div>
-                <h4 className="font-heading font-bold text-sm leading-tight text-white">Brownforte Mechanical</h4>
-                <p className="text-[11px] text-emerald-100">Typically replies instantly on WhatsApp</p>
+                <h4 className="font-heading font-bold text-sm leading-tight text-white">{t('whatsapp.company_name', 'Brownforte Mechanical')}</h4>
+                <p className="text-[11px] text-emerald-100">{t('whatsapp.status', 'Typically replies instantly on WhatsApp')}</p>
               </div>
             </div>
             <button
@@ -53,12 +55,12 @@ export default function WhatsAppWidget() {
           {/* Body */}
           <div className="p-4 bg-[#E5DDD5]/40 space-y-3 max-h-[320px] overflow-y-auto">
             <div className="bg-white p-3 rounded-xl rounded-tl-none text-xs text-slate-700 shadow-sm leading-relaxed border border-slate-100 max-w-[85%]">
-              Hello! 👋 How can our engineering team help you today? Select a quick topic or send us a custom message.
+              {t('whatsapp.greeting', 'Hello! 👋 How can our engineering team help you today? Select a quick topic or send us a custom message.')}
             </div>
 
             {/* Quick Option Buttons */}
             <div className="space-y-1.5 pt-1">
-              <p className="text-[10px] uppercase font-semibold text-slate-400 tracking-wider">Quick Topics:</p>
+              <p className="text-[10px] uppercase font-semibold text-slate-400 tracking-wider">{t('whatsapp.quick_topics_label', 'Quick Topics:')}</p>
               {quickMessages.map((msg, idx) => (
                 <button
                   key={idx}
@@ -76,7 +78,7 @@ export default function WhatsAppWidget() {
           <div className="p-3 bg-white border-t border-slate-100 flex items-center gap-2">
             <input
               type="text"
-              placeholder="Type a message..."
+              placeholder={t('whatsapp.placeholder', 'Type a message...')}
               value={message}
               onChange={(e) => setMessage(e.target.value)}
               onKeyDown={(e) => e.key === 'Enter' && handleSend()}

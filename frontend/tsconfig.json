@@ -4,9 +4,10 @@
     "module": "esnext",
     "lib": ["DOM", "DOM.Iterable", "ES2023"],
     "jsx": "react-jsx",
-    "types": ["vite/client", "node"],
-    "allowArbitraryExtensions": true,
+    "noEmit": true,
     "skipLibCheck": true,
+    "typeRoots": ["./node_modules/@types", "./node_modules"],
+    "types": ["vite/client", "node"],
     "paths": {
       "@/*": ["./src/*"]
     },
@@ -16,7 +17,6 @@
     "allowImportingTsExtensions": true,
     "verbatimModuleSyntax": true,
     "moduleDetection": "force",
-    "noEmit": true,
 
     /* Linting */
     "noUnusedLocals": false,

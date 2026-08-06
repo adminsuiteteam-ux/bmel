@@ -91,7 +91,7 @@ export const AnimatedCard = React.forwardRef<HTMLDivElement, AnimatedCardProps>(
     },
     ref
   ) => {
-    const variantStyle = colorStyles[colorVariant]
+    const variantStyle = colorStyles[colorVariant] || colorStyles.amber
 
     return (
       <motion.div
@@ -110,7 +110,6 @@ export const AnimatedCard = React.forwardRef<HTMLDivElement, AnimatedCardProps>(
           variantStyle.borderHover,
           className
         )}
-        {...props}
       >
         {/* Ambient Radial Background Glow */}
         <div

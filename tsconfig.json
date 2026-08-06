@@ -4,10 +4,12 @@
     "module": "esnext",
     "lib": ["DOM", "DOM.Iterable", "ES2023"],
     "jsx": "react-jsx",
-    "types": ["vite/client", "node"],
+    "noEmit": true,
     "skipLibCheck": true,
     "moduleResolution": "bundler",
     "allowImportingTsExtensions": true,
+    "typeRoots": ["./frontend/node_modules/@types", "./frontend/node_modules"],
+    "types": ["vite/client", "node"],
     "baseUrl": ".",
     "paths": {
       "@/*": ["./frontend/src/*"]

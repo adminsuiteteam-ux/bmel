@@ -1,9 +1,35 @@
 import SEO from '@/components/ui/SEO'
 import { Link } from 'react-router-dom'
-import * as Icons from 'lucide-react'
+import { useTranslation } from 'react-i18next'
+import {
+  Wrench,
+  Droplets,
+  Settings,
+  Shield,
+  Award,
+  Building2,
+  Sprout,
+  Zap,
+  HardHat,
+  HelpCircle
+} from 'lucide-react'
 import { mockServices } from '@/data/mockData'
 
+const iconMap: Record<string, React.ElementType> = {
+  Wrench,
+  Droplets,
+  Settings,
+  Shield,
+  Award,
+  Building2,
+  Sprout,
+  Zap,
+  HardHat,
+}
+
 export default function ServicesPage() {
+  const { t } = useTranslation()
+
   return (
     <>
       <SEO
@@ -15,10 +41,10 @@ export default function ServicesPage() {
       <section className="site-gradient-bg py-20 text-slate-900 border-b border-slate-200/60 relative">
         <div className="absolute inset-0 dot-grid-bg opacity-20 pointer-events-none" />
         <div className="container-xl relative z-10 text-center">
-          <span className="text-amber-600 font-heading font-bold text-xs uppercase tracking-widest">Capabilities</span>
-          <h1 className="text-4xl sm:text-5xl font-black text-navy mt-2">Our Engineering Services</h1>
+          <span className="text-amber-600 font-heading font-bold text-xs uppercase tracking-widest">{t('services.capabilities_label', 'Capabilities')}</span>
+          <h1 className="text-4xl sm:text-5xl font-black text-navy mt-2">{t('services.page_title', 'Our Engineering Services')}</h1>
           <p className="text-slate-600 text-lg max-w-xl mx-auto mt-4">
-            Industrial, municipal, and commercial fluid engineering systems deployed by certified COREN engineers.
+            {t('services.page_subtitle', 'Industrial, municipal, and commercial fluid engineering systems deployed by certified COREN engineers.')}
           </p>
         </div>
       </section>
@@ -28,7 +54,7 @@ export default function ServicesPage() {
         <div className="container-xl">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {mockServices.map((service) => {
-              const IconComponent = (Icons as any)[service.iconName] || Icons.HelpCircle
+              const IconComponent = iconMap[service.iconName] || HelpCircle
 
               return (
                 <div
@@ -64,7 +90,7 @@ export default function ServicesPage() {
                         to={`/services/${service.slug}`}
                         className="inline-flex items-center gap-1.5 text-sm font-semibold text-navy hover:text-amber transition-colors"
                       >
-                        Technical Specifications & Process →
+                        {t('services.view_specs', 'Technical Specifications & Process →')}
                       </Link>
                     </div>
                   </div>
@@ -77,4 +103,3 @@ export default function ServicesPage() {
     </>
   )
 }
-

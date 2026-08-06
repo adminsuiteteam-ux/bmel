@@ -14,9 +14,10 @@ export default function Testimonials() {
     setActive(prev => (prev === mockTestimonials.length - 1 ? 0 : prev + 1))
   }
 
-  if (mockTestimonials.length === 0) return null
+  const safeActive = Math.max(0, Math.min(active, mockTestimonials.length - 1))
+  const current = mockTestimonials[safeActive] || mockTestimonials[0]
 
-  const current = mockTestimonials[active]
+  if (!current) return null
 
   return (
     <section className="section-pad site-gradient-bg overflow-hidden">

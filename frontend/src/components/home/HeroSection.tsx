@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import { motion, LayoutGroup } from 'framer-motion'
 import { ArrowRight, CheckCircle2 } from 'lucide-react'
+import { useTranslation } from 'react-i18next'
 import { TextRotate } from '@/components/ui/text-rotate'
 import Floating, { FloatingElement } from '@/components/ui/parallax-floating'
 import AnimatedCounter from '@/components/ui/AnimatedCounter'
@@ -29,14 +30,16 @@ const heroImages = [
   },
 ]
 
-const stats = [
-  { value: 15, suffix: '+', label: 'Years Experience' },
-  { value: 500, suffix: '+', label: 'Projects Completed' },
-  { value: 100, suffix: '+', label: 'Corporate Clients' },
-  { value: 36, suffix: '', label: 'States Covered' },
-]
-
 export default function HeroSection() {
+  const { t } = useTranslation()
+
+  const stats = [
+    { value: 15, suffix: '+', label: t('hero.stat_years', 'Years Experience') },
+    { value: 500, suffix: '+', label: t('hero.stat_projects', 'Projects Completed') },
+    { value: 100, suffix: '+', label: t('hero.stat_clients', 'Corporate Clients') },
+    { value: 36, suffix: '', label: t('hero.stat_states', 'States Covered') },
+  ]
+
   return (
     <section className="w-full min-h-screen overflow-hidden flex flex-col items-center justify-center relative site-gradient-bg text-slate-900">
 
@@ -47,7 +50,7 @@ export default function HeroSection() {
       <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-amber-400/15 rounded-full blur-[120px] pointer-events-none animate-glow-pulse" />
       <div className="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] bg-sky-400/15 rounded-full blur-[100px] pointer-events-none animate-glow-pulse" style={{ animationDelay: '1.5s' }} />
 
-      {/* Parallax floating engineering images (desktop only to prevent clutter on mobile) */}
+      {/* Parallax floating engineering images */}
       <Floating sensitivity={-0.5} className="h-full hidden md:block">
 
         <FloatingElement depth={0.5} className="top-[12%] left-[1%] md:top-[20%] md:left-[3%]">
@@ -119,7 +122,7 @@ export default function HeroSection() {
         >
           <span className="w-2.5 h-2.5 rounded-full bg-amber animate-pulse" />
           <span className="text-xs uppercase tracking-widest font-bold text-navy">
-            Nigeria's Trusted Engineering Partner
+            {t('hero.badge', "Nigeria's Trusted Engineering Partner")}
           </span>
         </motion.div>
 
@@ -130,7 +133,7 @@ export default function HeroSection() {
           initial={{ opacity: 0, y: 20 }}
           transition={{ duration: 0.3, ease: 'easeOut', delay: 0.3 }}
         >
-          <span className="text-navy">Engineering Solutions</span>
+          <span className="text-navy">{t('hero.title_part1', 'Engineering Solutions')}</span>
           <LayoutGroup>
             <motion.span layout className="flex flex-wrap items-center justify-center gap-x-2">
               <motion.span
@@ -138,7 +141,7 @@ export default function HeroSection() {
                 className="text-slate-600"
                 transition={{ type: 'spring', damping: 30, stiffness: 400 }}
               >
-                that are
+                {t('hero.that_are', 'that are')}
               </motion.span>
               <TextRotate
                 texts={[
@@ -170,7 +173,7 @@ export default function HeroSection() {
           initial={{ opacity: 0, y: 20 }}
           transition={{ duration: 0.3, ease: 'easeOut', delay: 0.5 }}
         >
-          Brownforte Mechanical Engineering Limited (BMEL) provides innovative mechanical, plumbing, water, and infrastructure solutions for residential, commercial, industrial, and institutional projects across Nigeria.
+          {t('hero.description', 'Brownforte Mechanical Engineering Limited (BMEL) provides innovative mechanical, plumbing, water, and infrastructure solutions for residential, commercial, industrial, and institutional projects across Nigeria.')}
         </motion.p>
 
         {/* Trust checkmarks */}
@@ -180,8 +183,8 @@ export default function HeroSection() {
           initial={{ opacity: 0, y: 20 }}
           transition={{ duration: 0.3, ease: 'easeOut', delay: 0.6 }}
         >
-          {['Engineering Excellence', 'Strict Compliance Standards', 'End-to-End Delivery'].map((item) => (
-            <div key={item} className="flex items-center gap-1.5">
+          {[t('hero.trust_excellence', 'Engineering Excellence'), t('hero.trust_standards', 'Strict Compliance Standards'), t('hero.trust_delivery', 'End-to-End Delivery')].map((item, idx) => (
+            <div key={idx} className="flex items-center gap-1.5">
               <CheckCircle2 size={15} className="text-amber-500 flex-shrink-0" />
               <span>{item}</span>
             </div>
@@ -202,7 +205,7 @@ export default function HeroSection() {
               to="/contact"
               className="btn-primary text-sm sm:text-base shadow-xl"
             >
-              Request a Quote
+              {t('hero.request_quote', 'Request a Quote')}
               <ArrowRight size={16} />
             </Link>
           </motion.div>
@@ -213,7 +216,7 @@ export default function HeroSection() {
               to="/projects"
               className="btn-secondary text-sm sm:text-base bg-white/80 border border-slate-300 text-slate-800 hover:bg-slate-100"
             >
-              Explore Projects
+              {t('hero.explore_projects', 'Explore Projects')}
             </Link>
           </motion.div>
         </motion.div>
@@ -241,4 +244,3 @@ export default function HeroSection() {
     </section>
   )
 }
-

@@ -84,7 +84,6 @@ const Floating = ({
       <div
         ref={containerRef}
         className={cn("absolute top-0 left-0 w-full h-full", className)}
-        {...restProps}
       >
         {children}
       </div>

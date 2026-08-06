@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import SEO from '@/components/ui/SEO'
 import { Link } from 'react-router-dom'
+import { useTranslation } from 'react-i18next'
 import { Search, ArrowRight } from 'lucide-react'
 import { mockServices, mockProjects, mockBlog } from '@/data/mockData'
 
@@ -12,6 +13,7 @@ interface SearchResult {
 }
 
 export default function SearchPage() {
+  const { t } = useTranslation()
   const [query, setQuery] = useState('')
 
   const handleSearch = () => {
@@ -81,7 +83,7 @@ export default function SearchPage() {
       <section className="site-gradient-bg py-16 text-slate-900 border-b border-slate-200/60 relative">
         <div className="absolute inset-0 dot-grid-bg opacity-20 pointer-events-none" />
         <div className="container-xl relative z-10 text-center">
-          <h1 className="text-3xl sm:text-4xl font-black text-navy">Search Portal</h1>
+          <h1 className="text-3xl sm:text-4xl font-black text-navy">{t('search.title', 'Search Portal')}</h1>
         </div>
       </section>
 
@@ -95,7 +97,7 @@ export default function SearchPage() {
               type="text"
               value={query}
               onChange={e => setQuery(e.target.value)}
-              placeholder="Search services, project locations, specifications..."
+              placeholder={t('search.placeholder', 'Search services, project locations, specifications...')}
               className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3.5 pl-12 text-base focus:outline-none focus:border-amber/50 transition-colors shadow-sm"
               autoFocus
             />
@@ -106,12 +108,12 @@ export default function SearchPage() {
           {query && (
             <div className="space-y-6">
               <p className="text-xs text-slate-400 font-semibold uppercase tracking-wider">
-                Search Results ({results.length})
+                {t('search.results_label', 'Search Results')} ({results.length})
               </p>
 
               {results.length === 0 ? (
                 <div className="text-center py-10 bg-slate-50 border border-slate-100 rounded-xl">
-                  <p className="text-slate-500 text-sm">No matches found for "{query}".</p>
+                  <p className="text-slate-500 text-sm">{t('search.no_matches', 'No matches found for')} "{query}".</p>
                 </div>
               ) : (
                 <div className="space-y-4">
@@ -152,4 +154,3 @@ export default function SearchPage() {
     </>
   )
 }
-
