@@ -1,8 +1,20 @@
 import { Link } from 'react-router-dom'
-import * as Icons from 'lucide-react'
+import { Droplets, Settings, Building2, Wrench, HardHat, Factory, Shield, Sprout, Zap, HelpCircle } from 'lucide-react'
 import { mockServices } from '../../data/mockData'
 import SectionHeading from '../ui/SectionHeading'
 import { AnimatedCard } from '../ui/AnimatedCard'
+
+const iconMap: Record<string, React.ElementType> = {
+  Droplets,
+  Settings,
+  Building2,
+  Wrench,
+  HardHat,
+  Factory,
+  Shield,
+  Sprout,
+  Zap,
+}
 
 export default function ServicesSection() {
   const colorVariants: Array<'amber' | 'cyan' | 'emerald' | 'violet' | 'steel'> = [
@@ -29,7 +41,7 @@ export default function ServicesSection() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {mockServices.map((service, idx) => {
-            const IconComponent = (Icons as any)[service.iconName] || Icons.HelpCircle
+            const IconComponent = iconMap[service.iconName] || HelpCircle
             const colorVariant = colorVariants[idx % colorVariants.length]
             const indexStr = String(idx + 1).padStart(3, '0')
 

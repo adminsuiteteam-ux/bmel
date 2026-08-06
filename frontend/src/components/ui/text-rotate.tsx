@@ -68,7 +68,6 @@ const TextRotate = forwardRef<TextRotateRef, TextRotateProps>(
       mainClassName,
       splitLevelClassName,
       elementLevelClassName,
-      ...props
     },
     ref
   ) => {
@@ -82,8 +81,10 @@ const TextRotate = forwardRef<TextRotateRef, TextRotateProps>(
       return Array.from(text)
     }
 
+    const safeIndex = currentTextIndex >= 0 && currentTextIndex < texts.length ? currentTextIndex : 0
+
     const elements = useMemo(() => {
-      const currentText = texts[currentTextIndex]
+      const currentText = texts[safeIndex] || ""
       if (splitBy === "characters") {
         const text = currentText.split(" ")
         return text.map((word, i) => ({
@@ -96,7 +97,7 @@ const TextRotate = forwardRef<TextRotateRef, TextRotateProps>(
         : splitBy === "lines"
           ? currentText.split("\n")
           : currentText.split(splitBy)
-    }, [texts, currentTextIndex, splitBy])
+    }, [texts, safeIndex, splitBy])
 
     const getStaggerDelay = useCallback(
       (index: number, totalChars: number) => {
@@ -165,11 +166,10 @@ const TextRotate = forwardRef<TextRotateRef, TextRotateProps>(
     return (
       <motion.span
         className={cn("flex flex-wrap whitespace-pre-wrap", mainClassName)}
-        {...(props as MotionProps)}
         layout
         transition={transition}
       >
-        <span className="sr-only">{texts[currentTextIndex]}</span>
+        <span className="sr-only">{texts[safeIndex] || ""}</span>
 
         <AnimatePresence mode={animatePresenceMode} initial={animatePresenceInitial}>
           <motion.div

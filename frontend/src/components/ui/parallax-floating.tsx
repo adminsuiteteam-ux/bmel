@@ -18,7 +18,7 @@ interface FloatingContextType {
 
 const FloatingContext = createContext<FloatingContextType | null>(null)
 
-interface FloatingProps {
+interface FloatingProps extends React.HTMLAttributes<HTMLDivElement> {
   children: ReactNode
   className?: string
   sensitivity?: number
@@ -30,7 +30,7 @@ const Floating = ({
   className,
   sensitivity = 1,
   easingFactor = 0.05,
-  ...props
+  ...restProps
 }: FloatingProps) => {
   const containerRef = useRef<HTMLDivElement>(null)
   const elementsMap = useRef(
@@ -84,7 +84,7 @@ const Floating = ({
       <div
         ref={containerRef}
         className={cn("absolute top-0 left-0 w-full h-full", className)}
-        {...props}
+        {...restProps}
       >
         {children}
       </div>

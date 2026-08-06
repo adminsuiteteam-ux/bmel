@@ -2,8 +2,11 @@ import SEO from '@/components/ui/SEO'
 import { Link } from 'react-router-dom'
 import { MapPin, Briefcase, Calendar, ArrowRight } from 'lucide-react'
 import { mockCareers } from '@/data/mockData'
+import { useTranslation } from 'react-i18next'
 
 export default function CareersPage() {
+  const { t } = useTranslation()
+
   return (
     <>
       <SEO
@@ -15,8 +18,8 @@ export default function CareersPage() {
       <section className="site-gradient-bg py-20 text-slate-900 border-b border-slate-200/60 relative">
         <div className="absolute inset-0 dot-grid-bg opacity-20 pointer-events-none" />
         <div className="container-xl relative z-10 text-center">
-          <span className="text-amber-600 font-heading font-bold text-xs uppercase tracking-widest">Opportunities</span>
-          <h1 className="text-4xl sm:text-5xl font-black text-navy mt-2">Work With Us</h1>
+          <span className="text-amber-600 font-heading font-bold text-xs uppercase tracking-widest">{t('careers.opportunities_label')}</span>
+          <h1 className="text-4xl sm:text-5xl font-black text-navy mt-2">{t('careers.title')}</h1>
           <p className="text-slate-600 text-lg max-w-xl mx-auto mt-4">
             Build your professional engineering career at Nigeria's top mechanical fabrication and water infrastructure firm.
           </p>
@@ -28,8 +31,8 @@ export default function CareersPage() {
         <div className="container-xl max-w-4xl">
           
           <div className="mb-12">
-            <h2 className="text-2xl font-heading font-bold text-navy">Open Roles</h2>
-            <p className="text-sm text-slate-500 mt-1">Select an open position to view description, requirements, and apply online.</p>
+            <h2 className="text-2xl font-heading font-bold text-navy">{t('careers.open_roles')}</h2>
+            <p className="text-sm text-slate-500 mt-1">{t('careers.open_roles_subtitle')}</p>
           </div>
 
           <div className="space-y-6">

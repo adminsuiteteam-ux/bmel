@@ -3,8 +3,10 @@ import { Link, useParams } from 'react-router-dom'
 import SEO from '@/components/ui/SEO'
 import { mockCareers } from '@/data/mockData'
 import { ArrowLeft, Briefcase, Calendar, CheckCircle2, MapPin, Upload } from 'lucide-react'
+import { useTranslation } from 'react-i18next'
 
 export default function CareerDetailPage() {
+  const { t } = useTranslation()
   const { id } = useParams<{ id: string }>()
   const job = mockCareers.find(j => j.id === id)
 
@@ -22,8 +24,8 @@ export default function CareerDetailPage() {
   if (!job) {
     return (
       <div className="min-h-[60vh] flex flex-col items-center justify-center p-6 text-center">
-        <h2 className="text-2xl font-bold text-navy">Position Not Found</h2>
-        <p className="text-slate-500 mt-2">The career listing you requested is not available.</p>
+        <h2 className="text-2xl font-bold text-navy">{t('careers.not_found_title')}</h2>
+        <p className="text-slate-500 mt-2">{t('careers.not_found_subtitle')}</p>
         <Link to="/careers" className="btn-primary mt-6">
           <ArrowLeft size={16} /> Back to Careers
         </Link>
@@ -107,13 +109,13 @@ export default function CareerDetailPage() {
                   <Calendar size={14} className="text-amber" /> Apply by: {job.deadline}
                 </span>
               </div>
-              <h2 className="text-2xl font-heading font-bold text-navy mb-4">Role Description</h2>
+              <h2 className="text-2xl font-heading font-bold text-navy mb-4">{t('careers.role_description')}</h2>
               <p className="text-slate-600 leading-relaxed text-base">{job.description}</p>
             </div>
 
             {/* Responsibilities */}
             <div>
-              <h3 className="text-lg font-heading font-bold text-navy mb-4">Key Responsibilities</h3>
+              <h3 className="text-lg font-heading font-bold text-navy mb-4">{t('careers.key_responsibilities')}</h3>
               <div className="space-y-3">
                 {job.responsibilities.map((resp, idx) => (
                   <div key={idx} className="flex gap-3 items-start">
@@ -126,7 +128,7 @@ export default function CareerDetailPage() {
 
             {/* Requirements */}
             <div>
-              <h3 className="text-lg font-heading font-bold text-navy mb-4">Requirements & Experience</h3>
+              <h3 className="text-lg font-heading font-bold text-navy mb-4">{t('careers.requirements')} & Experience</h3>
               <div className="space-y-3">
                 {job.requirements.map((req, idx) => (
                   <div key={idx} className="flex gap-3 items-start">
@@ -150,7 +152,7 @@ export default function CareerDetailPage() {
                   <div className="w-12 h-12 rounded-full bg-emerald-100 flex items-center justify-center mx-auto mb-4 text-emerald-500">
                     <CheckCircle2 size={24} />
                   </div>
-                  <h4 className="font-heading font-bold text-navy text-lg mb-2">Application Submitted!</h4>
+                  <h4 className="font-heading font-bold text-navy text-lg mb-2">{t('careers.submitted_title')}</h4>
                   <p className="text-xs text-slate-500 leading-relaxed">
                     Thank you for applying. Our Human Resources team will review your credentials and contact you shortly.
                   </p>
@@ -158,7 +160,7 @@ export default function CareerDetailPage() {
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-5">
                   <div>
-                    <label className="text-xs font-semibold text-slate-500 uppercase tracking-wider block mb-1">Full Name *</label>
+                    <label className="text-xs font-semibold text-slate-500 uppercase tracking-wider block mb-1">{t('careers.label_name')}</label>
                     <input
                       type="text"
                       required
@@ -170,7 +172,7 @@ export default function CareerDetailPage() {
                   </div>
 
                   <div>
-                    <label className="text-xs font-semibold text-slate-500 uppercase tracking-wider block mb-1">Email Address *</label>
+                    <label className="text-xs font-semibold text-slate-500 uppercase tracking-wider block mb-1">{t('careers.label_email')}</label>
                     <input
                       type="email"
                       required
@@ -182,7 +184,7 @@ export default function CareerDetailPage() {
                   </div>
 
                   <div>
-                    <label className="text-xs font-semibold text-slate-500 uppercase tracking-wider block mb-1">Phone Number *</label>
+                    <label className="text-xs font-semibold text-slate-500 uppercase tracking-wider block mb-1">{t('careers.label_phone')}</label>
                     <input
                       type="tel"
                       required
@@ -194,7 +196,7 @@ export default function CareerDetailPage() {
                   </div>
 
                   <div>
-                    <label className="text-xs font-semibold text-slate-500 uppercase tracking-wider block mb-1">Cover Letter *</label>
+                    <label className="text-xs font-semibold text-slate-500 uppercase tracking-wider block mb-1">{t('careers.label_cover_letter')}</label>
                     <textarea
                       required
                       value={formData.coverLetter}
@@ -207,7 +209,7 @@ export default function CareerDetailPage() {
 
                   {/* Resume File Upload */}
                   <div>
-                    <label className="text-xs font-semibold text-slate-500 uppercase tracking-wider block mb-1">Upload Resume (PDF/DOCX) *</label>
+                    <label className="text-xs font-semibold text-slate-500 uppercase tracking-wider block mb-1">{t('careers.label_resume')}</label>
                     <div className="relative border-2 border-dashed border-slate-200 hover:border-amber/40 rounded-lg p-4 text-center cursor-pointer transition-colors bg-white">
                       <input
                         type="file"
@@ -219,7 +221,7 @@ export default function CareerDetailPage() {
                       <p className="text-xs text-slate-600 font-medium">
                         {file ? `Selected: ${file.name}` : 'Drag & drop file here or click to browse'}
                       </p>
-                      <p className="text-[10px] text-slate-400 mt-1">Maximum allowed size: 5MB</p>
+                      <p className="text-[10px] text-slate-400 mt-1">{t('careers.max_size')}</p>
                     </div>
                     {fileError && <p className="text-xs text-rose-500 mt-1.5 font-medium">{fileError}</p>}
                   </div>

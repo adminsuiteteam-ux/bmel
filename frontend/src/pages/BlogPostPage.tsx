@@ -2,16 +2,18 @@ import { Link, useParams } from 'react-router-dom'
 import SEO from '@/components/ui/SEO'
 import { mockBlog } from '@/data/mockData'
 import { ArrowLeft, Calendar, User, Clock } from 'lucide-react'
+import { useTranslation } from 'react-i18next'
 
 export default function BlogPostPage() {
+  const { t } = useTranslation()
   const { slug } = useParams<{ slug: string }>()
   const post = mockBlog.find(p => p.slug === slug)
 
   if (!post) {
     return (
       <div className="min-h-[60vh] flex flex-col items-center justify-center p-6 text-center">
-        <h2 className="text-2xl font-bold text-navy">Article Not Found</h2>
-        <p className="text-slate-500 mt-2">The blog post you requested could not be located.</p>
+        <h2 className="text-2xl font-bold text-navy">{t('blog.not_found_title')}</h2>
+        <p className="text-slate-500 mt-2">{t('blog.not_found_subtitle')}</p>
         <Link to="/blog" className="btn-primary mt-6">
           <ArrowLeft size={16} /> Back to Blog
         </Link>
