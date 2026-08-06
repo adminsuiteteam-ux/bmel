@@ -1,28 +1,25 @@
 import SEO from '@/components/ui/SEO'
-import { Award, ShieldAlert, BadgeCheck, Scale, CheckCircle2 } from 'lucide-react'
+import { Award, ShieldCheck, FileCheck, CheckCircle2 } from 'lucide-react'
+import { useTranslation } from 'react-i18next'
 
 export default function CertificationsPage() {
+  const { t } = useTranslation()
+
   const credentials = [
     {
+      icon: FileCheck,
+      title: 'COREN Registered Engineering Consultancy',
+      desc: 'Formally licensed by the Council for the Regulation of Engineering in Nigeria (COREN) to practice mechanical, water resources, and structural engineering services nationwide.',
+    },
+    {
       icon: Award,
-      title: 'ISO 9001:2015 Quality standards',
-      subtitle: 'Accredited Quality Management System',
-      desc: 'Our fabrication workshop operations, weld quality checks, and on-site engineering installation guidelines comply with strict ISO auditing standard pathways.',
+      title: 'ISO 9001:2015 Quality Management Certified',
+      desc: 'Audited and certified operating workflows covering procurement, mechanical design, welding fabrication, and site project management.',
     },
     {
-      icon: BadgeCheck,
-      title: 'COREN Authorized Engineering Firm',
-      desc: 'Formally registered with the Council for the Regulation of Engineering in Nigeria. Our practices and drawings align with the highest professional ethical frameworks.',
-    },
-    {
-      icon: ShieldAlert,
-      title: 'HSE Safety Standard compliance',
-      desc: 'Adherence to local and international construction safety acts. Our engineers hold OSHA-certified status, driving safety metrics to zero-incident milestones.',
-    },
-    {
-      icon: Scale,
-      title: 'Federal Ministry Registration',
-      desc: 'Approved contractor for water plants, mechanical utilities, steel panel tanks, and public processing works with municipal agencies.',
+      icon: ShieldCheck,
+      title: 'OSHA / ISO 45001 Occupational Safety Standards',
+      desc: 'Zero-incident safety culture implemented across every site installation, crane lifting operation, and high-pressure testing environment.',
     },
   ]
 
@@ -37,8 +34,8 @@ export default function CertificationsPage() {
       <section className="site-gradient-bg py-20 text-slate-900 border-b border-slate-200/60 relative">
         <div className="absolute inset-0 dot-grid-bg opacity-20 pointer-events-none" />
         <div className="container-xl relative z-10 text-center">
-          <span className="text-amber-600 font-heading font-bold text-xs uppercase tracking-widest">Credibility</span>
-          <h1 className="text-4xl sm:text-5xl font-black text-navy mt-2">Certifications & Standards</h1>
+          <span className="text-amber-600 font-heading font-bold text-xs uppercase tracking-widest">{t('certifications.credibility_label')}</span>
+          <h1 className="text-4xl sm:text-5xl font-black text-navy mt-2">{t('certifications.title')}</h1>
           <p className="text-slate-600 text-lg max-w-xl mx-auto mt-4">
             Quality assurance and standard compliance parameters governing all of our installations.
           </p>
@@ -68,7 +65,7 @@ export default function CertificationsPage() {
                   
                   <div className="flex items-center gap-2 text-xs text-slate-400">
                     <CheckCircle2 size={14} className="text-amber" />
-                    <span>Active and verified for fiscal year 2026</span>
+                    <span>{t('certifications.subtitle')}</span>
                   </div>
                 </div>
               </div>

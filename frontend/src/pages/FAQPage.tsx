@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import SEO from '@/components/ui/SEO'
 import { Plus, Minus } from 'lucide-react'
+import { useTranslation } from 'react-i18next'
 
 interface FAQItem {
   q: string;
@@ -8,6 +9,7 @@ interface FAQItem {
 }
 
 export default function FAQPage() {
+  const { t } = useTranslation()
   const [openIdx, setOpenIdx] = useState<number | null>(null)
 
   const faqs: FAQItem[] = [
@@ -48,8 +50,8 @@ export default function FAQPage() {
       <section className="site-gradient-bg py-20 text-slate-900 border-b border-slate-200/60 relative">
         <div className="absolute inset-0 dot-grid-bg opacity-20 pointer-events-none" />
         <div className="container-xl relative z-10 text-center">
-          <span className="text-amber-600 font-heading font-bold text-xs uppercase tracking-widest">Support</span>
-          <h1 className="text-4xl sm:text-5xl font-black text-navy mt-2">Frequently Asked Questions</h1>
+          <span className="text-amber-600 font-heading font-bold text-xs uppercase tracking-widest">{t('faq.support_label')}</span>
+          <h1 className="text-4xl sm:text-5xl font-black text-navy mt-2">{t('faq.title')}</h1>
           <p className="text-slate-600 text-lg max-w-xl mx-auto mt-4">
             Answers to common questions regarding our capabilities, certifications, and project workflows.
           </p>

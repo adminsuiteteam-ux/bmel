@@ -1,8 +1,11 @@
 import { Link } from 'react-router-dom'
 import SEO from '@/components/ui/SEO'
 import { ArrowLeft } from 'lucide-react'
+import { useTranslation } from 'react-i18next'
 
 export default function NotFoundPage() {
+  const { t } = useTranslation()
+
   return (
     <>
       <SEO
@@ -14,7 +17,7 @@ export default function NotFoundPage() {
         <div className="absolute inset-0 dot-grid-bg opacity-20 pointer-events-none" />
         
         <h1 className="text-8xl sm:text-9xl font-black text-amber-600 animate-pulse">404</h1>
-        <h2 className="text-2xl sm:text-3xl font-heading font-bold text-navy mt-4">Engineering Route Not Found</h2>
+        <h2 className="text-2xl sm:text-3xl font-heading font-bold text-navy mt-4">{t('not_found.title')}</h2>
         <p className="text-slate-600 text-sm sm:text-base mt-2 max-w-md mx-auto">
           The structural path or address you entered does not exist in our systems.
         </p>
