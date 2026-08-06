@@ -69,73 +69,23 @@ export interface DownloadItem {
 
 export const mockServices: Service[] = [
   {
-    slug: 'water-treatment',
-    title: 'Water Treatment Plants',
-    shortDesc: 'Design, installation, and commissioning of state-of-the-art industrial and municipal water treatment facilities.',
-    longDesc: 'BMEL specializes in engineering advanced water treatment plants tailored to meet specific industrial and municipal standards. From reverse osmosis and ultrafiltration to sewage treatment and chemical dosing systems, we provide comprehensive clean water solutions across Nigeria.',
-    iconName: 'Droplets',
+    slug: 'borehole-drilling',
+    title: 'Borehole Drilling',
+    shortDesc: 'Professional deep water borehole drilling, hydrogeological surveys, and casing installations for residential, commercial, and industrial sites.',
+    longDesc: 'BMEL delivers precision borehole drilling engineering across all geologic formations in Nigeria. From initial geophysical surveys to drilling, casing, gravel packing, and pumping tests, we guarantee clean, reliable water production.',
+    iconName: 'Wrench',
     benefits: [
-      'Removal of 99.9% of biological and chemical contaminants',
-      'Compliance with Federal Ministry of Environment standards',
-      'Energy-efficient membrane technology that lowers operation costs',
-      'Scalable designs suitable for manufacturing, estates, and municipalities'
+      'Geophysical resistivity survey & aquifer mapping',
+      'High-durability heavy-duty PVC & steel casing lines',
+      'Pumping tests & water yield rate certification',
+      'Long-term borehole rehabilitation & maintenance support'
     ],
     process: [
-      'Raw Water Quality Analysis & Feasibility Study',
-      'Process Design & Engineering Blueprinting',
-      'Equipment Procurement & Panel Fabrication',
-      'On-site Installation, Piping & Integration',
-      'Testing, Commissioning & Operator Training'
-    ],
-    image: 'https://images.unsplash.com/photo-1581094288338-2314dddb7ecc?auto=format&fit=crop&w=800&q=80',
-    gallery: [
-      'https://images.unsplash.com/photo-1581094719234-8c8efd9df737?auto=format&fit=crop&w=600&q=80',
-      'https://images.unsplash.com/photo-1581094288338-2314dddb7ecc?auto=format&fit=crop&w=600&q=80'
-    ]
-  },
-  {
-    slug: 'pumping-systems',
-    title: 'Industrial Pumping Systems',
-    shortDesc: 'High-performance pumping configurations for industrial fluid handling, municipal water distribution, and agricultural irrigation.',
-    longDesc: 'We design and configure heavy-duty pumping assemblies, including centrifugal, submersible, and booster pumps. Our systems feature intelligent control panels (VFDs) for optimal flow rates and energy efficiency.',
-    iconName: 'Settings',
-    benefits: [
-      'High-durability components designed for continuous duty cycles',
-      'Smart VFD control panels reducing energy spikes by up to 40%',
-      'Precision flow matches for high-viscosity or corrosive industrial fluids',
-      'Minimized mechanical wear via computerized pressure management'
-    ],
-    process: [
-      'System Hydraulics & Head Loss Calculation',
-      'Pump Specification & Selection (SMC Pumps Africa, Heavy-Duty Centrifugal Assemblies)',
-      'Control Panel Assembly (PLC/VFD Integration)',
-      'Foundation Casting & Pump Alignment',
-      'Piping Hookups & System Calibration'
-    ],
-    image: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=800&q=80',
-    gallery: [
-      'https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=600&q=80',
-      'https://images.unsplash.com/photo-1537462715879-360eeb61a0bc?auto=format&fit=crop&w=600&q=80'
-    ]
-  },
-  {
-    slug: 'panel-tanks',
-    title: 'Steel Panel Tanks',
-    shortDesc: 'Premium sectional panel tank fabrication and installation for large-volume water and chemical storage solutions.',
-    longDesc: 'Our structural sectional tanks are engineered in galvanized pressed steel, stainless steel, or glass-reinforced plastic (GRP). We build elevated and ground-level storage solutions designed to withstand harsh atmospheric conditions.',
-    iconName: 'Building2',
-    benefits: [
-      'Modular panel design allowing easy transportation to remote areas',
-      'High corrosion resistance with hot-dip galvanized or GRP finishes',
-      'Engineered structural framing matching international wind loading standards',
-      'Leak-proof sealing using specialized heavy-duty synthetic rubber gaskets'
-    ],
-    process: [
-      'Volume Analysis & Space Optimization Engineering',
-      'Sectional Panel Manufacture & Quality Control Testing',
-      'Elevated Support Tower Design & Foundation Cast Layout',
-      'Bolt-and-Nut Assembly & Gasket Lining Installation',
-      'Hydrostatic Leak Testing & Disinfection Flushing'
+      'Hydrogeological Site Assessment & Permits',
+      'Rig Setup & Precision Rotary/Percussion Drilling',
+      'Casing, Screen & Gravel Pack Insertion',
+      'Well Development & Yield Testing',
+      'Submersible Pump Installation & Quality Sampling'
     ],
     image: 'https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=800&q=80',
     gallery: [
@@ -143,47 +93,167 @@ export const mockServices: Service[] = [
     ]
   },
   {
-    slug: 'mechanical-fabrication',
-    title: 'Mechanical Design & Fabrication',
-    shortDesc: 'Custom industrial piping, structural steel assemblies, pressure vessels, and mechanical structural configurations.',
-    longDesc: 'BMEL provides top-tier metal fabrication services. Utilizing specialized welding (TIG/MIG) and advanced CNC tools, we build custom process piping spools, machine frames, steel gantries, and industrial storage vessels.',
-    iconName: 'Wrench',
+    slug: 'water-treatment',
+    title: 'Water Treatment Systems',
+    shortDesc: 'Design, installation, and commissioning of state-of-the-art industrial, commercial, and municipal water treatment plants.',
+    longDesc: 'BMEL specializes in engineering advanced water treatment plants tailored to meet specific water quality standards. From reverse osmosis and ultrafiltration to iron removal and chemical dosing systems, we provide comprehensive clean water solutions.',
+    iconName: 'Droplets',
     benefits: [
-      'ASME Section IX certified welding quality',
-      'Custom configurations using precision CAD/BIM model files',
-      'Non-destructive testing (NDT) available for high-pressure systems',
-      'Heavy-gauge materials offering exceptional mechanical life cycles'
+      'Removal of 99.9% of biological, heavy metal & chemical contaminants',
+      'Compliance with WHO & local regulatory water standards',
+      'Energy-efficient membrane technology lowering operating costs',
+      'Custom filtration setups for estates, factories, and institutions'
     ],
     process: [
-      '3D CAD Modeling & Engineering Stress Simulations',
-      'Material Selection & Certified Lab Testing Verification',
-      'Cutting, Bending, and Precise Jig Alignment Assembly',
-      'Certified Weld Execution (MIG, TIG, Shielded Arc)',
-      'Surface Treating (Sandblasting, Epoxies, Hot-dip Galvanization)'
+      'Raw Water Quality Analysis & Lab Testing',
+      'Custom Treatment Process Design Blueprinting',
+      'Filter Vessel, Piping & Dosing Skid Procurement',
+      'On-site Mechanical Hookup & Electrical Integration',
+      'System Testing, Water Sampling & Handover'
     ],
-    image: 'https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1581094288338-2314dddb7ecc?auto=format&fit=crop&w=800&q=80',
     gallery: [
-      'https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&w=600&q=80'
+      'https://images.unsplash.com/photo-1581094719234-8c8efd9df737?auto=format&fit=crop&w=600&q=80'
     ]
   },
   {
-    slug: 'installation',
-    title: 'Equipment Installation Services',
-    shortDesc: 'Rigging, positioning, alignment, and hookup of heavy industrial plant and utility machinery.',
-    longDesc: 'From boilers and water systems to industrial process loops, our mechanical engineers handle complex installations with structural alignment precision. We minimize factory downtime during retrofits.',
-    iconName: 'HardHat',
+    slug: 'plumbing-installations',
+    title: 'Plumbing Installations',
+    shortDesc: 'Comprehensive commercial, residential, and industrial plumbing reticulation, drainage, and utility piping networks.',
+    longDesc: 'Our certified plumbing engineers design and execute end-to-end piping networks for multi-storey commercial towers, residential estates, and industrial plants. We ensure leak-free, correctly pressure-balanced installations.',
+    iconName: 'Settings',
     benefits: [
-      'Laser-aligned pump/motor couplings to minimize operational wear',
-      'Strict adherence to OSHA and local safety regulations',
-      'Seamless structural integration into existing processing piping networks',
-      'Dedicated rigging experts for high-tonnage heavy machinery handling'
+      'Precision pressure-balanced hot & cold water reticulation',
+      'Heavy-gauge PPR, HDPE, stainless steel & PVC piping materials',
+      'Full compliance with national building & plumbing codes',
+      'Integrated backflow prevention & acoustic soundproof drainage'
     ],
     process: [
-      'Rigging Studies & Equipment Delivery Access Mapping',
-      'Plinth Leveling & Foundation Anchor Bolt Alignment Check',
-      'Heavy Lifting & Precision Mechanical Leveling Set',
-      'Piping & Electrical Hookups Integration',
-      'Cold & Hot Commissioning Dry Runs'
+      'Architectural & Mechanical Plumbing Layout Design',
+      'Pipe Sizing, Head-Loss & Hydraulic Pressure Calculations',
+      'Riser, Manifold & Drainage Piping Execution',
+      'Pressure Hydro-Testing & Leak Auditing',
+      'Fixture Hookups & Final System Commissioning'
+    ],
+    image: 'https://images.unsplash.com/photo-1585338107529-13afc5f02586?auto=format&fit=crop&w=800&q=80',
+    gallery: [
+      'https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=600&q=80'
+    ]
+  },
+  {
+    slug: 'firefighting-systems',
+    title: 'Firefighting Systems',
+    shortDesc: 'Complete fire protection engineering including sprinkler loops, fire hydrants, hose reels, and automated fire pump sets.',
+    longDesc: 'We safeguard facilities with certified fire protection infrastructure. BMEL designs, installs, and tests automatic sprinkler networks, wet/dry riser hydrants, diesel & electric fire pump assemblies, and gas suppression systems.',
+    iconName: 'Shield',
+    benefits: [
+      'NFPA-compliant fire sprinkler & hydrant system layouts',
+      'High-reliability dual electric/diesel fire pump controllers',
+      'Instant automatic pressure-sensing fire activation loops',
+      'Comprehensive fire safety audits & routine maintenance'
+    ],
+    process: [
+      'Building Hazard Assessment & Hydraulic Design',
+      'Fire Pipe Network Prefabrication & Hangers Installation',
+      'Fire Pump House Assembly & Jockey Pump Calibration',
+      'Sprinkler Head & Hydrant Fitting Hookups',
+      'Flow Testing, Pressure Validation & Fire Safety Certification'
+    ],
+    image: 'https://images.unsplash.com/photo-1542013936693-8848e574047a?auto=format&fit=crop&w=800&q=80',
+    gallery: [
+      'https://images.unsplash.com/photo-1542013936693-8848e574047a?auto=format&fit=crop&w=600&q=80'
+    ]
+  },
+  {
+    slug: 'swimming-pool-engineering',
+    title: 'Swimming Pool Engineering',
+    shortDesc: 'Turnkey hydraulic design, filtration systems, chemical dosing, and structural installation for luxury and commercial pools.',
+    longDesc: 'BMEL engineers Olympic-sized, commercial, and residential swimming pools. From pool filtration pumps and sand filters to underwater LED lighting, balance tanks, and automated chemical dosing, we deliver pristine pool systems.',
+    iconName: 'Award',
+    benefits: [
+      'Crystal-clear automated filtration & water balance systems',
+      'Energy-efficient pool pumps & heat exchanger integration',
+      'Custom infinity edge, overflow & skimmer hydraulic designs',
+      'Durable pool chemical dosing & UV sanitization loops'
+    ],
+    process: [
+      'Pool Hydraulics & Mechanical Blueprinting',
+      'Reinforced Piping & Under-slab Conduit Laying',
+      'Filter Skid, Pump & Chemical Dosing Equipment Setup',
+      'Hydrostatic Pressure Testing & Liner/Tile Checks',
+      'Water Balance Commissioning & Maintenance Training'
+    ],
+    image: 'https://images.unsplash.com/photo-1576013551627-0cc20b96c2a7?auto=format&fit=crop&w=800&q=80',
+    gallery: [
+      'https://images.unsplash.com/photo-1576013551627-0cc20b96c2a7?auto=format&fit=crop&w=600&q=80'
+    ]
+  },
+  {
+    slug: 'sewage-treatment-plants',
+    title: 'Sewage Treatment Plants',
+    shortDesc: 'Eco-friendly aerobic and anaerobic sewage treatment plants (STP), effluent treatment, and recycled water systems.',
+    longDesc: 'We design and construct packaged sewage treatment plants for estates, hotels, hospitals, and industrial campuses. Our STPs convert raw wastewater into clean effluent suitable for irrigation and discharge.',
+    iconName: 'Building2',
+    benefits: [
+      'Odorless, automated biological wastewater treatment',
+      'Effluent discharge meeting Federal Ministry of Environment standards',
+      'Recycled water output suitable for irrigation & flushing',
+      'Compact packaged STP designs for constrained sites'
+    ],
+    process: [
+      'Wastewater Inflow Volume & BOD/COD Load Analysis',
+      'STP Civil/Mechanical Structural Design Layout',
+      'Blower, Diffuser & Sludge Recirculation Pump Rigging',
+      'Biological Seeding & Aeration Commissioning',
+      'Effluent Lab Testing & Environmental Compliance Certification'
+    ],
+    image: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=800&q=80',
+    gallery: [
+      'https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=600&q=80'
+    ]
+  },
+  {
+    slug: 'irrigation-systems',
+    title: 'Irrigation Systems',
+    shortDesc: 'Automated drip, sprinkler, and center-pivot agricultural & landscape irrigation setups powered by electric or solar pumps.',
+    longDesc: 'BMEL provides efficient agricultural and commercial landscape irrigation solutions. We build drip irrigation loops, pop-up turf sprinkler networks, and high-volume agricultural water transfer systems.',
+    iconName: 'Sprout',
+    benefits: [
+      'Up to 50% water savings via precision drip & smart controllers',
+      'Solar-powered pumping integration for remote agricultural sites',
+      'Automated zone timers & weather-sensing irrigation valves',
+      'Durable UV-resistant piping networks built for field longevity'
+    ],
+    process: [
+      'Soil & Crop Water Demand Calculation',
+      'Pump Head & Mainline Reticulation Hydraulics Design',
+      'Trenching, Pipe Laying & Solenoid Valve Installation',
+      'Emitter & Sprinkler Head Alignment Calibration',
+      'Automated Controller Programming & Field Demo'
+    ],
+    image: 'https://images.unsplash.com/photo-1500937386664-56d1dfef3854?auto=format&fit=crop&w=800&q=80',
+    gallery: [
+      'https://images.unsplash.com/photo-1500937386664-56d1dfef3854?auto=format&fit=crop&w=600&q=80'
+    ]
+  },
+  {
+    slug: 'pumping-solutions',
+    title: 'Pumping Solutions',
+    shortDesc: 'High-performance pumping configurations for industrial fluid handling, municipal water distribution, and booster systems.',
+    longDesc: 'We design and configure heavy-duty pumping assemblies including centrifugal, submersible, transfer, and pressure booster pumps equipped with intelligent VFD control panels for optimal efficiency.',
+    iconName: 'Zap',
+    benefits: [
+      'High-durability pumps designed for continuous duty cycles',
+      'Smart VFD control panels reducing energy usage by up to 40%',
+      'Precision flow matching for high-head or high-volume applications',
+      'Minimized mechanical wear via computerized pressure management'
+    ],
+    process: [
+      'System Hydraulics & Flow Calculation',
+      'Pump Specification & Quality Assembly Selection',
+      'Control Panel Fabrication (VFD/PLC Integration)',
+      'Foundation Casting & Laser Alignment',
+      'Piping Hookup & System Calibration'
     ],
     image: 'https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=800&q=80',
     gallery: [
@@ -191,23 +261,23 @@ export const mockServices: Service[] = [
     ]
   },
   {
-    slug: 'maintenance',
-    title: 'Operations & Maintenance Services',
-    shortDesc: 'Preventive, predictive, and emergency breakdown maintenance contracts for industrial engineering systems.',
-    longDesc: 'Minimize costly factory shut-downs. We offer comprehensive mechanical service agreements, chemical refills for water plants, seal replacements, pump rewinding, and instrumentation recalibration.',
-    iconName: 'Factory',
+    slug: 'facility-maintenance',
+    title: 'Facility Maintenance',
+    shortDesc: 'Comprehensive preventive, predictive, and breakdown maintenance contracts for mechanical and plumbing infrastructure.',
+    longDesc: 'Prevent costly facility downtime. BMEL offers routine mechanical maintenance, chemical refills for water plants, pump rewinding, pipe repairs, and 24/7 emergency response for commercial and industrial facilities.',
+    iconName: 'HardHat',
     benefits: [
-      '24/7 priority emergency response service team availability',
-      'Regular oil changes, seal replacements, and cleaning schedules',
-      'Detailed maintenance audit reporting & health trend logs',
-      'Extended machinery operating lifespan with minor repairs before failure'
+      '24/7 priority emergency response team availability',
+      'Scheduled preventive inspections, seal replacements & servicing',
+      'Detailed maintenance health logs & audit reports',
+      'Extended asset operating lifespan & reduced unexpected breakdowns'
     ],
     process: [
-      'System Audit & Equipment Documentation Review',
-      'Customized Preventive Maintenance Checklist Definition',
-      'Routine Field Testing & Vibration Diagnostics Inspections',
-      'Consumables Replacement & Mechanical Refits Execution',
-      'Post-Maintenance Performance Auditing & Log Approvals'
+      'Initial Infrastructure Audit & Equipment Inventory',
+      'Custom Maintenance Schedule Definition',
+      'Routine Field Servicing & Diagnostic Checks',
+      'Part Replacements & System Recalibrations',
+      'Audit Reporting & Log Approvals'
     ],
     image: 'https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=800&q=80',
     gallery: [

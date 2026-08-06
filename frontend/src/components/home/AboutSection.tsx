@@ -5,8 +5,8 @@ import SectionHeading from '../ui/SectionHeading'
 
 export default function AboutSection() {
   const highlights = [
-    { title: 'Our Mission', desc: 'To deliver reliable, innovative, and cost-effective mechanical engineering solutions that exceed client expectations.' },
-    { title: 'Our Vision', desc: 'To become one of Africa\'s most trusted mechanical engineering companies, recognized for technical excellence & innovation.' },
+    { title: 'Our Mission', desc: 'To deliver reliable, innovative, and cost-effective mechanical engineering solutions that exceed client expectations through quality workmanship, integrity, and continuous improvement.' },
+    { title: 'Our Vision', desc: 'To become one of Africa\'s most trusted mechanical engineering companies, recognized for technical excellence, innovation, and exceptional project delivery.' },
     { title: 'End-to-End Delivery', desc: 'From concept and design to installation, testing, commissioning, and long-term facility maintenance.' },
     { title: 'Quality & Safety', desc: 'Strict compliance with international engineering standards and zero-compromise safety protocols.' }
   ]

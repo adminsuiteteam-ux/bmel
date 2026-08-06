@@ -1,43 +1,61 @@
 import SEO from '@/components/ui/SEO'
-import { Fuel, Factory, Stethoscope, Building, Sprout, HardHat, CheckCircle } from 'lucide-react'
+import { Home, Building2, Hotel, Stethoscope, GraduationCap, Factory, Landmark, Building, Sprout, CheckCircle } from 'lucide-react'
 
 export default function IndustriesPage() {
   const industries = [
     {
-      icon: Fuel,
-      name: 'Oil & Gas',
-      desc: 'High-pressure utilities, fluid transfer pipe spools, certified raw water filtration setups, and large-capacity fire-fighting storage panel tanks.',
-      points: ['ASME-compliant pipe welding spools', 'Heavy-gauge steel panel tanks', 'Corrosive chemical fluid handling']
+      icon: Home,
+      name: 'Residential Developments',
+      desc: 'Custom plumbing installations, borehole drilling, water treatment systems, and swimming pool engineering for private residences and gated estates.',
+      points: ['Estate water reticulation networks', 'Sectional storage panel tanks', 'Borehole & filtration systems']
     },
     {
-      icon: Factory,
-      name: 'Manufacturing & Process Plants',
-      desc: 'Dedicated reverse osmosis plants, sanitary steel food-grade piping spools, boilers feed pumps, and high-pressure steam utility lines.',
-      points: ['Pure-grade sanitization networks', 'VFD energy-efficient pump arrays', 'Routine operations support plans']
+      icon: Building2,
+      name: 'Commercial Buildings',
+      desc: 'Full mechanical utility design, high-pressure pumping solutions, firefighting systems, and routine facility maintenance contracts.',
+      points: ['High-rise water booster pumps', 'Certified fire suppression loops', '24/7 facility maintenance']
+    },
+    {
+      icon: Hotel,
+      name: 'Hotels & Hospitality',
+      desc: 'Centralized hot and cold water distribution, swimming pool engineering, sewage treatment plants, and continuous water filtration.',
+      points: ['Swimming pool water treatment', 'Constant pressure water supply', 'Effluent & sewage treatment']
     },
     {
       icon: Stethoscope,
-      name: 'Healthcare & Pharma',
-      desc: 'Highly purified water distribution systems matching pharmacopoeia standards, clinical air line fabrications, and clean room storage vessels.',
-      points: ['Multi-phase filtration cascades', 'Stainless steel orbital welding', 'Sanitary booster pump alignments']
+      name: 'Healthcare Facilities',
+      desc: 'Specialized clinical water treatment systems, medical facility plumbing installations, and zero-downtime backup pumping solutions.',
+      points: ['Sterile water filtration systems', 'Emergency water storage tanks', 'Sanitary plumbing installations']
+    },
+    {
+      icon: GraduationCap,
+      name: 'Educational Institutions',
+      desc: 'Campus-wide water storage panel tanks, sewage treatment plants, borehole drilling, and educational facility plumbing systems.',
+      points: ['Campus water reticulation', 'High-capacity sectional tanks', 'Waste water treatment plants']
+    },
+    {
+      icon: Factory,
+      name: 'Industrial Facilities',
+      desc: 'Heavy-duty industrial pumping solutions, process water purification, process piping fabrication, and chemical dosing setups.',
+      points: ['Industrial water treatment', 'Heavy-duty fluid pumping', 'Custom pipe fabrication & welding']
+    },
+    {
+      icon: Landmark,
+      name: 'Government Projects',
+      desc: 'Public infrastructure water treatment schemes, municipal borehole drilling, institutional plumbing installations, and government facilities.',
+      points: ['Public utility water schemes', 'Municipal borehole drilling', 'Compliant engineering execution']
     },
     {
       icon: Building,
-      name: 'Municipal & Public Works',
-      desc: 'Large sectional raw storage towers, regional distribution pumping systems, community filter plants, and water transmission infrastructure.',
-      points: ['State agency scale configurations', 'Elevated tower structural calculations', 'Nationwide deployment setups']
+      name: 'Real Estate Developments',
+      desc: 'Turnkey utility blueprints, sectional steel storage panel tanks, site-wide drainage, and residential estate plumbing infrastructure.',
+      points: ['Turnkey utility infrastructure', 'Ground & elevated storage tanks', 'Comprehensive maintenance']
     },
     {
       icon: Sprout,
-      name: 'Agriculture & Irrigation',
-      desc: 'High-volume irrigation water lines, booster stations, dam intake arrays, solar water pumping configurations, and farm storage towers.',
-      points: ['Off-grid solar integrated utilities', 'Raw filtration setups', 'Long-life pump assemblies']
-    },
-    {
-      icon: HardHat,
-      name: 'Construction & Estates',
-      desc: 'Central plumbing setups for residential complexes, industrial drainage spools, elevated sectional steel tanks, and fire mains loops.',
-      points: ['Gated community main reservoirs', 'High-rise balance valve configurations', 'Subcontracting drawings alignment']
+      name: 'Agricultural & Irrigation Projects',
+      desc: 'High-volume borehole drilling, electric & solar pumping solutions, farm water storage, and agricultural irrigation systems.',
+      points: ['Solar & electric pumping setups', 'Agricultural irrigation lines', 'Raw water treatment systems']
     }
   ]
 

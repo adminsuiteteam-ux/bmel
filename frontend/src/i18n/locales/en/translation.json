@@ -30,12 +30,15 @@
     "mega_work_with_us": "Work With Us",
     "toggle_menu": "Toggle menu",
     "services": {
-      "water_treatment": "Water Treatment Plants",
-      "pumping_systems": "Pumping Systems",
-      "panel_tanks": "Steel Panel Tanks",
-      "mechanical_fabrication": "Mechanical Fabrication",
-      "installation": "Installation Services",
-      "maintenance": "Maintenance Services"
+      "borehole_drilling": "Borehole Drilling",
+      "water_treatment": "Water Treatment Systems",
+      "plumbing_installations": "Plumbing Installations",
+      "firefighting_systems": "Firefighting Systems",
+      "swimming_pool": "Swimming Pool Engineering",
+      "sewage_treatment": "Sewage Treatment Plants",
+      "irrigation_systems": "Irrigation Systems",
+      "pumping_solutions": "Pumping Solutions",
+      "facility_maintenance": "Facility Maintenance"
     },
     "mega_links": {
       "about_us": "About Us",
@@ -59,7 +62,7 @@
     "cta_contact": "Contact Us",
     "logo_name": "BMEL",
     "logo_tagline": "Mechanical Engineering",
-    "brand_description": "Brownforte Mechanical Engineering Limited — Nigeria's trusted partner for water treatment, pumping systems, panel tanks and industrial fluid handling solutions. 15+ years of engineering excellence.",
+    "brand_description": "Brownforte Mechanical Engineering Limited (BMEL) is a Nigerian engineering company providing innovative mechanical, plumbing, water, and infrastructure solutions for residential, commercial, industrial, and institutional projects.",
     "services_heading": "Our Services",
     "quick_links_heading": "Quick Links",
     "contact_heading": "Get In Touch",
@@ -73,12 +76,15 @@
     "bottom_downloads": "Downloads",
     "bottom_contact": "Contact",
     "services": {
-      "water_treatment": "Water Treatment Plants",
-      "pumping_systems": "Pumping Systems",
-      "panel_tanks": "Steel Panel Tanks",
-      "mechanical_fabrication": "Mechanical Fabrication",
-      "installation": "Installation Services",
-      "maintenance": "Maintenance Services"
+      "borehole_drilling": "Borehole Drilling",
+      "water_treatment": "Water Treatment Systems",
+      "plumbing_installations": "Plumbing Installations",
+      "firefighting_systems": "Firefighting Systems",
+      "swimming_pool": "Swimming Pool Engineering",
+      "sewage_treatment": "Sewage Treatment Plants",
+      "irrigation_systems": "Irrigation Systems",
+      "pumping_solutions": "Pumping Solutions",
+      "facility_maintenance": "Facility Maintenance"
     },
     "quick_links": {
       "about": "About Us",

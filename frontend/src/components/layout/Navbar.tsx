@@ -4,18 +4,21 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { useTranslation } from 'react-i18next'
 import {
   Menu, X, ChevronDown, Phone, Mail,
-  Droplets, Settings, Building2, Wrench, HardHat, Factory,
+  Droplets, Settings, Building2, Wrench, HardHat, Factory, Shield, Sprout, Zap,
   Newspaper, Briefcase, Download, Award, Users, MessageSquare,
   Search, FileText
 } from 'lucide-react'
 
 const services = [
+  { key: 'borehole_drilling', slug: 'borehole-drilling', icon: Wrench },
   { key: 'water_treatment', slug: 'water-treatment', icon: Droplets },
-  { key: 'pumping_systems', slug: 'pumping-systems', icon: Settings },
-  { key: 'panel_tanks', slug: 'panel-tanks', icon: Building2 },
-  { key: 'mechanical_fabrication', slug: 'mechanical-fabrication', icon: Wrench },
-  { key: 'installation', slug: 'installation', icon: HardHat },
-  { key: 'maintenance', slug: 'maintenance', icon: Factory },
+  { key: 'plumbing_installations', slug: 'plumbing-installations', icon: Settings },
+  { key: 'firefighting_systems', slug: 'firefighting-systems', icon: Shield },
+  { key: 'swimming_pool', slug: 'swimming-pool-engineering', icon: Award },
+  { key: 'sewage_treatment', slug: 'sewage-treatment-plants', icon: Building2 },
+  { key: 'irrigation_systems', slug: 'irrigation-systems', icon: Sprout },
+  { key: 'pumping_solutions', slug: 'pumping-solutions', icon: Zap },
+  { key: 'facility_maintenance', slug: 'facility-maintenance', icon: HardHat },
 ]
 
 const megaMenuLinks = [

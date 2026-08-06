@@ -165,13 +165,12 @@ export default function HeroSection() {
 
         {/* Sub-description */}
         <motion.p
-          className="text-sm sm:text-base md:text-lg lg:text-xl text-center text-slate-600 font-medium pt-5 sm:pt-8 md:pt-10 leading-relaxed max-w-lg"
+          className="text-sm sm:text-base md:text-lg lg:text-xl text-center text-slate-600 font-medium pt-5 sm:pt-8 md:pt-10 leading-relaxed max-w-xl"
           animate={{ opacity: 1, y: 0 }}
           initial={{ opacity: 0, y: 20 }}
           transition={{ duration: 0.3, ease: 'easeOut', delay: 0.5 }}
         >
-          Brownforte Mechanical Engineering Limited delivers premium water treatment systems,
-          pumping infrastructure, sectional panel tanks, and custom fabrications nationwide.
+          Brownforte Mechanical Engineering Limited (BMEL) provides innovative mechanical, plumbing, water, and infrastructure solutions for residential, commercial, industrial, and institutional projects across Nigeria.
         </motion.p>
 
         {/* Trust checkmarks */}
@@ -181,7 +180,7 @@ export default function HeroSection() {
           initial={{ opacity: 0, y: 20 }}
           transition={{ duration: 0.3, ease: 'easeOut', delay: 0.6 }}
         >
-          {['Certified ASME Fabrication', 'Full QA/QC Protocol', '24-Month Warranty'].map((item) => (
+          {['Engineering Excellence', 'Strict Compliance Standards', 'End-to-End Delivery'].map((item) => (
             <div key={item} className="flex items-center gap-1.5">
               <CheckCircle2 size={15} className="text-amber-500 flex-shrink-0" />
               <span>{item}</span>

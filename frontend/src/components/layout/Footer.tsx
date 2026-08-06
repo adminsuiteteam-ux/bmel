@@ -6,12 +6,15 @@ import {
 } from 'lucide-react'
 
 const serviceKeys = [
+  { key: 'borehole_drilling', href: '/services/borehole-drilling' },
   { key: 'water_treatment', href: '/services/water-treatment' },
-  { key: 'pumping_systems', href: '/services/pumping-systems' },
-  { key: 'panel_tanks', href: '/services/panel-tanks' },
-  { key: 'mechanical_fabrication', href: '/services/mechanical-fabrication' },
-  { key: 'installation', href: '/services/installation' },
-  { key: 'maintenance', href: '/services/maintenance' },
+  { key: 'plumbing_installations', href: '/services/plumbing-installations' },
+  { key: 'firefighting_systems', href: '/services/firefighting-systems' },
+  { key: 'swimming_pool', href: '/services/swimming-pool-engineering' },
+  { key: 'sewage_treatment', href: '/services/sewage-treatment-plants' },
+  { key: 'irrigation_systems', href: '/services/irrigation-systems' },
+  { key: 'pumping_solutions', href: '/services/pumping-solutions' },
+  { key: 'facility_maintenance', href: '/services/facility-maintenance' },
 ]
 
 const quickLinkKeys = [
