@@ -15,16 +15,19 @@ import {
 } from 'lucide-react'
 import { mockServices } from '@/data/mockData'
 
-const iconMap: Record<string, React.ElementType> = {
-  Wrench,
-  Droplets,
-  Settings,
-  Shield,
-  Award,
-  Building2,
-  Sprout,
-  Zap,
-  HardHat,
+function getServiceIcon(iconName: string): React.ElementType {
+  switch (iconName) {
+    case 'Wrench': return Wrench
+    case 'Droplets': return Droplets
+    case 'Settings': return Settings
+    case 'Shield': return Shield
+    case 'Award': return Award
+    case 'Building2': return Building2
+    case 'Sprout': return Sprout
+    case 'Zap': return Zap
+    case 'HardHat': return HardHat
+    default: return HelpCircle
+  }
 }
 
 export default function ServicesPage() {
@@ -54,7 +57,7 @@ export default function ServicesPage() {
         <div className="container-xl">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {mockServices.map((service) => {
-              const IconComponent = iconMap[service.iconName] || HelpCircle
+              const IconComponent = getServiceIcon(service.iconName)
 
               return (
                 <div
