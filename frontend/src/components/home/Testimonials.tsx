@@ -1,5 +1,4 @@
 import { useState } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
 import { ChevronLeft, ChevronRight, Quote, Star } from 'lucide-react'
 import { mockTestimonials } from '../../data/mockData'
 import SectionHeading from '../ui/SectionHeading'

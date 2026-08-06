@@ -1,5 +1,5 @@
 import SEO from '@/components/ui/SEO'
-import { FileText, Download, ShieldCheck, Settings } from 'lucide-react'
+import { FileText, Download } from 'lucide-react'
 import { mockDownloads } from '@/data/mockData'
 
 export default function DownloadsPage() {

@@ -1,5 +1,5 @@
 import SEO from '@/components/ui/SEO'
-import { Award, Compass, Eye, ShieldCheck, Target, Users, CheckCircle2, Building2, Wrench, Shield, Zap, Sparkles, HeartHandshake, FileCheck } from 'lucide-react'
+import { Award, Eye, ShieldCheck, Target, CheckCircle2, Building2, Wrench, Shield, Zap, Sparkles, HeartHandshake, FileCheck } from 'lucide-react'
 import { Link } from 'react-router-dom'
 
 export default function AboutPage() {

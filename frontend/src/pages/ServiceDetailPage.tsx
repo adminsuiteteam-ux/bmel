@@ -1,7 +1,7 @@
 import { Link, useParams } from 'react-router-dom'
 import SEO from '@/components/ui/SEO'
 import { mockServices } from '@/data/mockData'
-import { ArrowLeft, CheckCircle2, ChevronRight, Mail, Settings } from 'lucide-react'
+import { ArrowLeft, CheckCircle2, ChevronRight } from 'lucide-react'
 
 export default function ServiceDetailPage() {
   const { slug } = useParams<{ slug: string }>()

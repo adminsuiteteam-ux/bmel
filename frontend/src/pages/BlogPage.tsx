@@ -1,6 +1,6 @@
 import SEO from '@/components/ui/SEO'
 import { Link } from 'react-router-dom'
-import { Calendar, User, Clock, ArrowRight } from 'lucide-react'
+import { Calendar, Clock, ArrowRight } from 'lucide-react'
 import { mockBlog } from '@/data/mockData'
 
 export default function BlogPage() {
@@ -27,7 +27,7 @@ export default function BlogPage() {
       <section className="section-pad bg-white">
         <div className="container-xl">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {mockBlog.map((post, idx) => (
+            {mockBlog.map((post) => (
               <div
                 key={post.slug}
                 className="bg-white border border-slate-100 rounded-xl overflow-hidden shadow-card hover:shadow-card-hover transition-all flex flex-col group"

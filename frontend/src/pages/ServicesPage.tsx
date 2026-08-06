@@ -27,7 +27,7 @@ export default function ServicesPage() {
       <section className="section-pad site-gradient-bg">
         <div className="container-xl">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {mockServices.map((service, idx) => {
+            {mockServices.map((service) => {
               const IconComponent = (Icons as any)[service.iconName] || Icons.HelpCircle
 
               return (

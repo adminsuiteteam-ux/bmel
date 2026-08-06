@@ -1,5 +1,5 @@
 import SEO from '@/components/ui/SEO'
-import { Fuel, Factory, Stethoscope, Building, Sprout, HardHat, Hotel, GraduationCap, CheckCircle } from 'lucide-react'
+import { Fuel, Factory, Stethoscope, Building, Sprout, HardHat, CheckCircle } from 'lucide-react'
 
 export default function IndustriesPage() {
   const industries = [

@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import SEO from '@/components/ui/SEO'
 import { Link } from 'react-router-dom'
-import { Search, ArrowRight, FileText, Droplets, BookOpen } from 'lucide-react'
+import { Search, ArrowRight } from 'lucide-react'
 import { mockServices, mockProjects, mockBlog } from '@/data/mockData'
 
 interface SearchResult {
