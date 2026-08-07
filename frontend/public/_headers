@@ -1,9 +1,0 @@
-[build]
-  command = "npm run build"
-  destination = "dist"
-  node_compat = true
-
-[[rules]]
-  match = { url = "/*" }
-  serve = { path = "/index.html" }
-  when = { status = 404 }
