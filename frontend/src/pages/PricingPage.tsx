@@ -348,7 +348,7 @@ export default function PricingPage() {
                         href="/contact"
                         className={`flex items-center justify-center gap-2 w-full py-3 rounded-xl font-heading font-bold text-sm transition-all duration-200 hover:-translate-y-0.5 ${
                           pkg.popular
-                            ? 'bg-amber text-navy hover:bg-amber-400 shadow-md'
+                            ? 'bg-[#0077B6] text-white hover:bg-[#03045E] shadow-md'
                             : 'bg-navy text-white hover:bg-navy/90'
                         }`}
                       >
