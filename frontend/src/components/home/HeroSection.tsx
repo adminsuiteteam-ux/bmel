@@ -46,9 +46,6 @@ export default function HeroSection() {
       {/* Subtle dot grid background */}
       <div className="absolute inset-0 dot-grid-bg opacity-25 pointer-events-none" />
 
-      {/* Ambient glow blobs */}
-      <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-amber-400/15 rounded-full blur-[120px] pointer-events-none animate-glow-pulse" />
-      <div className="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] bg-sky-400/15 rounded-full blur-[100px] pointer-events-none animate-glow-pulse" style={{ animationDelay: '1.5s' }} />
 
       {/* Parallax floating engineering images */}
       <Floating sensitivity={-0.5} className="h-full hidden md:block">

@@ -118,17 +118,15 @@ export default function Navbar() {
             : 'bg-navy'
         }`}
       >
-        <div className="container-xl flex items-center justify-between h-16 lg:h-18">
+        <div className="container-xl flex items-center justify-between h-16 lg:h-20">
 
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-3 group flex-shrink-0">
-            <img src={`${import.meta.env.BASE_URL}logo.svg`} alt="BMEL Logo" className="w-10 h-10 rounded-lg group-hover:scale-105 transition-transform shadow-glow-blue" />
-            <div className="hidden sm:block">
-              <div className="text-white font-heading font-bold text-base leading-tight">{t('navbar.logo_name')}</div>
-              <div className="text-amber text-[10px] font-medium tracking-widest uppercase leading-tight">
-                {t('navbar.logo_tagline')}
-              </div>
-            </div>
+          <Link to="/" className="flex items-center group flex-shrink-0">
+            <img
+              src={`${import.meta.env.BASE_URL}bmel-logo.svg`}
+              alt="Brownforte Mechanical Engineering Limited"
+              className="h-10 sm:h-11 lg:h-12 w-auto object-contain group-hover:scale-105 transition-all duration-300"
+            />
           </Link>
 
           {/* Desktop Nav */}
@@ -270,12 +268,12 @@ export default function Navbar() {
               <div>
                 {/* Header */}
                 <div className="flex items-center justify-between p-5 border-b border-white/10">
-                  <Link to="/" onClick={() => setMobileOpen(false)} className="flex items-center gap-2.5">
-                    <img src={`${import.meta.env.BASE_URL}logo.svg`} alt="BMEL Logo" className="w-8 h-8 rounded-lg" />
-                    <div>
-                      <div className="text-white font-heading font-bold text-sm leading-tight">{t('navbar.logo_name')}</div>
-                      <div className="text-amber text-[9px] font-medium tracking-widest uppercase">{t('navbar.logo_tagline')}</div>
-                    </div>
+                  <Link to="/" onClick={() => setMobileOpen(false)} className="flex items-center">
+                    <img
+                      src={`${import.meta.env.BASE_URL}bmel-logo.svg`}
+                      alt="Brownforte Mechanical Engineering Limited"
+                      className="h-9 w-auto object-contain"
+                    />
                   </Link>
                   <button
                     onClick={() => setMobileOpen(false)}

@@ -7,7 +7,7 @@ import { AnimatedCard, type CardColorVariant } from '../ui/AnimatedCard'
 export default function FeaturedProjects() {
   const { t } = useTranslation()
   const featured = mockProjects.slice(0, 3)
-  const variants: CardColorVariant[] = ['amber', 'emerald', 'cyan']
+  const variants: CardColorVariant[] = ['navy', 'steel', 'amber']
 
   return (
     <section className="section-pad site-gradient-bg">

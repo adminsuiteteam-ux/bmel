@@ -18,7 +18,7 @@ export default function ContactPage() {
   const [turnstileToken, setTurnstileToken] = useState<string | null>(null)
   const [turnstileError, setTurnstileError] = useState(false)
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
 
     if (!turnstileToken) {
@@ -29,11 +29,35 @@ export default function ContactPage() {
     setSubmitting(true)
     setTurnstileError(false)
 
-    // Simulate API request
-    setTimeout(() => {
+    try {
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify({
+          access_key: import.meta.env.VITE_WEB3FORMS_KEY || '4cc8bfa5-d4db-4ffd-ad4a-02cde4020861',
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone,
+          subject: formData.subject || `Engineering Inquiry from ${formData.name}`,
+          message: formData.message,
+          from_name: 'BMEL Website Contact'
+        })
+      })
+      const data = await response.json()
+      if (response.status === 200) {
+        setSubmitted(true)
+      } else {
+        alert(data.message || 'Submission failed. Please try again.')
+      }
+    } catch (err) {
+      console.error(err)
+      alert('Network error. Please try again.')
+    } finally {
       setSubmitting(false)
-      setSubmitted(true)
-    }, 1500)
+    }
   }
 
   const branches = [

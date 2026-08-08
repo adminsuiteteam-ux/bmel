@@ -20,7 +20,7 @@ export default function SectionHeading({
         {title}
       </h2>
       {subtitle && (
-        <p className={`mt-4 text-lg max-w-2xl ${centered ? 'mx-auto' : ''} ${light ? 'text-white/60' : 'text-slate-600'}`}>
+        <p className={`mt-4 text-lg max-w-2xl ${centered ? 'mx-auto' : ''} ${light ? 'text-white/90 font-normal' : 'text-slate-800 font-medium'}`}>
           {subtitle}
         </p>
       )}

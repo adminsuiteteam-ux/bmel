@@ -76,7 +76,8 @@ export default function ProjectsPage() {
             </div>
 
             {/* Search Input */}
-            <div className="relative w-full lg:w-72">
+            <div className="relative w-full lg:w-72 flex items-center">
+              <Search size={16} className="absolute left-3 text-slate-400 pointer-events-none z-10" />
               <input
                 type="text"
                 placeholder="Search location, client, title..."
@@ -84,7 +85,6 @@ export default function ProjectsPage() {
                 onChange={e => setSearch(e.target.value)}
                 className="w-full bg-slate-50 border border-slate-200 rounded-lg px-4 py-2.5 pl-10 text-sm focus:outline-none focus:border-amber/50 transition-colors"
               />
-              <Search size={16} className="absolute left-3 top-3.5 text-slate-400" />
             </div>
 
           </div>

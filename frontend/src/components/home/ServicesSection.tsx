@@ -23,13 +23,13 @@ function getServiceIcon(iconName: string): React.ElementType {
 export default function ServicesSection() {
   const { t } = useTranslation()
 
-  const colorVariants: Array<'amber' | 'cyan' | 'emerald' | 'violet' | 'steel'> = [
-    'amber',
-    'cyan',
-    'emerald',
-    'violet',
+  const colorVariants: Array<'navy' | 'steel' | 'amber' | 'cyan'> = [
+    'navy',
     'steel',
     'amber',
+    'cyan',
+    'navy',
+    'steel',
   ]
 
   return (

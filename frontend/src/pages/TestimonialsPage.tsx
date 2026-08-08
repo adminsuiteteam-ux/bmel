@@ -46,16 +46,9 @@ export default function TestimonialsPage() {
                   </p>
                 </div>
 
-                <div className="flex items-center gap-3 border-t border-slate-200/50 pt-4">
-                  <img
-                    src={t.image}
-                    alt={t.client}
-                    className="w-10 h-10 rounded-full object-cover"
-                  />
-                  <div>
-                    <h4 className="font-heading font-bold text-navy text-sm">{t.client}</h4>
-                    <p className="text-xs text-slate-400 font-semibold">{t.company}</p>
-                  </div>
+                <div className="border-t border-slate-200/50 pt-4">
+                  <h4 className="font-heading font-bold text-navy text-sm">{t.client}</h4>
+                  <p className="text-xs text-slate-400 font-semibold">{t.company}</p>
                 </div>
               </div>
             ))}

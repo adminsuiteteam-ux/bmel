@@ -70,12 +70,12 @@ export default function Footer() {
 
         {/* Brand Column */}
         <div className="lg:col-span-1">
-          <Link to="/" className="flex items-center gap-3 mb-5">
-            <img src={`${import.meta.env.BASE_URL}logo.svg`} alt="BMEL Logo" className="w-10 h-10 rounded-lg shadow-glow-blue" />
-            <div>
-              <div className="text-white font-heading font-bold text-base">{t('footer.logo_name')}</div>
-              <div className="text-amber text-[10px] tracking-widest uppercase">{t('footer.logo_tagline')}</div>
-            </div>
+          <Link to="/" className="inline-block mb-5">
+            <img
+              src={`${import.meta.env.BASE_URL}bmel-logo.svg`}
+              alt="Brownforte Mechanical Engineering Limited"
+              className="h-10 sm:h-12 w-auto object-contain hover:scale-105 transition-all duration-300"
+            />
           </Link>
           <p className="text-white/50 text-sm leading-relaxed mb-6">
             {t('footer.brand_description')}

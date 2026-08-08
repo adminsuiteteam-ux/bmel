@@ -15,10 +15,10 @@
             --amber-light: #90E0EF;
             --ocean-ice: #90E0EF;
             --ocean-glacier: #CAF0F8;
-            --slate: #64748B;
+            --slate: #475569;
             --white: #FFFFFF;
             --bg: #F8FAFC;
-            --border: #E2E8F0;
+            --border: #CBD5E1;
             --green: #10B981;
             --red: #EF4444;
         }
@@ -32,7 +32,7 @@
 
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            color: #1E293B;
+            color: #0F172A;
             line-height: 1.7;
             background: var(--white);
             font-size: 15px;
@@ -71,7 +71,7 @@
             z-index: 100;
             box-shadow: 0 2px 12px rgba(0,0,0,0.3);
         }
-        .print-bar p { color: rgba(255,255,255,0.7); font-size: 13px; }
+        .print-bar p { color: #FFFFFF; font-size: 13px; font-weight: 500; }
         .print-btn {
             background: var(--amber);
             color: var(--navy);
@@ -124,16 +124,18 @@
         .cover h1 span { color: var(--amber); }
         .cover-subtitle {
             font-size: 16px;
-            color: rgba(255,255,255,0.7);
+            color: #F1F5F9;
+            font-weight: 500;
             margin-bottom: 32px;
         }
         .cover-meta {
             display: flex;
             gap: 32px;
             font-size: 12px;
-            color: rgba(255,255,255,0.5);
+            color: #E2E8F0;
+            font-weight: 500;
         }
-        .cover-meta strong { color: rgba(255,255,255,0.8); }
+        .cover-meta strong { color: #FFFFFF; font-weight: 700; }
 
         /* ===== BODY SECTIONS ===== */
         .body-content { padding: 48px 64px; }
@@ -163,14 +165,14 @@
         h4 {
             font-family: 'Outfit', sans-serif;
             font-size: 13px;
-            font-weight: 600;
-            color: var(--slate);
+            font-weight: 700;
+            color: var(--navy);
             margin: 16px 0 6px 0;
             text-transform: uppercase;
             letter-spacing: 1px;
         }
 
-        p { margin-bottom: 10px; color: #475569; }
+        p { margin-bottom: 10px; color: #1E293B; font-weight: 450; }
 
         /* ===== TABLES ===== */
         table {
@@ -194,6 +196,7 @@
             padding: 12px 16px;
             border-bottom: 1px solid var(--border);
             vertical-align: top;
+            color: #0F172A;
         }
         tr:nth-child(even) { background: #F8FAFC; }
         .total-row td {
@@ -217,7 +220,7 @@
         .badge-free { background: #D1FAE5; color: #065F46; }
         .badge-recommended { background: var(--amber); color: var(--navy); padding: 3px 10px; font-size: 11px; }
         .check { color: var(--green); font-weight: 700; }
-        .cross { color: #CBD5E1; }
+        .cross { color: #64748B; font-weight: 700; }
 
         /* ===== CARDS ===== */
         .package-card {
@@ -265,8 +268,8 @@
         }
         .package-price small {
             font-size: 11px;
-            font-weight: 500;
-            color: var(--slate);
+            font-weight: 600;
+            color: #475569;
         }
 
         /* ===== CALLOUT ===== */
@@ -284,26 +287,27 @@
             color: var(--navy);
             margin-bottom: 4px;
         }
-        .callout p { margin: 0; font-size: 12px; color: #92400E; }
+        .callout p { margin: 0; font-size: 12px; color: #78350F; font-weight: 500; }
 
         .callout-blue {
             background: linear-gradient(135deg, #EFF6FF, #DBEAFE);
             border-left: 4px solid #3B82F6;
         }
-        .callout-blue p { color: #1E40AF; }
+        .callout-blue p { color: #1E3A8A; font-weight: 500; }
 
         .callout-green {
             background: linear-gradient(135deg, #ECFDF5, #D1FAE5);
             border-left: 4px solid #10B981;
         }
-        .callout-green p { color: #065F46; }
+        .callout-green p { color: #044E37; font-weight: 500; }
 
         /* ===== LISTS ===== */
         ul { margin: 8px 0 16px 0; padding-left: 0; list-style: none; }
         ul li {
             padding: 4px 0 4px 24px;
             position: relative;
-            color: #475569;
+            color: #1E293B;
+            font-weight: 450;
         }
         ul li::before {
             content: '✓';
@@ -327,11 +331,12 @@
         .doc-footer {
             background: var(--navy);
             padding: 32px 64px;
-            color: rgba(255,255,255,0.5);
+            color: #E2E8F0;
             font-size: 13px;
             text-align: center;
+            font-weight: 500;
         }
-        .doc-footer strong { color: rgba(255,255,255,0.8); }
+        .doc-footer strong { color: #FFFFFF; font-weight: 700; }
 
         /* ===== DIVIDER ===== */
         hr {
@@ -562,6 +567,7 @@
 
     <!-- ===== COVER ===== -->
     <div class="cover">
+        <img src="bmel-logo.svg" alt="BMEL Logo" style="height: 48px; margin-bottom: 24px; display: inline-block;">
         <div class="cover-label">Website Development Proposal</div>
         <h1>Building a World-Class<br>Digital Presence for<br><span>Brownforte Mechanical<br>Engineering Limited</span></h1>
         <p class="cover-subtitle">Comprehensive website packages, pricing & recommendations</p>

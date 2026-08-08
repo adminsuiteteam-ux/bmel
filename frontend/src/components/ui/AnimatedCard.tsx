@@ -21,53 +21,53 @@ interface AnimatedCardProps extends Omit<React.ComponentPropsWithoutRef<typeof m
 }
 
 const colorStyles: Record<CardColorVariant, { radial: string; tagBg: string; tagText: string; iconBg: string; iconText: string; borderHover: string }> = {
-  amber: {
-    radial: 'radial-gradient(circle at 50% 20%, rgba(245, 158, 11, 0.15) 0%, transparent 70%)',
-    tagBg: 'bg-amber-500/10 text-amber-500 border-amber-500/20',
-    tagText: 'text-amber-500',
-    iconBg: 'bg-amber-500/10 border-amber-500/20 text-amber-500 group-hover:bg-amber-500 group-hover:text-navy-900',
-    iconText: 'text-amber-500',
-    borderHover: 'hover:border-amber-500/40 hover:shadow-amber-500/10',
-  },
   navy: {
-    radial: 'radial-gradient(circle at 50% 20%, rgba(14, 116, 144, 0.15) 0%, transparent 70%)',
-    tagBg: 'bg-cyan-500/10 text-cyan-400 border-cyan-500/20',
-    tagText: 'text-cyan-400',
-    iconBg: 'bg-slate-800 border-slate-700 text-cyan-400 group-hover:bg-cyan-500 group-hover:text-navy-950',
-    iconText: 'text-cyan-400',
-    borderHover: 'hover:border-cyan-500/40 hover:shadow-cyan-500/10',
+    radial: 'radial-gradient(circle at 50% 20%, rgba(3, 4, 94, 0.08) 0%, transparent 70%)',
+    tagBg: 'bg-navy/10 text-navy border-navy/20',
+    tagText: 'text-navy',
+    iconBg: 'bg-navy/10 border-navy/20 text-navy group-hover:bg-navy group-hover:text-white',
+    iconText: 'text-navy',
+    borderHover: 'hover:border-navy/40 hover:shadow-navy/10',
   },
   steel: {
-    radial: 'radial-gradient(circle at 50% 20%, rgba(99, 102, 241, 0.15) 0%, transparent 70%)',
-    tagBg: 'bg-indigo-500/10 text-indigo-400 border-indigo-500/20',
-    tagText: 'text-indigo-400',
-    iconBg: 'bg-indigo-500/10 border-indigo-500/20 text-indigo-400 group-hover:bg-indigo-500 group-hover:text-white',
-    iconText: 'text-indigo-400',
-    borderHover: 'hover:border-indigo-500/40 hover:shadow-indigo-500/10',
+    radial: 'radial-gradient(circle at 50% 20%, rgba(0, 119, 182, 0.08) 0%, transparent 70%)',
+    tagBg: 'bg-[#0077B6]/10 text-[#0077B6] border-[#0077B6]/20',
+    tagText: 'text-[#0077B6]',
+    iconBg: 'bg-[#0077B6]/10 border-[#0077B6]/20 text-[#0077B6] group-hover:bg-[#0077B6] group-hover:text-white',
+    iconText: 'text-[#0077B6]',
+    borderHover: 'hover:border-[#0077B6]/40 hover:shadow-[#0077B6]/10',
   },
-  emerald: {
-    radial: 'radial-gradient(circle at 50% 20%, rgba(16, 185, 129, 0.15) 0%, transparent 70%)',
-    tagBg: 'bg-emerald-500/10 text-emerald-400 border-emerald-500/20',
-    tagText: 'text-emerald-400',
-    iconBg: 'bg-emerald-500/10 border-emerald-500/20 text-emerald-400 group-hover:bg-emerald-500 group-hover:text-navy-950',
-    iconText: 'text-emerald-400',
-    borderHover: 'hover:border-emerald-500/40 hover:shadow-emerald-500/10',
+  amber: {
+    radial: 'radial-gradient(circle at 50% 20%, rgba(0, 180, 216, 0.08) 0%, transparent 70%)',
+    tagBg: 'bg-[#00B4D8]/10 text-[#0077B6] border-[#00B4D8]/30',
+    tagText: 'text-[#0077B6]',
+    iconBg: 'bg-[#00B4D8]/10 border-[#00B4D8]/20 text-[#0077B6] group-hover:bg-[#00B4D8] group-hover:text-navy',
+    iconText: 'text-[#0077B6]',
+    borderHover: 'hover:border-[#00B4D8]/50 hover:shadow-[#00B4D8]/10',
   },
   cyan: {
-    radial: 'radial-gradient(circle at 50% 20%, rgba(6, 182, 212, 0.15) 0%, transparent 70%)',
-    tagBg: 'bg-cyan-500/10 text-cyan-300 border-cyan-500/20',
-    tagText: 'text-cyan-300',
-    iconBg: 'bg-cyan-500/10 border-cyan-500/20 text-cyan-300 group-hover:bg-cyan-400 group-hover:text-navy-950',
-    iconText: 'text-cyan-300',
-    borderHover: 'hover:border-cyan-400/40 hover:shadow-cyan-400/10',
+    radial: 'radial-gradient(circle at 50% 20%, rgba(0, 180, 216, 0.08) 0%, transparent 70%)',
+    tagBg: 'bg-navy/5 text-navy border-navy/15',
+    tagText: 'text-navy',
+    iconBg: 'bg-slate-100 border-slate-200 text-navy group-hover:bg-navy group-hover:text-white',
+    iconText: 'text-navy',
+    borderHover: 'hover:border-navy/30 hover:shadow-slate-200/50',
+  },
+  emerald: {
+    radial: 'radial-gradient(circle at 50% 20%, rgba(0, 119, 182, 0.08) 0%, transparent 70%)',
+    tagBg: 'bg-[#0077B6]/10 text-[#0077B6] border-[#0077B6]/20',
+    tagText: 'text-[#0077B6]',
+    iconBg: 'bg-[#0077B6]/10 border-[#0077B6]/20 text-[#0077B6] group-hover:bg-[#0077B6] group-hover:text-white',
+    iconText: 'text-[#0077B6]',
+    borderHover: 'hover:border-[#0077B6]/40 hover:shadow-[#0077B6]/10',
   },
   violet: {
-    radial: 'radial-gradient(circle at 50% 20%, rgba(139, 92, 246, 0.15) 0%, transparent 70%)',
-    tagBg: 'bg-purple-500/10 text-purple-400 border-purple-500/20',
-    tagText: 'text-purple-400',
-    iconBg: 'bg-purple-500/10 border-purple-500/20 text-purple-400 group-hover:bg-purple-500 group-hover:text-white',
-    iconText: 'text-purple-400',
-    borderHover: 'hover:border-purple-500/40 hover:shadow-purple-500/10',
+    radial: 'radial-gradient(circle at 50% 20%, rgba(3, 4, 94, 0.08) 0%, transparent 70%)',
+    tagBg: 'bg-navy/10 text-navy border-navy/20',
+    tagText: 'text-navy',
+    iconBg: 'bg-navy/10 border-navy/20 text-navy group-hover:bg-navy group-hover:text-white',
+    iconText: 'text-navy',
+    borderHover: 'hover:border-navy/40 hover:shadow-navy/10',
   },
 }
 
@@ -111,11 +111,6 @@ export const AnimatedCard = React.forwardRef<HTMLDivElement, AnimatedCardProps>(
           className
         )}
       >
-        {/* Ambient Radial Background Glow */}
-        <div
-          className="absolute inset-0 pointer-events-none opacity-60 group-hover:opacity-100 transition-opacity duration-500"
-          style={{ background: variantStyle.radial }}
-        />
 
         {/* Dynamic Top Bar Accent */}
         <div className="absolute top-0 left-0 w-full h-[3px] bg-gradient-to-r from-transparent via-amber-500 to-transparent scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-center" />
@@ -124,7 +119,7 @@ export const AnimatedCard = React.forwardRef<HTMLDivElement, AnimatedCardProps>(
         <div>
           <div className="flex items-center justify-between gap-4 mb-5 relative z-10">
             {index && (
-              <span className="font-mono text-xs tracking-widest uppercase font-semibold text-slate-400 opacity-80 group-hover:text-amber-400 transition-colors">
+              <span className="font-mono text-xs tracking-widest uppercase font-semibold text-slate-400 group-hover:text-amber-400 transition-colors">
                 {index}
               </span>
             )}
@@ -178,8 +173,8 @@ export const AnimatedCard = React.forwardRef<HTMLDivElement, AnimatedCardProps>(
           {description && (
             <p
               className={cn(
-                'text-sm leading-relaxed mb-4 line-clamp-3',
-                darkTheme ? 'text-slate-300/80' : 'text-slate-600'
+                'text-sm leading-relaxed mb-4 line-clamp-3 font-normal',
+                darkTheme ? 'text-slate-200' : 'text-slate-800'
               )}
             >
               {description}

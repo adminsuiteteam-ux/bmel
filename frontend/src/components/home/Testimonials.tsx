@@ -53,20 +53,13 @@ export default function Testimonials() {
             </div>
 
             {/* User Bio */}
-            <div className="flex items-center gap-4 border-t border-slate-100 pt-6 mt-8">
-              <img
-                src={current.image}
-                alt={current.client}
-                className="w-14 h-14 rounded-full object-cover border-2 border-amber/20"
-              />
-              <div>
-                <h4 className="font-heading font-bold text-navy text-base">
-                  {current.client}
-                </h4>
-                <p className="text-xs text-slate-500 font-medium">
-                  {current.company}
-                </p>
-              </div>
+            <div className="border-t border-slate-100 pt-6 mt-8">
+              <h4 className="font-heading font-bold text-navy text-base">
+                {current.client}
+              </h4>
+              <p className="text-xs text-slate-500 font-medium">
+                {current.company}
+              </p>
             </div>
 
           </div>

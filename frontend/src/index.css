@@ -79,8 +79,8 @@
 
   .btn-primary {
     @apply inline-flex items-center gap-2 bg-amber text-navy font-heading font-bold px-6 py-3 rounded-lg
-      hover:bg-amber-400 active:bg-amber-600 transition-all duration-300 shadow-glow-amber
-      hover:shadow-glow-cyan hover:-translate-y-0.5 active:translate-y-0 cursor-pointer;
+      hover:bg-amber-400 active:bg-amber-600 transition-all duration-300 shadow-md
+      hover:shadow-lg hover:-translate-y-0.5 active:translate-y-0 cursor-pointer;
   }
 
   .btn-secondary {
@@ -90,7 +90,7 @@
 
   .btn-outline {
     @apply inline-flex items-center gap-2 border-2 border-amber text-amber font-heading font-semibold px-6 py-3 rounded-lg
-      hover:bg-amber hover:text-navy transition-all duration-300 hover:shadow-glow-amber hover:-translate-y-0.5 cursor-pointer;
+      hover:bg-amber hover:text-navy transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5 cursor-pointer;
   }
 
   .text-gradient {

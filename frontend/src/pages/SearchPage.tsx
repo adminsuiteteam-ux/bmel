@@ -92,16 +92,16 @@ export default function SearchPage() {
         <div className="container-xl max-w-2xl">
           
           {/* Input Bar */}
-          <div className="relative mb-10">
+          <div className="relative mb-10 flex items-center">
+            <Search size={20} className="absolute left-4 text-slate-400 pointer-events-none z-10" />
             <input
               type="text"
               value={query}
               onChange={e => setQuery(e.target.value)}
               placeholder={t('search.placeholder', 'Search services, project locations, specifications...')}
-              className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3.5 pl-12 text-base focus:outline-none focus:border-amber/50 transition-colors shadow-sm"
+              className="w-full bg-white border border-slate-300 rounded-xl px-4 py-3.5 pl-12 text-base focus:outline-none focus:border-amber focus:ring-2 focus:ring-amber/20 transition-all shadow-sm"
               autoFocus
             />
-            <Search size={20} className="absolute left-4 top-4.5 text-slate-400" />
           </div>
 
           {/* Results list */}

@@ -56,7 +56,7 @@ const packages: Package[] = [
     Icon: Globe,
     gradientFrom: '#0EA5E9',
     gradientTo: '#0369A1',
-    glowClass: 'hover:shadow-[0_0_40px_rgba(14,165,233,0.25)]',
+    glowClass: 'hover:shadow-xl',
     idealFor: ['Small businesses', 'Startups', 'NGOs', 'Churches', 'Portfolios', 'Company profiles'],
     lineItems: [
       { label: 'Website Development (up to 5 pages)', amount: '₦250,000' },
@@ -79,7 +79,7 @@ const packages: Package[] = [
     Icon: Zap,
     gradientFrom: '#F59E0B',
     gradientTo: '#D97706',
-    glowClass: 'hover:shadow-[0_0_50px_rgba(245,158,11,0.35)]',
+    glowClass: 'hover:shadow-xl',
     idealFor: ['Engineering firms', 'Schools', 'Hotels', 'Healthcare providers', 'SMEs', 'Organizations'],
     lineItems: [
       { label: 'React Dynamic Website + CMS', amount: '₦350,000' },
@@ -104,7 +104,7 @@ const packages: Package[] = [
     Icon: Building2,
     gradientFrom: '#7C3AED',
     gradientTo: '#5B21B6',
-    glowClass: 'hover:shadow-[0_0_40px_rgba(124,58,237,0.25)]',
+    glowClass: 'hover:shadow-xl',
     idealFor: [
       'Large organizations',
       'Logistics companies',
@@ -195,8 +195,6 @@ export default function PricingPage() {
       {/* ── Hero ── */}
       <section className="site-gradient-bg py-24 text-slate-900 border-b border-slate-200/60 relative overflow-hidden">
         <div className="absolute inset-0 dot-grid-bg opacity-20 pointer-events-none" />
-        <div className="absolute -top-40 -left-40 w-[28rem] h-[28rem] bg-amber-400/10 rounded-full blur-3xl pointer-events-none" />
-        <div className="absolute -bottom-40 -right-40 w-[28rem] h-[28rem] bg-indigo-500/10 rounded-full blur-3xl pointer-events-none" />
 
         <div className="container-xl relative z-10 text-center">
           <span className="section-label">{t('pricing.web_dev')}</span>
@@ -350,7 +348,7 @@ export default function PricingPage() {
                         href="/contact"
                         className={`flex items-center justify-center gap-2 w-full py-3 rounded-xl font-heading font-bold text-sm transition-all duration-200 hover:-translate-y-0.5 ${
                           pkg.popular
-                            ? 'bg-amber text-navy hover:bg-amber-400 shadow-glow-amber'
+                            ? 'bg-amber text-navy hover:bg-amber-400 shadow-md'
                             : 'bg-navy text-white hover:bg-navy/90'
                         }`}
                       >
