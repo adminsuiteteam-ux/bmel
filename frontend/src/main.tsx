@@ -16,11 +16,14 @@ const queryClient = new QueryClient({
   },
 })
 
+const rawBase = import.meta.env.BASE_URL
+const basename = rawBase && rawBase !== './' && rawBase !== '.' ? rawBase : undefined
+
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
     <HelmetProvider>
       <QueryClientProvider client={queryClient}>
-        <BrowserRouter basename={import.meta.env.BASE_URL}>
+        <BrowserRouter basename={basename}>
           <App />
         </BrowserRouter>
       </QueryClientProvider>
