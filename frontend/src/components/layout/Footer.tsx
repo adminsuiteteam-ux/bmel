@@ -45,25 +45,6 @@ export default function Footer() {
 
   return (
     <footer className="bg-navy border-t border-white/5">
-      {/* CTA Banner */}
-      <div className="bg-gradient-to-r from-ocean-deep via-ocean-royal to-ocean-deep border-y border-ocean-bright/25 relative overflow-hidden">
-        <div className="container-xl py-10 flex flex-col md:flex-row items-center justify-between gap-6">
-          <div>
-            <h3 className="font-heading font-bold text-2xl text-white">
-              {t('footer.cta_heading')}
-            </h3>
-            <p className="text-white/60 mt-1">{t('footer.cta_subtext')}</p>
-          </div>
-          <div className="flex gap-3 flex-shrink-0">
-            <Link to="/contact" className="btn-primary">
-              {t('footer.cta_get_quote')} <ArrowRight size={16} />
-            </Link>
-            <Link to="/contact" className="btn-secondary text-sm py-2.5 px-5">
-              {t('footer.cta_contact')}
-            </Link>
-          </div>
-        </div>
-      </div>
 
       {/* Main Footer Grid */}
       <div className="container-xl py-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">

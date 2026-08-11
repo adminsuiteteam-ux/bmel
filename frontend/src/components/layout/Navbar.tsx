@@ -2,11 +2,12 @@ import { useState, useEffect, useRef } from 'react'
 import { Link, NavLink, useLocation } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
 import { useTranslation } from 'react-i18next'
+import { useTheme } from '@/context/ThemeContext'
 import {
   Menu, X, ChevronDown, Phone, Mail,
   Droplets, Settings, Building2, Wrench, HardHat, Factory, Shield, Sprout, Zap,
   Newspaper, Briefcase, Download, Award, Users, MessageSquare,
-  Search, FileText
+  Search, FileText, Sun, Moon
 } from 'lucide-react'
 
 const services = [
@@ -53,6 +54,7 @@ const megaMenuLinks = [
 
 export default function Navbar() {
   const { t } = useTranslation()
+  const { theme, toggleTheme } = useTheme()
   const [scrolled, setScrolled] = useState(false)
   const [mobileOpen, setMobileOpen] = useState(false)
   const [servicesOpen, setServicesOpen] = useState(false)
@@ -114,8 +116,8 @@ export default function Navbar() {
       <header
         className={`sticky top-0 z-50 transition-all duration-300 ${
           scrolled
-            ? 'bg-navy/90 backdrop-blur-lg shadow-card border-b border-amber/20'
-            : 'bg-navy'
+            ? 'bg-navy/90 dark:bg-slate-900/95 backdrop-blur-lg shadow-card border-b border-amber/20'
+            : 'bg-navy dark:bg-slate-900'
         }`}
       >
         <div className="container-xl flex items-center justify-between h-16 lg:h-20">
@@ -222,11 +224,29 @@ export default function Navbar() {
             <NavLink to="/contact" className={navLinkClass}>{t('navbar.nav_contact')}</NavLink>
           </nav>
 
-          {/* Right CTA + Search */}
+          {/* Right CTA + Search + Theme Toggle */}
           <div className="hidden lg:flex items-center gap-3">
             <Link to="/search" className="w-9 h-9 flex items-center justify-center rounded-lg text-white/60 hover:text-amber hover:bg-white/5 transition-colors">
               <Search size={18} />
             </Link>
+            {/* Dark mode toggle */}
+            <button
+              onClick={toggleTheme}
+              aria-label="Toggle dark mode"
+              className="w-9 h-9 flex items-center justify-center rounded-lg text-white/60 hover:text-amber hover:bg-white/5 transition-all duration-300"
+            >
+              <AnimatePresence mode="wait" initial={false}>
+                <motion.span
+                  key={theme}
+                  initial={{ rotate: -90, opacity: 0, scale: 0.5 }}
+                  animate={{ rotate: 0, opacity: 1, scale: 1 }}
+                  exit={{ rotate: 90, opacity: 0, scale: 0.5 }}
+                  transition={{ duration: 0.25 }}
+                >
+                  {theme === 'dark' ? <Sun size={18} /> : <Moon size={18} />}
+                </motion.span>
+              </AnimatePresence>
+            </button>
             <Link to="/contact" className="btn-primary text-sm py-2.5 px-5">
               {t('navbar.get_quote')}
             </Link>
@@ -301,6 +321,14 @@ export default function Navbar() {
 
               {/* Bottom Actions */}
               <div className="p-5 border-t border-white/10 space-y-3">
+                {/* Dark mode toggle (mobile) */}
+                <button
+                  onClick={toggleTheme}
+                  className="w-full flex items-center justify-center gap-2 py-2.5 rounded-lg border border-white/10 text-white/70 hover:text-amber hover:border-amber/30 text-sm font-medium transition-all duration-300"
+                >
+                  {theme === 'dark' ? <Sun size={15} /> : <Moon size={15} />}
+                  {theme === 'dark' ? 'Light Mode' : 'Dark Mode'}
+                </button>
                 <Link to="/contact" onClick={() => setMobileOpen(false)} className="btn-primary w-full justify-center text-sm py-3">
                   {t('navbar.get_free_quote')}
                 </Link>

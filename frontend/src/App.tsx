@@ -1,8 +1,10 @@
-import { lazy, Suspense } from 'react'
+import { lazy, Suspense, useState, useCallback } from 'react'
 import { Routes, Route } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import PageLayout from '@/components/layout/PageLayout'
 import ScrollToTop from '@/components/ui/ScrollToTop'
+import { ThemeProvider } from '@/context/ThemeContext'
+import Preloader from '@/components/ui/Preloader'
 
 // Lazy-loaded pages for code splitting
 const HomePage = lazy(() => import('@/pages/HomePage'))
@@ -26,23 +28,28 @@ const PricingPage = lazy(() => import('@/pages/PricingPage'))
 const SearchPage = lazy(() => import('@/pages/SearchPage'))
 const NotFoundPage = lazy(() => import('@/pages/NotFoundPage'))
 
-function PageLoader() {
-  const { t } = useTranslation()
+function RouteLoader() {
   return (
     <div className="min-h-screen bg-navy flex items-center justify-center">
       <div className="flex flex-col items-center gap-4">
-        <div className="w-12 h-12 border-4 border-amber border-t-transparent rounded-full animate-spin" />
-        <p className="text-amber font-heading text-sm tracking-widest uppercase">{t('common.loading')}</p>
+        <div className="w-10 h-10 border-3 border-amber border-t-transparent rounded-full animate-spin" />
       </div>
     </div>
   )
 }
 
 export default function App() {
+  const [loading, setLoading] = useState(true)
+
+  const handleComplete = useCallback(() => {
+    setLoading(false)
+  }, [])
+
   return (
-    <>
+    <ThemeProvider>
       <ScrollToTop />
-      <Suspense fallback={<PageLoader />}>
+      {loading && <Preloader onComplete={handleComplete} />}
+      <Suspense fallback={<RouteLoader />}>
         <Routes>
           <Route element={<PageLayout />}>
             <Route path="/" element={<HomePage />} />
@@ -68,7 +75,7 @@ export default function App() {
           </Route>
         </Routes>
       </Suspense>
-    </>
+    </ThemeProvider>
   )
 }
 

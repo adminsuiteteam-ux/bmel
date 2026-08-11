@@ -6,27 +6,27 @@ import { TextRotate } from '@/components/ui/text-rotate'
 import Floating, { FloatingElement } from '@/components/ui/parallax-floating'
 import AnimatedCounter from '@/components/ui/AnimatedCounter'
 
-// Plumbing-engineering-focused Unsplash images (pipes, valves, water distribution, manifolds)
+// BMEL real project photos
 const heroImages = [
   {
-    url: 'https://images.unsplash.com/photo-1585338107529-13afc5f02586?q=80&w=2670&auto=format&fit=crop',
-    alt: 'Plumbing engineering pressure meters and pipes',
+    url: '/images/hero-1.jpg',
+    alt: 'BMEL water treatment system with pipes and valves',
   },
   {
-    url: 'https://images.unsplash.com/photo-1621905251189-08b45d6a269e?q=80&w=2669&auto=format&fit=crop',
-    alt: 'Commercial plumbing manifold systems',
+    url: '/images/hero-2.jpg',
+    alt: 'BMEL borehole steel tank stand installation - S.U.B.E.B project, Bayelsa State',
   },
   {
-    url: 'https://images.unsplash.com/photo-1542013936693-8848e574047a?q=80&w=2670&auto=format&fit=crop',
-    alt: 'Industrial water pipeline installation',
+    url: '/images/hero-3.jpg',
+    alt: 'BMEL borehole with steel tank stand - Kolokuma/Opokuma LGA, Bayelsa State',
   },
   {
-    url: 'https://images.unsplash.com/photo-1615859131861-052f0641a60e?q=80&w=2670&auto=format&fit=crop',
-    alt: 'High pressure steel plumbing lines',
+    url: '/images/hero-4.jpg',
+    alt: 'BMEL swimming pool construction and plumbing at night',
   },
   {
-    url: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=2670&auto=format&fit=crop',
-    alt: 'Professional plumbing pipe fabrication',
+    url: '/images/hero-5.jpg',
+    alt: 'BMEL team installing elevated galvanized water tank',
   },
 ]
 
@@ -41,7 +41,7 @@ export default function HeroSection() {
   ]
 
   return (
-    <section className="w-full min-h-screen overflow-hidden flex flex-col items-center justify-center relative site-gradient-bg text-slate-900">
+    <section className="w-full min-h-screen overflow-hidden flex flex-col items-center justify-center relative site-gradient-bg text-slate-900 dark:text-slate-100">
 
       {/* Subtle dot grid background */}
       <div className="absolute inset-0 dot-grid-bg opacity-25 pointer-events-none" />
@@ -112,7 +112,7 @@ export default function HeroSection() {
 
         {/* Badge */}
         <motion.div
-          className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/80 backdrop-blur-md border border-navy/15 shadow-sm mb-8"
+          className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/80 dark:bg-white/10 backdrop-blur-md border border-navy/15 dark:border-sky-400/20 shadow-sm mb-8"
           animate={{ opacity: 1, y: 0 }}
           initial={{ opacity: 0, y: 20 }}
           transition={{ duration: 0.3, ease: 'easeOut', delay: 0.2 }}
@@ -130,12 +130,12 @@ export default function HeroSection() {
           initial={{ opacity: 0, y: 20 }}
           transition={{ duration: 0.3, ease: 'easeOut', delay: 0.3 }}
         >
-          <span className="text-navy">{t('hero.title_part1', 'Engineering Solutions')}</span>
+          <span className="text-navy dark:text-sky-200">{t('hero.title_part1', 'Engineering Solutions')}</span>
           <LayoutGroup>
             <motion.span layout className="flex flex-wrap items-center justify-center gap-x-2">
               <motion.span
                 layout
-                className="text-slate-600"
+                className="text-slate-600 dark:text-slate-300"
                 transition={{ type: 'spring', damping: 30, stiffness: 400 }}
               >
                 {t('hero.that_are', 'that are')}
@@ -165,7 +165,7 @@ export default function HeroSection() {
 
         {/* Sub-description */}
         <motion.p
-          className="text-sm sm:text-base md:text-lg lg:text-xl text-center text-slate-600 font-medium pt-5 sm:pt-8 md:pt-10 leading-relaxed max-w-xl"
+          className="text-sm sm:text-base md:text-lg lg:text-xl text-center text-slate-600 dark:text-slate-300 font-medium pt-5 sm:pt-8 md:pt-10 leading-relaxed max-w-xl"
           animate={{ opacity: 1, y: 0 }}
           initial={{ opacity: 0, y: 20 }}
           transition={{ duration: 0.3, ease: 'easeOut', delay: 0.5 }}
@@ -175,7 +175,7 @@ export default function HeroSection() {
 
         {/* Trust checkmarks */}
         <motion.div
-          className="flex flex-col sm:flex-row gap-3 sm:gap-6 mt-6 text-xs sm:text-sm text-slate-700 font-semibold"
+          className="flex flex-col sm:flex-row gap-3 sm:gap-6 mt-6 text-xs sm:text-sm text-slate-700 dark:text-slate-300 font-semibold"
           animate={{ opacity: 1, y: 0 }}
           initial={{ opacity: 0, y: 20 }}
           transition={{ duration: 0.3, ease: 'easeOut', delay: 0.6 }}
@@ -220,14 +220,14 @@ export default function HeroSection() {
 
         {/* Stats row */}
         <motion.div
-          className="grid grid-cols-2 sm:grid-cols-4 gap-5 sm:gap-8 border-t border-slate-300/70 mt-14 pt-10 w-full"
+          className="grid grid-cols-2 sm:grid-cols-4 gap-5 sm:gap-8 border-t border-slate-300/70 dark:border-slate-700/60 mt-14 pt-10 w-full"
           animate={{ opacity: 1 }}
           initial={{ opacity: 0 }}
           transition={{ duration: 0.8, delay: 0.9 }}
         >
           {stats.map((stat, i) => (
             <div key={i} className="flex flex-col items-center sm:items-start">
-              <span className="text-2xl sm:text-3xl font-heading font-black text-navy flex items-center">
+              <span className="text-2xl sm:text-3xl font-heading font-black text-navy dark:text-sky-300 flex items-center">
                 <AnimatedCounter end={stat.value} suffix={stat.suffix} />
               </span>
               <span className="text-[11px] text-slate-500 mt-1 font-semibold tracking-wide uppercase text-center sm:text-left">
