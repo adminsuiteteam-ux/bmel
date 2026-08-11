@@ -21,13 +21,13 @@ export default function HomePage() {
       {/* HomePage Sections Layout */}
       <HeroSection />
       <AboutSection />
+      <Partners />
       <ServicesSection />
       <WhyChooseUs />
       <FeaturedProjects />
       <Industries />
       <Testimonials />
       <Certifications />
-      <Partners />
       <CTASection />
     </>
   )

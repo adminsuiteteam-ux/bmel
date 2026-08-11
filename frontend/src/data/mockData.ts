@@ -432,19 +432,35 @@ export const mockCareers: JobListing[] = [
 export const mockTestimonials: Testimonial[] = [
   {
     id: 't-1',
-    client: 'Dr. Kunle Adeyemi',
-    company: 'Lagos Estate Developers Group',
-    review: 'BMEL delivered the entire sectional panel tank array and main pump station for our new gated estate ahead of schedule. The quality of hot-dip steel coating and control panels is world-class.',
+    client: 'Engineer Richard Afenfia',
+    company: 'Structural & Mechanical Engineering Consultant',
+    review: 'BMEL delivered the entire sectional panel tank array and main pump station for our new gated estate ahead of schedule. The quality of hot-dip steel coating and control panels is world-class. Their engineering precision is unmatched in the Nigerian market.',
     rating: 5,
     image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=150&q=80'
   },
   {
     id: 't-2',
-    client: 'Engr. Nnamdi Eze',
-    company: 'Goldcrest Breweries Ltd.',
-    review: 'Our stainless steel utility loop retrofit was completed with minimal plant shutdown. Their welding team was certified to ASME standards, and their documentation made compliance simple.',
+    client: 'Architect Quincy Ntoko',
+    company: 'Ntoko Design & Architecture Studio',
+    review: 'Working with BMEL on multiple mixed-use developments has been outstanding. Their plumbing and firefighting systems installation is always precise, clean, and compliant with international codes. A truly dependable partner on every project.',
+    rating: 5,
+    image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=150&q=80'
+  },
+  {
+    id: 't-3',
+    client: 'Engineer Olusegun Shoyode',
+    company: 'Project Director, Industrial Facilities',
+    review: 'Our stainless steel utility loop retrofit was completed with minimal plant shutdown. BMEL\'s welding team is certified to ASME standards, and their documentation made compliance simple. Their borehole and water treatment solutions are top-tier.',
     rating: 5,
     image: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=150&q=80'
+  },
+  {
+    id: 't-4',
+    client: 'Architect Alabede Adetayo',
+    company: 'Principal Architect, AD Studios',
+    review: 'BMEL transformed our hospital project with a complete water infrastructure overhaul — from borehole drilling to sewage treatment and swimming pool engineering. The team is professional, safety-conscious, and always delivers on time.',
+    rating: 5,
+    image: 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=150&q=80'
   }
 ];
 
