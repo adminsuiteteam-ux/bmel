@@ -9,11 +9,12 @@
     "moduleResolution": "bundler",
     "allowImportingTsExtensions": true,
     "moduleDetection": "force",
+    "noUnusedLocals": false,
+    "noUnusedParameters": false,
+    "noFallthroughCasesInSwitch": true,
     "paths": {
-      "@/*": ["./frontend/src/*"]
+      "@/*": ["./src/*"]
     }
   },
-  "include": [
-    "frontend/src/**/*"
-  ]
+  "include": ["src"]
 }
