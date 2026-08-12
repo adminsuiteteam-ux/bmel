@@ -2,6 +2,7 @@ import { Outlet, useLocation } from 'react-router-dom'
 import Navbar from './Navbar'
 import Footer from './Footer'
 import WhatsAppWidget from '@/components/ui/WhatsAppWidget'
+import CookieConsent from '@/components/ui/CookieConsent'
 import { useEffect } from 'react'
 
 export default function PageLayout() {
@@ -25,6 +26,7 @@ export default function PageLayout() {
       </main>
       <Footer />
       <WhatsAppWidget />
+      <CookieConsent />
     </div>
   )
 }
