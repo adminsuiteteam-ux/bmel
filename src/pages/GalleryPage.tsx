@@ -14,7 +14,7 @@ export default function GalleryPage() {
   const [filter, setFilter] = useState<'All' | 'Photos' | 'Videos' | 'Drone Shots' | 'Before/After'>('All')
 
   const items: GalleryItem[] = [
-    { id: 1, title: 'Water treatment filtration assembly', category: 'Photos', url: 'https://images.unsplash.com/photo-1581094719234-8c8efd9df737?auto=format&fit=crop&w=600&q=80' },
+    { id: 1, title: 'Industrial water treatment at Achievers Farm, Igbogene, Yenagoa', category: 'Photos', url: '/images/achievers-farm-water-treatment.jpg' },
     { id: 2, title: 'Hot-dip sectional galvanized steel tank', category: 'Photos', url: 'https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=600&q=80' },
     { id: 3, title: 'Industrial piping alignment check', category: 'Drone Shots', url: 'https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&w=600&q=80' },
     { id: 4, title: 'Pump station pressure balancing setup', category: 'Photos', url: 'https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=600&q=80' },

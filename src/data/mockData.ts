@@ -288,21 +288,20 @@ export const mockServices: Service[] = [
 
 export const mockProjects: Project[] = [
   {
-    slug: 'lekki-municipal-water',
-    title: 'Lekki Municipal Water Plant',
-    description: 'Design and construction of a high-capacity water treatment and storage plant for a major residential development zone in Lekki, Lagos.',
-    location: 'Lekki Phase 1, Lagos',
-    industry: 'Government / Infrastructure',
-    budget: '₦450,000,000',
-    completionDate: 'November 2025',
-    client: 'Lagos State Development & Property Corporation',
-    duration: '14 Months',
+    slug: 'achievers-farm-water-treatment',
+    title: 'Industrial Water Treatment Plant',
+    description: 'Design, engineering, installation, and commissioning of an industrial water treatment and purification plant featuring heavy-duty pressure vessels and multi-stage filtration system.',
+    location: 'Achievers Farm, Igbogene, Yenagoa, Bayelsa State',
+    industry: 'Agriculture & Industrial Processing',
+    budget: '₦320,000,000',
+    completionDate: 'March 2026',
+    client: 'Achievers Farm',
+    duration: '8 Months',
     status: 'Completed',
-    servicesRendered: ['Water Treatment Plants', 'Pumping Systems', 'Steel Panel Tanks', 'Installation Services'],
-    equipmentUsed: ['Reverse Osmosis Membranes', 'Industrial Heavy Booster Pumps (SMC Pumps Africa)', 'Hot-dip Sectional Galvanized Steel Tanks', 'Variable Frequency Drives (VFD) Control Cabinets'],
+    servicesRendered: ['Industrial Water Treatment', 'Water Purification & Filtration', 'Pressure Vessel Systems', 'Piping & Installation Services'],
+    equipmentUsed: ['Theocracy Water Technology Filtration Units', 'Multi-Stage Heavy-Duty Pressure Vessels', 'Stainless Steel Storage Tanks', 'High-Pressure Valve Manifolds & Piping'],
     images: [
-      'https://images.unsplash.com/photo-1581094719234-8c8efd9df737?auto=format&fit=crop&w=800&q=80',
-      'https://images.unsplash.com/photo-1581094288338-2314dddb7ecc?auto=format&fit=crop&w=600&q=80'
+      '/images/achievers-farm-water-treatment.jpg'
     ]
   },
   {
