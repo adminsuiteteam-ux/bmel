@@ -323,20 +323,20 @@ export const mockProjects: Project[] = [
     ]
   },
   {
-    slug: 'port-harcourt-terminal-tank',
-    title: 'Port Harcourt Terminal Fuel Panel Tanks',
-    description: 'Fabrication, structural towers construction, and leak-proof sealing of specialized storage tanks for industrial fluid management.',
-    location: 'Trans-Amadi, Port Harcourt, Rivers State',
-    industry: 'Oil & Gas',
-    budget: '₦620,000,000',
-    completionDate: 'June 2026',
-    client: 'Atlantic Petrochemicals Ltd.',
-    duration: '18 Months',
+    slug: 'omoku-inground-swimming-pool',
+    title: '9m × 5m Luxury Inground Swimming Pool',
+    description: 'Turnkey design, structural excavation, reinforced concrete civil engineering, underwater LED ambient lighting, and automated filtration system installation for a 9m × 5m inground swimming pool at Mr. Dennis Esiri residence.',
+    location: 'Omoku, Rivers State',
+    industry: 'Residential & Leisure Infrastructure',
+    budget: '₦95,000,000',
+    completionDate: '2025',
+    client: 'Mr. Dennis Esiri',
+    duration: '4 Months',
     status: 'Completed',
-    servicesRendered: ['Steel Panel Tanks', 'Mechanical Design & Fabrication', 'Installation Services'],
-    equipmentUsed: ['Structural Steel Elevated Towers', 'Sectional GRP Storage Panels', 'Explosion-Proof Pumping Units', 'Automated Tank Level Sensors'],
+    servicesRendered: ['Swimming Pool Engineering', 'Civil Construction & Tiling', 'Filtration & Pumping Systems', 'Underwater LED Lighting Installation'],
+    equipmentUsed: ['High-Flow Pool Recirculation Pumps', 'Multi-Port Sand Filtration Vessels', 'Underwater Ambient LED Luminaires', 'Mosaic Glass Tiling & Non-Slip Coping'],
     images: [
-      'https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=800&q=80'
+      '/images/omoku-swimming-pool.jpg'
     ]
   },
   {
