@@ -305,21 +305,21 @@ export const mockProjects: Project[] = [
     ]
   },
   {
-    slug: 'beverage-process-piping',
-    title: 'Industrial Beverage Process Piping',
-    description: 'Stainless steel process piping fabrication and sanitary equipment integration for a multinational food and beverage factory in Ogun State.',
-    location: 'Agbara Industrial Estate, Ogun State',
-    industry: 'Manufacturing',
-    budget: '₦280,000,000',
-    completionDate: 'April 2026',
-    client: 'NigBel Food & Beverage Co.',
-    duration: '8 Months',
+    slug: 'subeb-water-project-bayelsa',
+    title: 'SUBEB School Water Scheme & Tank Stand',
+    description: 'Provision of motorized borehole with multi-tier structural steel tank stand, storage tanks, and perimeter security fencing at Basic Junior Secondary School Odi under the S.U.B.E.B Water Project scheme.',
+    location: 'Odi, Kolokuma/Opokuma LGA, Bayelsa State',
+    industry: 'Government / Basic Education Infrastructure',
+    budget: '₦180,000,000',
+    completionDate: '2024 – 2025',
+    client: 'S.U.B.E.B (State Universal Basic Education Board)',
+    duration: '12 Months',
     status: 'Completed',
-    servicesRendered: ['Mechanical Design & Fabrication', 'Installation Services', 'Maintenance Services'],
-    equipmentUsed: ['Food-Grade Stainless Steel Piping (316L)', 'TIG Orbital Welding Stations', 'Pneumatic Flow Actuation Valves', 'Sanitary Positive Displacement Pumps'],
+    servicesRendered: ['Borehole Water Scheme', 'Structural Steel Tank Stand Towers', 'Water Storage & Reticulation', 'Perimeter Fencing & Infrastructure'],
+    equipmentUsed: ['Galvanized Structural Steel Elevated Stand', 'High-Capacity Overhead Water Tanks', 'Submersible Borehole Pump System', 'Safety Ladder & Protective Enclosure'],
     images: [
-      'https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&w=800&q=80',
-      'https://images.unsplash.com/photo-1537462715879-360eeb61a0bc?auto=format&fit=crop&w=600&q=80'
+      '/images/subeb-borehole-steel-tank-1.jpg',
+      '/images/subeb-borehole-steel-tank-2.jpg'
     ]
   },
   {
