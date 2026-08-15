@@ -38,10 +38,30 @@ function RouteLoader() {
   )
 }
 
+const HAS_VISITED_KEY = 'bmel_has_visited_site'
+
 export default function App() {
-  const [loading, setLoading] = useState(true)
+  const [loading, setLoading] = useState(() => {
+    try {
+      // Allow overriding for testing via ?preview=true
+      if (typeof window !== 'undefined') {
+        const params = new URLSearchParams(window.location.search)
+        if (params.get('preview') === 'true') {
+          return true
+        }
+      }
+      return !localStorage.getItem(HAS_VISITED_KEY)
+    } catch {
+      return true
+    }
+  })
 
   const handleComplete = useCallback(() => {
+    try {
+      localStorage.setItem(HAS_VISITED_KEY, 'true')
+    } catch {
+      // fallback if storage is disabled
+    }
     setLoading(false)
   }, [])
 

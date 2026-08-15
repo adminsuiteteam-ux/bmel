@@ -1,46 +1,54 @@
 import { Helmet } from 'react-helmet-async'
 
 interface SEOProps {
-  title: string;
-  description: string;
-  keywords?: string;
-  ogImage?: string;
-  ogType?: string;
-  canonicalUrl?: string;
+  title: string
+  description: string
+  keywords?: string
+  ogImage?: string
+  ogType?: string
+  canonicalUrl?: string
 }
 
 export default function SEO({
   title,
   description,
-  keywords = 'mechanical engineering Nigeria, water treatment plants, steel panel tanks, industrial pump installation, piping fabrication Lagos, BMEL, Brownforte Mechanical Engineering',
-  ogImage = 'https://images.unsplash.com/photo-1581094719234-8c8efd9df737?auto=format&fit=crop&w=800&q=80',
+  keywords = 'Brownforte Mechanical Engineering Limited, BMEL, borehole drilling Nigeria, water treatment plants Lagos, Braithwaite steel tanks, MEP contractor Nigeria, hydrogeological surveys, industrial water engineering, SUBEB water projects, FGGS Jalingo tank',
+  ogImage = 'http://www.brownfortemechanical.com/bmel-logo.png',
   ogType = 'website',
-  canonicalUrl = window.location.href,
+  canonicalUrl,
 }: SEOProps) {
-  const fullTitle = `${title} | Brownforte Mechanical Engineering Limited (BMEL)`
-  
+  const currentUrl =
+    canonicalUrl || (typeof window !== 'undefined' ? window.location.href : 'http://www.brownfortemechanical.com/')
+
+  const fullTitle = title.includes('BMEL') || title.includes('Brownforte')
+    ? title
+    : `${title} | Brownforte Mechanical Engineering Limited (BMEL)`
+
   return (
     <Helmet>
-      {/* Title */}
+      {/* Primary HTML Meta Tags */}
       <title>{fullTitle}</title>
+      <meta name="title" content={fullTitle} />
       <meta name="description" content={description} />
       <meta name="keywords" content={keywords} />
-      <link rel="canonical" href={canonicalUrl} />
+      <meta name="robots" content="index, follow, max-image-preview:large" />
+      <link rel="canonical" href={currentUrl} />
 
-      {/* Open Graph */}
+      {/* Open Graph / Facebook / LinkedIn / WhatsApp */}
+      <meta property="og:type" content={ogType} />
+      <meta property="og:url" content={currentUrl} />
       <meta property="og:title" content={fullTitle} />
       <meta property="og:description" content={description} />
-      <meta property="og:type" content={ogType} />
-      <meta property="og:url" content={canonicalUrl} />
       <meta property="og:image" content={ogImage} />
-      <meta property="og:site_name" content="BMEL" />
+      <meta property="og:site_name" content="Brownforte Mechanical Engineering Limited (BMEL)" />
+      <meta property="og:locale" content="en_US" />
 
       {/* Twitter Cards */}
       <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:url" content={currentUrl} />
       <meta name="twitter:title" content={fullTitle} />
       <meta name="twitter:description" content={description} />
       <meta name="twitter:image" content={ogImage} />
     </Helmet>
   )
 }
-

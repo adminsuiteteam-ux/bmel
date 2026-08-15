@@ -1,0 +1,6 @@
+# Allow all search crawlers to index Brownforte Mechanical Engineering Limited (BMEL)
+User-agent: *
+Allow: /
+
+# Direct search engine bots to the sitemap index
+Sitemap: http://www.brownfortemechanical.com/sitemap.xml

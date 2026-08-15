@@ -14,8 +14,9 @@ export default function HomePage() {
   return (
     <>
       <SEO
-        title="Engineering Excellence Beyond Expectations"
-        description="Brownforte Mechanical Engineering Limited (BMEL) specializes in water treatment plants, sectional panel tanks, industrial pumping systems, and mechanical fabrication nationwide in Nigeria."
+        title="Water Engineering, Deep Borehole Drilling & Industrial Solutions"
+        description="Brownforte Mechanical Engineering Limited (BMEL) is Nigeria's premier water engineering firm specializing in deep borehole drilling, industrial water treatment plants, elevated Braithwaite steel tanks, and MEP contracting."
+        keywords="Brownforte Mechanical Engineering Limited, BMEL, borehole drilling Nigeria, water treatment plants Lagos, Braithwaite steel tanks, MEP contractor Nigeria, hydrogeological surveys, industrial water engineering, SUBEB water projects, FGGS Jalingo tank"
       />
       
       {/* HomePage Sections Layout */}

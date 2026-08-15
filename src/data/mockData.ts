@@ -301,8 +301,24 @@ export const mockProjects: Project[] = [
     servicesRendered: ['Industrial Water Treatment', 'Water Purification & Filtration', 'Pressure Vessel Systems', 'Piping & Installation Services'],
     equipmentUsed: ['Theocracy Water Technology Filtration Units', 'Multi-Stage Heavy-Duty Pressure Vessels', 'Stainless Steel Storage Tanks', 'High-Pressure Valve Manifolds & Piping'],
     images: [
-      '/videos/achievers-farm-water-treatment.mp4',
       '/images/achievers-farm-water-treatment.jpg'
+    ]
+  },
+  {
+    slug: 'ekiotenne-luxurious-bathroom',
+    title: 'Luxurious Residential Bathroom Plumbing',
+    description: 'Turnkey luxury bathroom plumbing design, high-grade sanitary ware installation, thermostatic shower fittings, and water pressure balancing for Mr. Didi Debamo Ekiotenne residence at Emeringi Road, Yenagoa, Bayelsa State.',
+    location: 'Emeringi Road, Yenagoa, Bayelsa State',
+    industry: 'Residential & Luxury Plumbing',
+    budget: '₦45,000,000',
+    completionDate: '2025',
+    client: 'Mr. Didi Debamo Ekiotenne',
+    duration: '3 Months',
+    status: 'Completed',
+    servicesRendered: ['Luxury Bathroom Plumbing', 'Sanitary Ware Installation', 'Thermostatic Shower Reticulation', 'Pressure Booster Balancing'],
+    equipmentUsed: ['Thermostatic Rain Shower Mixer Systems', 'Concealed PEX Sanitary Manifolds', 'Wall-Hung Smart Water Closets & Basins', 'Tempered Glass Enclosure Hardware'],
+    images: [
+      '/videos/ekiotenne-luxurious-bathroom.mp4'
     ]
   },
   {
@@ -330,7 +346,7 @@ export const mockProjects: Project[] = [
     location: 'FGGS Jalingo, Taraba State',
     industry: 'Government / Educational Infrastructure',
     budget: '₦165,000,000',
-    completionDate: '2025',
+    completionDate: '2022',
     client: 'Federal Government Girls Science School (FGGS Jalingo)',
     duration: '6 Months',
     status: 'Completed',
