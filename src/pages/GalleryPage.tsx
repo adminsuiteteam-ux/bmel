@@ -7,6 +7,8 @@ interface GalleryItem {
   title: string;
   category: 'Photos' | 'Videos' | 'Drone Shots' | 'Before/After';
   url: string;
+  poster?: string;
+  isVideo?: boolean;
 }
 
 export default function GalleryPage() {
@@ -19,6 +21,7 @@ export default function GalleryPage() {
     { id: 3, title: 'Sectional hot pressed steel Braithwaite tank at FGGS Jalingo, Taraba State', category: 'Photos', url: '/images/fggs-jalingo-braithwaite-tank-3.jpg' },
     { id: 4, title: 'Foundation, tank stand fabrication & 20,000L fluid tanks at Ellah Lakes Farm Plc, Iguelaba, Edo State', category: 'Photos', url: '/images/ellah-lakes-tank-installation.jpg' },
     { id: 5, title: 'Fabrication shop welding execution', category: 'Before/After', url: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=600&q=80' },
+    { id: 6, title: 'Achievers Farm Industrial Water Treatment Site Video Tour', category: 'Videos', url: '/videos/achievers-farm-water-treatment.mp4', poster: '/images/achievers-farm-water-treatment.jpg', isVideo: true },
   ]
 
   const categories: ('All' | 'Photos' | 'Videos' | 'Drone Shots' | 'Before/After')[] = [
@@ -29,13 +32,19 @@ export default function GalleryPage() {
     'Before/After',
   ]
 
+  const isVideoUrl = (item: GalleryItem) => {
+    if (item.isVideo || item.category === 'Videos') return true;
+    const ext = item.url.split('.').pop()?.toLowerCase();
+    return ['mp4', 'webm', 'mov', 'm4v', 'avi', 'mkv'].includes(ext || '');
+  }
+
   const filteredItems = items.filter(i => filter === 'All' || i.category === filter)
 
   return (
     <>
       <SEO
-        title="Gallery — Project Photos & Drone Shots"
-        description="View photos, drone shots, and process images of Brownforte Mechanical Engineering Limited (BMEL) project sites in Nigeria."
+        title="Gallery — Project Photos, Videos & Drone Shots"
+        description="View photos, videos, drone shots, and process recordings of Brownforte Mechanical Engineering Limited (BMEL) project sites in Nigeria."
       />
 
       {/* Header */}
@@ -73,23 +82,39 @@ export default function GalleryPage() {
 
           {/* Grid */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {filteredItems.map(item => (
-              <div key={item.id} className="relative group overflow-hidden rounded-xl border border-slate-100 h-72">
-                <img
-                  src={item.url}
-                  alt={item.title}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-navy/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
-                  <span className="text-amber text-[10px] font-heading font-bold uppercase tracking-widest mb-1">
-                    {item.category}
-                  </span>
-                  <h4 className="font-heading font-bold text-white text-base leading-tight">
-                    {item.title}
-                  </h4>
+            {filteredItems.map(item => {
+              const isVid = isVideoUrl(item);
+
+              return (
+                <div key={item.id} className="relative group overflow-hidden rounded-xl border border-slate-100 h-72 bg-slate-900">
+                  {isVid ? (
+                    <video
+                      src={item.url}
+                      poster={item.poster}
+                      controls
+                      preload="metadata"
+                      className="w-full h-full object-cover"
+                    />
+                  ) : (
+                    <>
+                      <img
+                        src={item.url}
+                        alt={item.title}
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-navy/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6 pointer-events-none">
+                        <span className="text-amber text-[10px] font-heading font-bold uppercase tracking-widest mb-1">
+                          {item.category}
+                        </span>
+                        <h4 className="font-heading font-bold text-white text-base leading-tight">
+                          {item.title}
+                        </h4>
+                      </div>
+                    </>
+                  )}
                 </div>
-              </div>
-            ))}
+              )
+            })}
           </div>
 
         </div>

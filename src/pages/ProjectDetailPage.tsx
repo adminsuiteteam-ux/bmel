@@ -45,17 +45,31 @@ export default function ProjectDetailPage() {
           
           {/* Left Column - Core Description */}
           <div className="lg:col-span-8 space-y-10">
-            {/* Gallery Images */}
+            {/* Gallery Images & Videos */}
             <div className="grid grid-cols-1 gap-6">
-              {project.images.map((img, idx) => (
-                <div key={idx} className="h-96 md:h-[480px] overflow-hidden rounded-xl border border-slate-100 shadow-sm">
-                  <img
-                    src={img}
-                    alt={`${project.title} Main image ${idx + 1}`}
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-              ))}
+              {project.images.map((media, idx) => {
+                const ext = media.split('.').pop()?.toLowerCase();
+                const isVideo = ['mp4', 'webm', 'mov', 'm4v', 'avi'].includes(ext || '');
+
+                return (
+                  <div key={idx} className="h-96 md:h-[480px] overflow-hidden rounded-xl border border-slate-100 shadow-sm bg-slate-900">
+                    {isVideo ? (
+                      <video
+                        src={media}
+                        controls
+                        preload="metadata"
+                        className="w-full h-full object-cover"
+                      />
+                    ) : (
+                      <img
+                        src={media}
+                        alt={`${project.title} Main image ${idx + 1}`}
+                        className="w-full h-full object-cover"
+                      />
+                    )}
+                  </div>
+                )
+              })}
             </div>
 
             {/* Overview */}

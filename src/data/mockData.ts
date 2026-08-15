@@ -301,6 +301,7 @@ export const mockProjects: Project[] = [
     servicesRendered: ['Industrial Water Treatment', 'Water Purification & Filtration', 'Pressure Vessel Systems', 'Piping & Installation Services'],
     equipmentUsed: ['Theocracy Water Technology Filtration Units', 'Multi-Stage Heavy-Duty Pressure Vessels', 'Stainless Steel Storage Tanks', 'High-Pressure Valve Manifolds & Piping'],
     images: [
+      '/videos/achievers-farm-water-treatment.mp4',
       '/images/achievers-farm-water-treatment.jpg'
     ]
   },
