@@ -1,9 +1,13 @@
-[build]
-  command = "npm run build"
-  destination = "dist"
-  node_compat = true
+# Cloudflare Pages Caching & Headers Configuration
 
-[[rules]]
-  match = { url = "/*" }
-  serve = { path = "/index.html" }
-  when = { status = 404 }
+# Hashed assets: Immutable long-term browser cache (1 year)
+/assets/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# Static media/images: 7-day browser cache with revalidation
+/images/*
+  Cache-Control: public, max-age=604800, stale-while-revalidate=86400
+
+# HTML entry point: Always revalidate to get latest version
+/index.html
+  Cache-Control: public, max-age=0, must-revalidate
