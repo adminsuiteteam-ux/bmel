@@ -340,6 +340,25 @@ export const mockProjects: Project[] = [
     ]
   },
   {
+    slug: 'ellah-lakes-fluid-storage-tanks',
+    title: '20,000L Storage Tanks & Elevated Steel Stand',
+    description: 'Foundation civil works, structural steel tank stand tower fabrication, and installation of 20,000 liters capacity fluid storage tanks at Ellah Lakes Farm Plc in Iguelaba, Edo State.',
+    location: 'Iguelaba, Edo State',
+    industry: 'Agriculture & Industrial Processing',
+    budget: '₦145,000,000',
+    completionDate: '2025',
+    client: 'Ellah Lakes Farm Plc',
+    duration: '5 Months',
+    status: 'Completed',
+    servicesRendered: ['Reinforced Concrete Foundation Engineering', 'Heavy Structural Steel Stand Fabrication', 'Fluid Storage Tank Installation', 'High-Level Pipe Reticulation & Valves'],
+    equipmentUsed: ['20,000 Liters Capacity Industrial Fluid Tanks', 'Heavy I-Beam & Angle Iron Structural Tower', 'Reinforced Concrete Foundation Pedestals', 'Safety Handrails & Access Ladder Assembly'],
+    images: [
+      '/images/ellah-lakes-tank-installation.jpg',
+      '/images/ellah-lakes-tank-stand-1.jpg',
+      '/images/ellah-lakes-tank-stand-2.jpg'
+    ]
+  },
+  {
     slug: 'ikeja-mall-chilled-water',
     title: 'Ikeja Commercial Complex Chilled Water Pipeline',
     description: 'Installation of high-pressure cooling loop pipe lines and secondary pump configurations for central air conditioning facilities.',
