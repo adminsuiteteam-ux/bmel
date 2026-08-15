@@ -322,7 +322,27 @@ export const mockProjects: Project[] = [
       '/images/subeb-borehole-steel-tank-2.jpg'
     ]
   },
-
+  {
+    slug: 'fggs-jalingo-braithwaite-tank',
+    title: 'Sectional Hot Pressed Steel Braithwaite Tank',
+    description: 'Supply, engineering assembly, and commissioning of a sectional hot pressed steel Braithwaite water storage tank on an elevated steel tower with motorized booster pumping stations at FGGS Jalingo.',
+    location: 'FGGS Jalingo, Taraba State',
+    industry: 'Government / Educational Infrastructure',
+    budget: '₦165,000,000',
+    completionDate: '2025',
+    client: 'Federal Government Girls Science School (FGGS Jalingo)',
+    duration: '6 Months',
+    status: 'Completed',
+    servicesRendered: ['Sectional Braithwaite Tank Assembly', 'Elevated Structural Steel Tower Engineering', 'Booster Pumping Station Installation', 'Water Reticulation & Valve Systems'],
+    equipmentUsed: ['Sectional Hot-Pressed Galvanized Steel Panels (Braithwaite Design)', 'High-Capacity Booster Pumping Units', 'Structural Steel Lattice Tower & Safety Cage Ladder', 'External Level Indicator Gauge & Control Piping'],
+    images: [
+      '/images/fggs-jalingo-braithwaite-tank-1.jpg',
+      '/images/fggs-jalingo-braithwaite-tank-2.jpg',
+      '/images/fggs-jalingo-braithwaite-tank-3.jpg',
+      '/images/fggs-jalingo-braithwaite-tank-4.jpg',
+      '/images/fggs-jalingo-braithwaite-tank-5.jpg'
+    ]
+  },
   {
     slug: 'ellah-lakes-fluid-storage-tanks',
     title: '20,000L Storage Tanks & Elevated Steel Stand',
