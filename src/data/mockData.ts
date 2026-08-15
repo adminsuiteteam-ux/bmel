@@ -318,7 +318,8 @@ export const mockProjects: Project[] = [
     servicesRendered: ['Luxury Bathroom Plumbing', 'Sanitary Ware Installation', 'Thermostatic Shower Reticulation', 'Pressure Booster Balancing'],
     equipmentUsed: ['Thermostatic Rain Shower Mixer Systems', 'Concealed PEX Sanitary Manifolds', 'Wall-Hung Smart Water Closets & Basins', 'Tempered Glass Enclosure Hardware'],
     images: [
-      '/videos/ekiotenne-luxurious-bathroom.mp4'
+      '/videos/achievers-farm-water-treatment.mp4',
+      '/images/achievers-farm-water-treatment.jpg'
     ]
   },
   {

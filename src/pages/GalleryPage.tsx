@@ -89,12 +89,16 @@ export default function GalleryPage() {
                 <div key={item.id} className="relative group overflow-hidden rounded-xl border border-slate-100 h-72 bg-slate-900">
                   {isVid ? (
                     <video
-                      src={item.url}
-                      poster={item.poster}
                       controls
+                      playsInline
                       preload="metadata"
+                      poster={item.poster || '/images/achievers-farm-water-treatment.jpg'}
                       className="w-full h-full object-cover"
-                    />
+                    >
+                      <source src={item.url} type="video/mp4" />
+                      <source src={item.url} type="video/webm" />
+                      Your browser does not support HTML5 video playback.
+                    </video>
                   ) : (
                     <>
                       <img

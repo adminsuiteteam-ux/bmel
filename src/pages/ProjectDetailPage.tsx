@@ -52,14 +52,19 @@ export default function ProjectDetailPage() {
                 const isVideo = ['mp4', 'webm', 'mov', 'm4v', 'avi'].includes(ext || '');
 
                 return (
-                  <div key={idx} className="h-96 md:h-[480px] overflow-hidden rounded-xl border border-slate-100 shadow-sm bg-slate-900">
+                  <div key={idx} className="h-96 md:h-[480px] overflow-hidden rounded-xl border border-slate-100 shadow-sm bg-slate-900 relative">
                     {isVideo ? (
                       <video
-                        src={media}
                         controls
+                        playsInline
                         preload="metadata"
-                        className="w-full h-full object-cover"
-                      />
+                        poster="/images/achievers-farm-water-treatment.jpg"
+                        className="w-full h-full object-cover rounded-xl"
+                      >
+                        <source src={media} type="video/mp4" />
+                        <source src={media} type="video/webm" />
+                        Your browser does not support HTML5 video playback.
+                      </video>
                     ) : (
                       <img
                         src={media}
