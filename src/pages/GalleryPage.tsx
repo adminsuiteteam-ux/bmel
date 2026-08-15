@@ -16,7 +16,7 @@ export default function GalleryPage() {
   const items: GalleryItem[] = [
     { id: 1, title: 'Industrial water treatment at Achievers Farm, Igbogene, Yenagoa', category: 'Photos', url: '/images/achievers-farm-water-treatment.jpg' },
     { id: 2, title: 'SUBEB Borehole & Steel Tank Stand at Basic Junior Secondary School Odi, Bayelsa State', category: 'Photos', url: '/images/subeb-borehole-steel-tank-1.jpg' },
-    { id: 3, title: '9m × 5m Inground Swimming Pool at Mr. Dennis Esiri residence, Omoku, Rivers State', category: 'Photos', url: '/images/omoku-swimming-pool.jpg' },
+    { id: 3, title: 'SUBEB Motorized Borehole & Elevated Water Storage Assembly at Odi, Bayelsa State', category: 'Photos', url: '/images/subeb-borehole-steel-tank-2.jpg' },
     { id: 4, title: 'Foundation, tank stand fabrication & 20,000L fluid tanks at Ellah Lakes Farm Plc, Iguelaba, Edo State', category: 'Photos', url: '/images/ellah-lakes-tank-installation.jpg' },
     { id: 5, title: 'Fabrication shop welding execution', category: 'Before/After', url: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=600&q=80' },
   ]

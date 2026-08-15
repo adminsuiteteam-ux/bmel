@@ -322,23 +322,7 @@ export const mockProjects: Project[] = [
       '/images/subeb-borehole-steel-tank-2.jpg'
     ]
   },
-  {
-    slug: 'omoku-inground-swimming-pool',
-    title: '9m × 5m Luxury Inground Swimming Pool',
-    description: 'Turnkey design, structural excavation, reinforced concrete civil engineering, underwater LED ambient lighting, and automated filtration system installation for a 9m × 5m inground swimming pool at Mr. Dennis Esiri residence.',
-    location: 'Omoku, Rivers State',
-    industry: 'Residential & Leisure Infrastructure',
-    budget: '₦95,000,000',
-    completionDate: '2025',
-    client: 'Mr. Dennis Esiri',
-    duration: '4 Months',
-    status: 'Completed',
-    servicesRendered: ['Swimming Pool Engineering', 'Civil Construction & Tiling', 'Filtration & Pumping Systems', 'Underwater LED Lighting Installation'],
-    equipmentUsed: ['High-Flow Pool Recirculation Pumps', 'Multi-Port Sand Filtration Vessels', 'Underwater Ambient LED Luminaires', 'Mosaic Glass Tiling & Non-Slip Coping'],
-    images: [
-      '/images/omoku-swimming-pool.jpg'
-    ]
-  },
+
   {
     slug: 'ellah-lakes-fluid-storage-tanks',
     title: '20,000L Storage Tanks & Elevated Steel Stand',
