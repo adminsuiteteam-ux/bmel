@@ -1,4 +1,6 @@
-import { ShieldCheck, Clock, CheckCircle2, Award, Truck, Headphones, Sliders, ArrowRight } from 'lucide-react'
+import { useState, useEffect, useRef } from 'react'
+import { motion, AnimatePresence } from 'framer-motion'
+import { ShieldCheck, Clock, CheckCircle2, Award, Truck, Headphones, Sliders, ArrowRight, ChevronLeft, ChevronRight } from 'lucide-react'
 import SectionHeading from '../ui/SectionHeading'
 import { Link } from 'react-router-dom'
 
@@ -69,8 +71,74 @@ const features = [
 ]
 
 export default function WhyChooseUs() {
+  const [currentIndex, setCurrentIndex] = useState(0)
+  const [direction, setDirection] = useState<number>(1)
+  const [isHovered, setIsHovered] = useState(false)
+  const [itemsPerPage, setItemsPerPage] = useState(3)
+
+  // Calculate items to show based on screen width
+  useEffect(() => {
+    const updateItemsPerPage = () => {
+      if (window.innerWidth < 640) {
+        setItemsPerPage(1)
+      } else if (window.innerWidth < 1024) {
+        setItemsPerPage(2)
+      } else {
+        setItemsPerPage(3)
+      }
+    }
+
+    updateItemsPerPage()
+    window.addEventListener('resize', updateItemsPerPage)
+    return () => window.removeEventListener('resize', updateItemsPerPage)
+  }, [])
+
+  const maxPages = Math.ceil(features.length / itemsPerPage)
+
+  // Auto-play interval
+  useEffect(() => {
+    if (isHovered) return
+
+    const timer = setInterval(() => {
+      setDirection(1)
+      setCurrentIndex((prev) => (prev + 1) % maxPages)
+    }, 5000)
+
+    return () => clearInterval(timer)
+  }, [isHovered, maxPages])
+
+  const handlePrev = () => {
+    setDirection(-1)
+    setCurrentIndex((prev) => (prev - 1 + maxPages) % maxPages)
+  }
+
+  const handleNext = () => {
+    setDirection(1)
+    setCurrentIndex((prev) => (prev + 1) % maxPages)
+  }
+
+  // Get current visible features
+  const startIndex = currentIndex * itemsPerPage
+  const visibleFeatures = features.slice(startIndex, startIndex + itemsPerPage)
+
+  // Slide animation variants
+  const variants = {
+    enter: (dir: number) => ({
+      x: dir > 0 ? 60 : -60,
+      opacity: 0,
+    }),
+    center: {
+      x: 0,
+      opacity: 1,
+    },
+    exit: (dir: number) => ({
+      x: dir < 0 ? 60 : -60,
+      opacity: 0,
+    }),
+  }
+
   return (
-    <section className="section-pad site-gradient-bg relative overflow-hidden">
+    <section className="section-pad site-gradient-bg relative overflow-hidden select-none">
       <div className="absolute inset-0 dot-grid-bg opacity-20 pointer-events-none" />
 
       <div className="container-xl relative z-10">
@@ -81,47 +149,104 @@ export default function WhyChooseUs() {
           centered
         />
 
-        {/* Simple & Clean Feature Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-12">
-          {features.map((item) => {
-            const IconComponent = item.icon
-            return (
-              <div
-                key={item.id}
-                className="bg-white rounded-2xl border border-slate-200/80 p-7 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between group"
+        {/* Carousel Container */}
+        <div
+          className="mt-12 relative"
+          onMouseEnter={() => setIsHovered(true)}
+          onMouseLeave={() => setIsHovered(false)}
+        >
+          {/* Controls: Left & Right Navigation Arrows */}
+          <div className="flex items-center justify-between absolute -top-16 right-0 gap-2 z-20">
+            <button
+              onClick={handlePrev}
+              className="w-10 h-10 rounded-xl bg-white border border-slate-200 text-navy hover:bg-navy hover:text-amber shadow-sm flex items-center justify-center transition-all active:scale-95"
+              aria-label="Previous Carousel Slide"
+            >
+              <ChevronLeft size={20} />
+            </button>
+            <button
+              onClick={handleNext}
+              className="w-10 h-10 rounded-xl bg-white border border-slate-200 text-navy hover:bg-navy hover:text-amber shadow-sm flex items-center justify-center transition-all active:scale-95"
+              aria-label="Next Carousel Slide"
+            >
+              <ChevronRight size={20} />
+            </button>
+          </div>
+
+          {/* Cards Track */}
+          <div className="overflow-hidden min-h-[360px]">
+            <AnimatePresence initial={false} custom={direction} mode="wait">
+              <motion.div
+                key={currentIndex}
+                custom={direction}
+                variants={variants}
+                initial="enter"
+                animate="center"
+                exit="exit"
+                transition={{ duration: 0.4, ease: 'easeInOut' }}
+                className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
               >
-                <div>
-                  {/* Top Bar: Icon + Category Badge */}
-                  <div className="flex items-center justify-between mb-6">
-                    <div className={`w-12 h-12 rounded-xl flex items-center justify-center shadow-sm ${item.iconBg}`}>
-                      <IconComponent size={22} />
+                {visibleFeatures.map((item) => {
+                  const IconComponent = item.icon
+                  return (
+                    <div
+                      key={item.id}
+                      className="bg-white rounded-2xl border border-slate-200/80 p-7 shadow-md hover:shadow-xl transition-all duration-300 flex flex-col justify-between group h-full"
+                    >
+                      <div>
+                        {/* Top Bar: Icon + Category Badge */}
+                        <div className="flex items-center justify-between mb-6">
+                          <div className={`w-12 h-12 rounded-xl flex items-center justify-center shadow-sm ${item.iconBg}`}>
+                            <IconComponent size={22} />
+                          </div>
+                          <span className={`text-[10px] font-heading font-extrabold tracking-widest uppercase px-3 py-1 rounded-full border ${item.badgeBg}`}>
+                            {item.tag}
+                          </span>
+                        </div>
+
+                        {/* Title & Description */}
+                        <h3 className="font-heading font-bold text-navy text-lg sm:text-xl mb-3 leading-snug group-hover:text-amber-600 transition-colors">
+                          {item.title}
+                        </h3>
+                        <p className="text-slate-500 text-xs sm:text-sm leading-relaxed mb-6">
+                          {item.desc}
+                        </p>
+                      </div>
+
+                      {/* Card Footer */}
+                      <div className="border-t border-slate-100 pt-4 flex items-center justify-between text-xs text-slate-400">
+                        <span className="font-mono text-[11px] uppercase tracking-wider text-slate-400">BMEL STANDARD</span>
+                        <span className="w-2 h-2 rounded-full bg-slate-300 group-hover:bg-amber-500 group-hover:scale-125 transition-all" />
+                      </div>
                     </div>
-                    <span className={`text-[10px] font-heading font-extrabold tracking-widest uppercase px-3 py-1 rounded-full border ${item.badgeBg}`}>
-                      {item.tag}
-                    </span>
-                  </div>
+                  )
+                })}
+              </motion.div>
+            </AnimatePresence>
+          </div>
 
-                  {/* Title & Description */}
-                  <h3 className="font-heading font-bold text-navy text-lg sm:text-xl mb-3 leading-snug group-hover:text-amber-600 transition-colors">
-                    {item.title}
-                  </h3>
-                  <p className="text-slate-500 text-xs sm:text-sm leading-relaxed mb-6">
-                    {item.desc}
-                  </p>
-                </div>
-
-                {/* Card Footer Indicator */}
-                <div className="border-t border-slate-100 pt-4 flex items-center justify-between text-xs text-slate-400">
-                  <span className="font-mono text-[11px] uppercase tracking-wider text-slate-400">BMEL STANDARD</span>
-                  <span className="w-2 h-2 rounded-full bg-slate-300 group-hover:bg-amber-500 group-hover:scale-125 transition-all" />
-                </div>
-              </div>
-            )
-          })}
+          {/* Indicator Pagination Dots */}
+          <div className="flex items-center justify-center gap-2 mt-8">
+            {Array.from({ length: maxPages }).map((_, idx) => (
+              <button
+                key={idx}
+                onClick={() => {
+                  setDirection(idx > currentIndex ? 1 : -1)
+                  setCurrentIndex(idx)
+                }}
+                className={`h-2.5 rounded-full transition-all duration-300 ${
+                  currentIndex === idx
+                    ? 'w-8 bg-amber-500 shadow-sm'
+                    : 'w-2.5 bg-slate-300 hover:bg-slate-400'
+                }`}
+                aria-label={`Go to slide page ${idx + 1}`}
+              />
+            ))}
+          </div>
         </div>
 
         {/* Bottom Call to Action */}
-        <div className="mt-12 text-center">
+        <div className="mt-10 text-center">
           <Link
             to="/contact"
             className="inline-flex items-center gap-2 btn-primary py-3.5 px-7 text-sm shadow-lg shadow-navy/10"
