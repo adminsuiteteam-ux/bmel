@@ -1,8 +1,9 @@
-import { useState, useEffect, useRef } from 'react'
+import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { ShieldCheck, Clock, CheckCircle2, Award, Truck, Headphones, Sliders, ArrowRight, ChevronLeft, ChevronRight } from 'lucide-react'
 import SectionHeading from '../ui/SectionHeading'
 import { Link } from 'react-router-dom'
+import { useTranslation } from 'react-i18next'
 
 const features = [
   {
@@ -71,6 +72,7 @@ const features = [
 ]
 
 export default function WhyChooseUs() {
+  const { t } = useTranslation()
   const [currentIndex, setCurrentIndex] = useState(0)
   const [direction, setDirection] = useState<number>(1)
   const [isHovered, setIsHovered] = useState(false)
@@ -215,7 +217,9 @@ export default function WhyChooseUs() {
 
                       {/* Card Footer */}
                       <div className="border-t border-slate-100 pt-4 flex items-center justify-between text-xs text-slate-400">
-                        <span className="font-mono text-[11px] uppercase tracking-wider text-slate-400">BMEL STANDARD</span>
+                        <span className="font-mono text-[11px] uppercase tracking-wider text-slate-400">
+                          {t('why_choose_us.bmel_standard', 'BMEL STANDARD')}
+                        </span>
                         <span className="w-2 h-2 rounded-full bg-slate-300 group-hover:bg-amber-500 group-hover:scale-125 transition-all" />
                       </div>
                     </div>
@@ -251,7 +255,7 @@ export default function WhyChooseUs() {
             to="/contact"
             className="inline-flex items-center gap-2 btn-primary py-3.5 px-7 text-sm shadow-lg shadow-navy/10"
           >
-            <span>Partner With BMEL Engineers</span>
+            <span>{t('why_choose_us.partner_btn', 'Partner With BMEL Engineers')}</span>
             <ArrowRight size={16} />
           </Link>
         </div>
