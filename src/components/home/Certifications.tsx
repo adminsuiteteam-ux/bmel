@@ -39,15 +39,15 @@ export default function Certifications() {
           {certs.map((cert, idx) => (
             <div
               key={idx}
-              className="border border-slate-100 bg-slate-50/50 rounded-xl p-6 text-center hover:bg-white hover:shadow-card hover:border-slate-200 transition-all duration-300 group"
+              className="border border-slate-100 dark:border-navy-700 bg-slate-50/50 dark:bg-navy-800/50 rounded-xl p-6 text-center hover:bg-white dark:hover:bg-navy-800 hover:shadow-card hover:border-slate-200 dark:hover:border-navy-600 transition-all duration-300 group"
             >
-              <div className="w-12 h-12 rounded-full bg-navy/5 flex items-center justify-center mx-auto mb-4 text-navy group-hover:bg-amber group-hover:text-navy transition-colors duration-300">
+              <div className="w-12 h-12 rounded-full bg-navy/5 dark:bg-amber-500/10 flex items-center justify-center mx-auto mb-4 text-navy dark:text-amber-400 group-hover:bg-amber group-hover:text-navy dark:group-hover:bg-amber-500 dark:group-hover:text-navy transition-colors duration-300">
                 <cert.icon size={20} />
               </div>
-              <h3 className="font-heading font-bold text-navy text-base mb-2">
+              <h3 className="font-heading font-bold text-navy dark:text-white text-base mb-2">
                 {cert.title}
               </h3>
-              <p className="text-xs text-slate-500 leading-relaxed">
+              <p className="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">
                 {cert.desc}
               </p>
             </div>

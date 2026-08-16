@@ -96,7 +96,7 @@ export default function ProjectsPage() {
             </div>
           ) : (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {filteredProjects.slice(0, 3).map(project => (
+              {filteredProjects.map(project => (
                 <div
                   key={project.slug}
                   className="bg-white rounded-xl overflow-hidden border border-slate-100 shadow-card card-hover flex flex-col h-full"

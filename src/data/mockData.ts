@@ -288,67 +288,14 @@ export const mockServices: Service[] = [
 
 export const mockProjects: Project[] = [
   {
-    slug: 'achievers-farm-water-treatment',
-    title: 'Industrial Water Treatment Plant',
-    description: 'Design, engineering, installation, and commissioning of an industrial water treatment and purification plant featuring heavy-duty pressure vessels and multi-stage filtration system.',
-    location: 'Achievers Farm, Igbogene, Yenagoa, Bayelsa State',
-    industry: 'Agriculture & Industrial Processing',
-    budget: '₦320,000,000',
-    completionDate: 'March 2026',
-    client: 'Achievers Farm',
-    duration: '8 Months',
-    status: 'Completed',
-    servicesRendered: ['Industrial Water Treatment', 'Water Purification & Filtration', 'Pressure Vessel Systems', 'Piping & Installation Services'],
-    equipmentUsed: ['Theocracy Water Technology Filtration Units', 'Multi-Stage Heavy-Duty Pressure Vessels', 'Stainless Steel Storage Tanks', 'High-Pressure Valve Manifolds & Piping'],
-    images: [
-      '/images/achievers-farm-water-treatment.jpg'
-    ]
-  },
-  {
-    slug: 'ekiotenne-luxurious-bathroom',
-    title: 'Luxurious Residential Bathroom Plumbing',
-    description: 'Turnkey luxury bathroom plumbing design, high-grade sanitary ware installation, thermostatic shower fittings, and water pressure balancing for Mr. Didi Debamo Ekiotenne residence at Emeringi Road, Yenagoa, Bayelsa State.',
-    location: 'Emeringi Road, Yenagoa, Bayelsa State',
-    industry: 'Residential & Luxury Plumbing',
-    budget: '₦45,000,000',
-    completionDate: '2025',
-    client: 'Mr. Didi Debamo Ekiotenne',
-    duration: '3 Months',
-    status: 'Completed',
-    servicesRendered: ['Luxury Bathroom Plumbing', 'Sanitary Ware Installation', 'Thermostatic Shower Reticulation', 'Pressure Booster Balancing'],
-    equipmentUsed: ['Thermostatic Rain Shower Mixer Systems', 'Concealed PEX Sanitary Manifolds', 'Wall-Hung Smart Water Closets & Basins', 'Tempered Glass Enclosure Hardware'],
-    images: [
-      '/videos/achievers-farm-water-treatment.mp4',
-      '/images/achievers-farm-water-treatment.jpg'
-    ]
-  },
-  {
-    slug: 'subeb-water-project-bayelsa',
-    title: 'SUBEB School Water Scheme & Tank Stand',
-    description: 'Provision of motorized borehole with multi-tier structural steel tank stand, storage tanks, and perimeter security fencing at Basic Junior Secondary School Odi under the S.U.B.E.B Water Project scheme.',
-    location: 'Odi, Kolokuma/Opokuma LGA, Bayelsa State',
-    industry: 'Government / Basic Education Infrastructure',
-    budget: '₦180,000,000',
-    completionDate: '2024 – 2025',
-    client: 'S.U.B.E.B (State Universal Basic Education Board)',
-    duration: '12 Months',
-    status: 'Completed',
-    servicesRendered: ['Borehole Water Scheme', 'Structural Steel Tank Stand Towers', 'Water Storage & Reticulation', 'Perimeter Fencing & Infrastructure'],
-    equipmentUsed: ['Galvanized Structural Steel Elevated Stand', 'High-Capacity Overhead Water Tanks', 'Submersible Borehole Pump System', 'Safety Ladder & Protective Enclosure'],
-    images: [
-      '/images/subeb-borehole-steel-tank-1.jpg',
-      '/images/subeb-borehole-steel-tank-2.jpg'
-    ]
-  },
-  {
     slug: 'fggs-jalingo-braithwaite-tank',
-    title: 'Sectional Hot Pressed Steel Braithwaite Tank',
-    description: 'Supply, engineering assembly, and commissioning of a sectional hot pressed steel Braithwaite water storage tank on an elevated steel tower with motorized booster pumping stations at FGGS Jalingo.',
-    location: 'FGGS Jalingo, Taraba State',
+    title: 'Sectional Hot Pressed Steel Braithwaite Tank (FGGC / FGGS Jalingo)',
+    description: 'Supply, engineering assembly, and commissioning of a sectional hot pressed steel Braithwaite water storage tank on an elevated steel tower with motorized booster pumping stations at FGGC / FGGS Jalingo.',
+    location: 'FGGC Jalingo, Taraba State',
     industry: 'Government / Educational Infrastructure',
     budget: '₦165,000,000',
-    completionDate: '2022',
-    client: 'Federal Government Girls Science School (FGGS Jalingo)',
+    completionDate: '2020',
+    client: 'Federal Government Girls College / Science School (FGGC Jalingo)',
     duration: '6 Months',
     status: 'Completed',
     servicesRendered: ['Sectional Braithwaite Tank Assembly', 'Elevated Structural Steel Tower Engineering', 'Booster Pumping Station Installation', 'Water Reticulation & Valve Systems'],
@@ -362,13 +309,31 @@ export const mockProjects: Project[] = [
     ]
   },
   {
+    slug: 'subeb-water-project-bayelsa',
+    title: 'SUBEB School Water Scheme & Tank Stand',
+    description: 'Provision of motorized borehole with multi-tier structural steel tank stand, storage tanks, and perimeter security fencing at Basic Junior Secondary School Odi under the S.U.B.E.B Water Project scheme.',
+    location: 'Odi, Kolokuma/Opokuma LGA, Bayelsa State',
+    industry: 'Government / Basic Education Infrastructure',
+    budget: '₦180,000,000',
+    completionDate: '2021',
+    client: 'S.U.B.E.B (State Universal Basic Education Board)',
+    duration: '12 Months',
+    status: 'Completed',
+    servicesRendered: ['Borehole Water Scheme', 'Structural Steel Tank Stand Towers', 'Water Storage & Reticulation', 'Perimeter Fencing & Infrastructure'],
+    equipmentUsed: ['Galvanized Structural Steel Elevated Stand', 'High-Capacity Overhead Water Tanks', 'Submersible Borehole Pump System', 'Safety Ladder & Protective Enclosure'],
+    images: [
+      '/images/subeb-borehole-steel-tank-1.jpg',
+      '/images/subeb-borehole-steel-tank-2.jpg'
+    ]
+  },
+  {
     slug: 'ellah-lakes-fluid-storage-tanks',
     title: '20,000L Storage Tanks & Elevated Steel Stand',
     description: 'Foundation civil works, structural steel tank stand tower fabrication, and installation of 20,000 liters capacity fluid storage tanks at Ellah Lakes Farm Plc in Iguelaba, Edo State.',
     location: 'Iguelaba, Edo State',
     industry: 'Agriculture & Industrial Processing',
     budget: '₦145,000,000',
-    completionDate: '2025',
+    completionDate: '2022',
     client: 'Ellah Lakes Farm Plc',
     duration: '5 Months',
     status: 'Completed',
@@ -381,13 +346,48 @@ export const mockProjects: Project[] = [
     ]
   },
   {
+    slug: 'ekiotenne-luxurious-bathroom',
+    title: 'Luxurious Residential Bathroom Plumbing',
+    description: 'Turnkey luxury bathroom plumbing design, high-grade sanitary ware installation, thermostatic shower fittings, and water pressure balancing for Mr. Didi Debamo Ekiotenne residence at Emeringi Road, Yenagoa, Bayelsa State.',
+    location: 'Emeringi Road, Yenagoa, Bayelsa State',
+    industry: 'Residential & Luxury Plumbing',
+    budget: '₦45,000,000',
+    completionDate: '2023',
+    client: 'Mr. Didi Debamo Ekiotenne',
+    duration: '3 Months',
+    status: 'Completed',
+    servicesRendered: ['Luxury Bathroom Plumbing', 'Sanitary Ware Installation', 'Thermostatic Shower Reticulation', 'Pressure Booster Balancing'],
+    equipmentUsed: ['Thermostatic Rain Shower Mixer Systems', 'Concealed PEX Sanitary Manifolds', 'Wall-Hung Smart Water Closets & Basins', 'Tempered Glass Enclosure Hardware'],
+    images: [
+      '/videos/achievers-farm-water-treatment.mp4',
+      '/images/achievers-farm-water-treatment.jpg'
+    ]
+  },
+  {
+    slug: 'achievers-farm-water-treatment',
+    title: 'Industrial Water Treatment Plant',
+    description: 'Design, engineering, installation, and commissioning of an industrial water treatment and purification plant featuring heavy-duty pressure vessels and multi-stage filtration system.',
+    location: 'Achievers Farm, Igbogene, Yenagoa, Bayelsa State',
+    industry: 'Agriculture & Industrial Processing',
+    budget: '₦320,000,000',
+    completionDate: '2024',
+    client: 'Achievers Farm',
+    duration: '8 Months',
+    status: 'Completed',
+    servicesRendered: ['Industrial Water Treatment', 'Water Purification & Filtration', 'Pressure Vessel Systems', 'Piping & Installation Services'],
+    equipmentUsed: ['Theocracy Water Technology Filtration Units', 'Multi-Stage Heavy-Duty Pressure Vessels', 'Stainless Steel Storage Tanks', 'High-Pressure Valve Manifolds & Piping'],
+    images: [
+      '/images/achievers-farm-water-treatment.jpg'
+    ]
+  },
+  {
     slug: 'ikeja-mall-chilled-water',
     title: 'Ikeja Commercial Complex Chilled Water Pipeline',
     description: 'Installation of high-pressure cooling loop pipe lines and secondary pump configurations for central air conditioning facilities.',
     location: 'Ikeja, Lagos',
     industry: 'Commercial Construction',
     budget: '₦190,000,000',
-    completionDate: 'Ongoing',
+    completionDate: '2025',
     client: 'Ikeja Retail Developers Ltd.',
     duration: '6 Months (Est)',
     status: 'In Progress',
