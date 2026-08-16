@@ -28,8 +28,13 @@ declare global {
   }
 }
 
+const OFFICIAL_TEST_KEY = '1x00000000000000000000AA' // Cloudflare Official Pass-Through Test Key
+
 export default function TurnstileWidget({
-  siteKey = import.meta.env.VITE_TURNSTILE_SITE_KEY || '3x00000000000000000000FF', // Cloudflare interactive testing key (forces user click)
+  siteKey = import.meta.env.VITE_TURNSTILE_SITE_KEY &&
+  !import.meta.env.VITE_TURNSTILE_SITE_KEY.includes('Xxxxxxxx')
+    ? import.meta.env.VITE_TURNSTILE_SITE_KEY
+    : OFFICIAL_TEST_KEY,
   onVerify,
   onExpire,
   onError,
@@ -44,6 +49,8 @@ export default function TurnstileWidget({
     const renderWidget = () => {
       if (containerRef.current && window.turnstile && !widgetIdRef.current && isMounted) {
         try {
+          // Clear container before rendering explicit widget
+          containerRef.current.innerHTML = ''
           widgetIdRef.current = window.turnstile.render(containerRef.current, {
             sitekey: siteKey,
             callback: (token: string) => onVerify(token),
@@ -64,7 +71,7 @@ export default function TurnstileWidget({
       if (!existingScript) {
         const script = document.createElement('script')
         script.id = 'cf-turnstile-script'
-        script.src = 'https://challenges.cloudflare.com/turnstile/v0/api.js?onload=onloadTurnstileCallback'
+        script.src = 'https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit'
         script.async = true
         script.defer = true
         window.onloadTurnstileCallback = () => {
@@ -72,9 +79,7 @@ export default function TurnstileWidget({
         }
         document.head.appendChild(script)
       } else {
-        window.onloadTurnstileCallback = () => {
-          if (isMounted) renderWidget()
-        }
+        renderWidget()
       }
     }
 
@@ -93,7 +98,7 @@ export default function TurnstileWidget({
 
   return (
     <div className="my-3 flex justify-start">
-      <div ref={containerRef} className="cf-turnstile" />
+      <div ref={containerRef} className="turnstile-container" />
     </div>
   )
 }
