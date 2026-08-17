@@ -153,12 +153,12 @@ export default function WhyChooseUs() {
 
         {/* Carousel Container */}
         <div
-          className="mt-12 relative"
+          className="mt-6 relative"
           onMouseEnter={() => setIsHovered(true)}
           onMouseLeave={() => setIsHovered(false)}
         >
           {/* Controls: Left & Right Navigation Arrows */}
-          <div className="flex items-center justify-between absolute -top-16 right-0 gap-2 z-20">
+          <div className="flex items-center justify-end gap-2 mb-4">
             <button
               onClick={handlePrev}
               className="w-10 h-10 rounded-xl bg-white border border-slate-200 text-navy hover:bg-navy hover:text-amber shadow-sm flex items-center justify-center transition-all active:scale-95"

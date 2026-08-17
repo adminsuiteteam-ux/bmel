@@ -387,10 +387,10 @@ export const mockProjects: Project[] = [
     location: 'Ikeja, Lagos',
     industry: 'Commercial Construction',
     budget: '₦190,000,000',
-    completionDate: '2025',
+    completionDate: '2024',
     client: 'Ikeja Retail Developers Ltd.',
-    duration: '6 Months (Est)',
-    status: 'In Progress',
+    duration: '6 Months',
+    status: 'Completed',
     servicesRendered: ['Pumping Systems', 'Mechanical Design & Fabrication', 'Installation Services'],
     equipmentUsed: ['Pre-insulated Chilled Water Pipe segments', 'Double-Suction Centrifugal Pumps', 'Inline Balancing Valves', 'Automated BMS Integrator Panels'],
     images: [

@@ -86,15 +86,15 @@ export default function Navbar() {
   }, [])
 
   const navLinkClass = ({ isActive }: { isActive: boolean }) =>
-    `text-sm font-medium transition-colors duration-200 hover:text-amber ${
-      isActive ? 'text-amber' : 'text-white/80'
+    `text-sm font-medium transition-all duration-200 px-3 py-1.5 rounded-full hover:text-amber hover:bg-white/10 ${
+      isActive ? 'text-amber font-semibold bg-white/10 border border-amber/30 shadow-sm' : 'text-white/85'
     }`
 
   return (
     <>
       {/* Top Bar */}
-      <div className="hidden lg:flex bg-navy-700 border-b border-white/5">
-        <div className="container-xl w-full flex justify-between items-center py-2 text-xs text-white/60">
+      <div className="hidden lg:flex bg-navy-900/60 dark:bg-slate-950/70 backdrop-blur-md border-b border-white/10">
+        <div className="container-xl w-full flex justify-between items-center py-1.5 text-xs text-white/70">
           <div className="flex items-center gap-6">
             <a href="mailto:brownfortemechanical@gmail.com" className="flex items-center gap-1.5 hover:text-amber transition-colors">
               <Mail size={12} /> {t('navbar.email')}
@@ -112,156 +112,156 @@ export default function Navbar() {
         </div>
       </div>
 
-      {/* Main Navbar */}
-      <header
-        className={`sticky top-0 z-50 transition-all duration-300 ${
-          scrolled
-            ? 'bg-navy/90 dark:bg-slate-900/95 backdrop-blur-lg shadow-card border-b border-amber/20'
-            : 'bg-navy dark:bg-slate-900'
-        }`}
-      >
-        <div className="container-xl flex items-center justify-between h-16 lg:h-20">
+      {/* Main Floating Glassmorphic Pill Navbar */}
+      <div className="sticky top-2 sm:top-3.5 z-50 px-3 sm:px-6 max-w-7xl mx-auto w-full transition-all duration-300">
+        <header
+          className={`rounded-full transition-all duration-300 ${
+            scrolled ? 'glass-navbar-scrolled' : 'glass-navbar'
+          }`}
+        >
+          <div className="flex items-center justify-between h-14 sm:h-16 lg:h-18 px-4 sm:px-6 lg:px-7">
 
-          {/* Logo */}
-          <Link to="/" className="flex items-center group flex-shrink-0">
-            <img
-              src={`${import.meta.env.BASE_URL}bmel-logo.svg`}
-              alt="Brownforte Mechanical Engineering Limited"
-              className="h-10 sm:h-11 lg:h-12 w-auto object-contain group-hover:scale-105 transition-all duration-300"
-            />
-          </Link>
-
-          {/* Desktop Nav */}
-          <nav className="hidden lg:flex items-center gap-6">
-            <NavLink to="/" end className={navLinkClass}>{t('navbar.nav_home')}</NavLink>
-            <NavLink to="/about" className={navLinkClass}>{t('navbar.nav_about')}</NavLink>
-
-            {/* Services Dropdown */}
-            <div ref={servicesRef} className="relative">
-              <button
-                onClick={() => { setServicesOpen(!servicesOpen); setCompanyOpen(false) }}
-                className={`flex items-center gap-1 text-sm font-medium transition-colors hover:text-amber ${
-                  servicesOpen ? 'text-amber' : 'text-white/80'
-                }`}
-              >
-                {t('navbar.nav_services')} <ChevronDown size={14} className={`transition-transform ${servicesOpen ? 'rotate-180' : ''}`} />
-              </button>
-              <AnimatePresence>
-                {servicesOpen && (
-                  <motion.div
-                    initial={{ opacity: 0, y: 8 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: 8 }}
-                    transition={{ duration: 0.18 }}
-                    className="absolute top-full left-0 mt-2 w-72 glass-dark rounded-xl shadow-xl border border-white/10 p-3 z-50"
-                  >
-                    {services.map((s) => (
-                      <Link
-                        key={s.slug}
-                        to={`/services/${s.slug}`}
-                        className="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-white/5 group transition-colors"
-                      >
-                        <div className="w-8 h-8 bg-amber/10 rounded-lg flex items-center justify-center group-hover:bg-amber/20 transition-colors">
-                          <s.icon size={15} className="text-amber" />
-                        </div>
-                        <span className="text-white/80 text-sm group-hover:text-white transition-colors">{t(`navbar.services.${s.key}`)}</span>
-                      </Link>
-                    ))}
-                    <div className="border-t border-white/10 mt-2 pt-2">
-                      <Link to="/services" className="flex items-center justify-center gap-1 py-2 text-amber text-sm font-semibold hover:underline">
-                        {t('navbar.view_all_services')}
-                      </Link>
-                    </div>
-                  </motion.div>
-                )}
-              </AnimatePresence>
-            </div>
-
-            <NavLink to="/projects" className={navLinkClass}>{t('navbar.nav_projects')}</NavLink>
-            <NavLink to="/industries" className={navLinkClass}>{t('navbar.nav_industries')}</NavLink>
-
-            {/* Company Mega Menu */}
-            <div ref={companyRef} className="relative">
-              <button
-                onClick={() => { setCompanyOpen(!companyOpen); setServicesOpen(false) }}
-                className={`flex items-center gap-1 text-sm font-medium transition-colors hover:text-amber ${
-                  companyOpen ? 'text-amber' : 'text-white/80'
-                }`}
-              >
-                {t('navbar.nav_company')} <ChevronDown size={14} className={`transition-transform ${companyOpen ? 'rotate-180' : ''}`} />
-              </button>
-              <AnimatePresence>
-                {companyOpen && (
-                  <motion.div
-                    initial={{ opacity: 0, y: 8 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: 8 }}
-                    transition={{ duration: 0.18 }}
-                    className="absolute top-full right-0 mt-2 w-[600px] glass-dark rounded-xl shadow-xl border border-white/10 p-6 z-50 grid grid-cols-3 gap-6"
-                  >
-                    {megaMenuLinks.map((col) => (
-                      <div key={col.titleKey}>
-                        <p className="text-amber text-xs font-semibold uppercase tracking-widest mb-3">{t(`navbar.${col.titleKey}`)}</p>
-                        <div className="space-y-1">
-                          {col.links.map((link) => (
-                            <Link
-                              key={link.href}
-                              to={link.href}
-                              className="flex items-center gap-2.5 px-2 py-2 rounded-lg hover:bg-white/5 group transition-colors"
-                            >
-                              <link.icon size={14} className="text-amber/70 group-hover:text-amber transition-colors" />
-                              <span className="text-white/70 text-sm group-hover:text-white transition-colors">{t(`navbar.${link.labelKey}`)}</span>
-                            </Link>
-                          ))}
-                        </div>
-                      </div>
-                    ))}
-                  </motion.div>
-                )}
-              </AnimatePresence>
-            </div>
-
-            <NavLink to="/contact" className={navLinkClass}>{t('navbar.nav_contact')}</NavLink>
-          </nav>
-
-          {/* Right CTA + Search + Theme Toggle */}
-          <div className="hidden lg:flex items-center gap-3">
-            <Link to="/search" className="w-9 h-9 flex items-center justify-center rounded-lg text-white/60 hover:text-amber hover:bg-white/5 transition-colors">
-              <Search size={18} />
+            {/* Logo */}
+            <Link to="/" className="flex items-center group flex-shrink-0">
+              <img
+                src={`${import.meta.env.BASE_URL}bmel-logo.svg`}
+                alt="Brownforte Mechanical Engineering Limited"
+                className="h-8 sm:h-10 lg:h-11 w-auto object-contain group-hover:scale-105 transition-all duration-300"
+              />
             </Link>
-            {/* Dark mode toggle */}
-            <button
-              onClick={toggleTheme}
-              aria-label="Toggle dark mode"
-              className="w-9 h-9 flex items-center justify-center rounded-lg text-white/60 hover:text-amber hover:bg-white/5 transition-all duration-300"
-            >
-              <AnimatePresence mode="wait" initial={false}>
-                <motion.span
-                  key={theme}
-                  initial={{ rotate: -90, opacity: 0, scale: 0.5 }}
-                  animate={{ rotate: 0, opacity: 1, scale: 1 }}
-                  exit={{ rotate: 90, opacity: 0, scale: 0.5 }}
-                  transition={{ duration: 0.25 }}
+
+            {/* Desktop Nav */}
+            <nav className="hidden lg:flex items-center gap-1.5">
+              <NavLink to="/" end className={navLinkClass}>{t('navbar.nav_home')}</NavLink>
+              <NavLink to="/about" className={navLinkClass}>{t('navbar.nav_about')}</NavLink>
+
+              {/* Services Dropdown */}
+              <div ref={servicesRef} className="relative">
+                <button
+                  onClick={() => { setServicesOpen(!servicesOpen); setCompanyOpen(false) }}
+                  className={`flex items-center gap-1 text-sm font-medium transition-all duration-200 px-3 py-1.5 rounded-full hover:bg-white/10 hover:text-amber ${
+                    servicesOpen ? 'text-amber bg-white/10 border border-amber/30' : 'text-white/85'
+                  }`}
                 >
-                  {theme === 'dark' ? <Sun size={18} /> : <Moon size={18} />}
-                </motion.span>
-              </AnimatePresence>
-            </button>
-            <Link to="/contact" className="btn-primary text-sm py-2.5 px-5">
-              {t('navbar.get_quote')}
-            </Link>
-          </div>
+                  {t('navbar.nav_services')} <ChevronDown size={14} className={`transition-transform ${servicesOpen ? 'rotate-180' : ''}`} />
+                </button>
+                <AnimatePresence>
+                  {servicesOpen && (
+                    <motion.div
+                      initial={{ opacity: 0, y: 10, scale: 0.96 }}
+                      animate={{ opacity: 1, y: 0, scale: 1 }}
+                      exit={{ opacity: 0, y: 10, scale: 0.96 }}
+                      transition={{ duration: 0.2, ease: [0.16, 1, 0.3, 1] }}
+                      className="absolute top-full left-0 mt-3 w-72 glass-dark rounded-3xl shadow-2xl border border-white/20 p-3.5 z-50 backdrop-blur-2xl"
+                    >
+                      {services.map((s) => (
+                        <Link
+                          key={s.slug}
+                          to={`/services/${s.slug}`}
+                          className="flex items-center gap-3 px-3 py-2.5 rounded-2xl hover:bg-white/10 group transition-all duration-200"
+                        >
+                          <div className="w-8 h-8 bg-amber/15 rounded-xl flex items-center justify-center group-hover:bg-amber/30 group-hover:scale-110 transition-all duration-200">
+                            <s.icon size={15} className="text-amber" />
+                          </div>
+                          <span className="text-white/85 text-sm group-hover:text-white transition-colors">{t(`navbar.services.${s.key}`)}</span>
+                        </Link>
+                      ))}
+                      <div className="border-t border-white/15 mt-2 pt-2">
+                        <Link to="/services" className="flex items-center justify-center gap-1 py-2 text-amber text-sm font-semibold hover:underline">
+                          {t('navbar.view_all_services')}
+                        </Link>
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </div>
 
-          {/* Mobile Hamburger */}
-          <button
-            onClick={() => setMobileOpen(!mobileOpen)}
-            className="lg:hidden w-10 h-10 flex items-center justify-center text-white hover:text-amber transition-colors"
-            aria-label={t('navbar.toggle_menu')}
-          >
-            {mobileOpen ? <X size={22} /> : <Menu size={22} />}
-          </button>
-        </div>
-      </header>
+              <NavLink to="/projects" className={navLinkClass}>{t('navbar.nav_projects')}</NavLink>
+              <NavLink to="/industries" className={navLinkClass}>{t('navbar.nav_industries')}</NavLink>
+
+              {/* Company Mega Menu */}
+              <div ref={companyRef} className="relative">
+                <button
+                  onClick={() => { setCompanyOpen(!companyOpen); setServicesOpen(false) }}
+                  className={`flex items-center gap-1 text-sm font-medium transition-all duration-200 px-3 py-1.5 rounded-full hover:bg-white/10 hover:text-amber ${
+                    companyOpen ? 'text-amber bg-white/10 border border-amber/30' : 'text-white/85'
+                  }`}
+                >
+                  {t('navbar.nav_company')} <ChevronDown size={14} className={`transition-transform ${companyOpen ? 'rotate-180' : ''}`} />
+                </button>
+                <AnimatePresence>
+                  {companyOpen && (
+                    <motion.div
+                      initial={{ opacity: 0, y: 10, scale: 0.96 }}
+                      animate={{ opacity: 1, y: 0, scale: 1 }}
+                      exit={{ opacity: 0, y: 10, scale: 0.96 }}
+                      transition={{ duration: 0.2, ease: [0.16, 1, 0.3, 1] }}
+                      className="absolute top-full right-0 mt-3 w-[620px] glass-dark rounded-3xl shadow-2xl border border-white/20 p-6 z-50 grid grid-cols-3 gap-6 backdrop-blur-2xl"
+                    >
+                      {megaMenuLinks.map((col) => (
+                        <div key={col.titleKey}>
+                          <p className="text-amber text-xs font-bold uppercase tracking-widest mb-3">{t(`navbar.${col.titleKey}`)}</p>
+                          <div className="space-y-1">
+                            {col.links.map((link) => (
+                              <Link
+                                key={link.href}
+                                to={link.href}
+                                className="flex items-center gap-2.5 px-2.5 py-2 rounded-xl hover:bg-white/10 group transition-all duration-200"
+                              >
+                                <link.icon size={14} className="text-amber/80 group-hover:text-amber transition-colors" />
+                                <span className="text-white/80 text-sm group-hover:text-white transition-colors">{t(`navbar.${link.labelKey}`)}</span>
+                              </Link>
+                            ))}
+                          </div>
+                        </div>
+                      ))}
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </div>
+
+              <NavLink to="/contact" className={navLinkClass}>{t('navbar.nav_contact')}</NavLink>
+            </nav>
+
+            {/* Right CTA + Search + Theme Toggle */}
+            <div className="hidden lg:flex items-center gap-2.5">
+              <Link to="/search" aria-label="Search" className="w-9 h-9 flex items-center justify-center rounded-full text-white/70 hover:text-amber hover:bg-white/10 transition-all duration-200">
+                <Search size={18} />
+              </Link>
+              {/* Dark mode toggle */}
+              <button
+                onClick={toggleTheme}
+                aria-label="Toggle dark mode"
+                className="w-9 h-9 flex items-center justify-center rounded-full text-white/70 hover:text-amber hover:bg-white/10 transition-all duration-300"
+              >
+                <AnimatePresence mode="wait" initial={false}>
+                  <motion.span
+                    key={theme}
+                    initial={{ rotate: -90, opacity: 0, scale: 0.5 }}
+                    animate={{ rotate: 0, opacity: 1, scale: 1 }}
+                    exit={{ rotate: 90, opacity: 0, scale: 0.5 }}
+                    transition={{ duration: 0.25 }}
+                  >
+                    {theme === 'dark' ? <Sun size={18} /> : <Moon size={18} />}
+                  </motion.span>
+                </AnimatePresence>
+              </button>
+              <Link to="/contact" className="btn-primary text-sm py-2 px-5 rounded-full shadow-lg shadow-amber/20 hover:scale-105 transition-all duration-300">
+                {t('navbar.get_quote')}
+              </Link>
+            </div>
+
+            {/* Mobile Hamburger */}
+            <button
+              onClick={() => setMobileOpen(!mobileOpen)}
+              className="lg:hidden w-10 h-10 flex items-center justify-center text-white hover:text-amber rounded-full hover:bg-white/10 transition-colors"
+              aria-label={t('navbar.toggle_menu')}
+            >
+              {mobileOpen ? <X size={22} /> : <Menu size={22} />}
+            </button>
+          </div>
+        </header>
+      </div>
 
       {/* Mobile Side Drawer Overlay & Panel */}
       <AnimatePresence>
