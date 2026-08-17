@@ -86,34 +86,14 @@ export default function Navbar() {
   }, [])
 
   const navLinkClass = ({ isActive }: { isActive: boolean }) =>
-    `text-sm font-medium transition-all duration-200 px-3 py-1.5 rounded-full hover:text-amber hover:bg-white/10 ${
-      isActive ? 'text-amber font-semibold bg-white/10 border border-amber/30 shadow-sm' : 'text-white/85'
+    `text-sm font-medium transition-all duration-200 px-3.5 py-1.5 rounded-full hover:text-[#0077B6] dark:hover:text-sky-300 hover:bg-slate-900/5 dark:hover:bg-white/10 ${
+      isActive ? 'text-[#0077B6] dark:text-sky-300 font-semibold bg-[#0077B6]/10 dark:bg-white/10 border border-[#0077B6]/30 shadow-sm' : 'text-slate-800 dark:text-white/90'
     }`
 
   return (
     <>
-      {/* Top Bar */}
-      <div className="hidden lg:flex bg-navy-900/60 dark:bg-slate-950/70 backdrop-blur-md border-b border-white/10">
-        <div className="container-xl w-full flex justify-between items-center py-1.5 text-xs text-white/70">
-          <div className="flex items-center gap-6">
-            <a href="mailto:brownfortemechanical@gmail.com" className="flex items-center gap-1.5 hover:text-amber transition-colors">
-              <Mail size={12} /> {t('navbar.email')}
-            </a>
-            <a href="tel:07063332335" className="flex items-center gap-1.5 hover:text-amber transition-colors">
-              <Phone size={12} /> {t('navbar.phone')}
-            </a>
-          </div>
-          <div className="flex items-center gap-4">
-            <span>{t('navbar.hours')}</span>
-            <Link to="/contact" className="text-amber font-semibold hover:underline">
-              {t('navbar.request_quote')}
-            </Link>
-          </div>
-        </div>
-      </div>
-
-      {/* Main Floating Glassmorphic Pill Navbar */}
-      <div className="sticky top-2 sm:top-3.5 z-50 px-3 sm:px-6 max-w-7xl mx-auto w-full transition-all duration-300">
+      {/* Main Floating White Transparent Glassmorphic Pill Navbar */}
+      <div className="sticky top-3 sm:top-4 z-50 px-3 sm:px-6 max-w-7xl mx-auto w-full transition-all duration-300">
         <header
           className={`rounded-full transition-all duration-300 ${
             scrolled ? 'glass-navbar-scrolled' : 'glass-navbar'
@@ -139,8 +119,8 @@ export default function Navbar() {
               <div ref={servicesRef} className="relative">
                 <button
                   onClick={() => { setServicesOpen(!servicesOpen); setCompanyOpen(false) }}
-                  className={`flex items-center gap-1 text-sm font-medium transition-all duration-200 px-3 py-1.5 rounded-full hover:bg-white/10 hover:text-amber ${
-                    servicesOpen ? 'text-amber bg-white/10 border border-amber/30' : 'text-white/85'
+                  className={`flex items-center gap-1 text-sm font-medium transition-all duration-200 px-3.5 py-1.5 rounded-full hover:bg-slate-900/5 dark:hover:bg-white/10 hover:text-[#0077B6] dark:hover:text-sky-300 ${
+                    servicesOpen ? 'text-[#0077B6] dark:text-sky-300 bg-[#0077B6]/10 dark:bg-white/10 border border-[#0077B6]/30' : 'text-slate-800 dark:text-white/90'
                   }`}
                 >
                   {t('navbar.nav_services')} <ChevronDown size={14} className={`transition-transform ${servicesOpen ? 'rotate-180' : ''}`} />
@@ -183,8 +163,8 @@ export default function Navbar() {
               <div ref={companyRef} className="relative">
                 <button
                   onClick={() => { setCompanyOpen(!companyOpen); setServicesOpen(false) }}
-                  className={`flex items-center gap-1 text-sm font-medium transition-all duration-200 px-3 py-1.5 rounded-full hover:bg-white/10 hover:text-amber ${
-                    companyOpen ? 'text-amber bg-white/10 border border-amber/30' : 'text-white/85'
+                  className={`flex items-center gap-1 text-sm font-medium transition-all duration-200 px-3.5 py-1.5 rounded-full hover:bg-slate-900/5 dark:hover:bg-white/10 hover:text-[#0077B6] dark:hover:text-sky-300 ${
+                    companyOpen ? 'text-[#0077B6] dark:text-sky-300 bg-[#0077B6]/10 dark:bg-white/10 border border-[#0077B6]/30' : 'text-slate-800 dark:text-white/90'
                   }`}
                 >
                   {t('navbar.nav_company')} <ChevronDown size={14} className={`transition-transform ${companyOpen ? 'rotate-180' : ''}`} />
@@ -225,14 +205,14 @@ export default function Navbar() {
 
             {/* Right CTA + Search + Theme Toggle */}
             <div className="hidden lg:flex items-center gap-2.5">
-              <Link to="/search" aria-label="Search" className="w-9 h-9 flex items-center justify-center rounded-full text-white/70 hover:text-amber hover:bg-white/10 transition-all duration-200">
+              <Link to="/search" aria-label="Search" className="w-9 h-9 flex items-center justify-center rounded-full text-slate-700 dark:text-white/80 hover:text-[#0077B6] hover:bg-slate-900/5 dark:hover:bg-white/10 transition-all duration-200">
                 <Search size={18} />
               </Link>
               {/* Dark mode toggle */}
               <button
                 onClick={toggleTheme}
                 aria-label="Toggle dark mode"
-                className="w-9 h-9 flex items-center justify-center rounded-full text-white/70 hover:text-amber hover:bg-white/10 transition-all duration-300"
+                className="w-9 h-9 flex items-center justify-center rounded-full text-slate-700 dark:text-white/80 hover:text-[#0077B6] hover:bg-slate-900/5 dark:hover:bg-white/10 transition-all duration-300"
               >
                 <AnimatePresence mode="wait" initial={false}>
                   <motion.span
@@ -254,7 +234,7 @@ export default function Navbar() {
             {/* Mobile Hamburger */}
             <button
               onClick={() => setMobileOpen(!mobileOpen)}
-              className="lg:hidden w-10 h-10 flex items-center justify-center text-white hover:text-amber rounded-full hover:bg-white/10 transition-colors"
+              className="lg:hidden w-10 h-10 flex items-center justify-center text-slate-800 dark:text-white hover:text-[#0077B6] rounded-full hover:bg-slate-900/5 dark:hover:bg-white/10 transition-colors"
               aria-label={t('navbar.toggle_menu')}
             >
               {mobileOpen ? <X size={22} /> : <Menu size={22} />}

@@ -132,36 +132,36 @@
     border: 1px solid rgba(0, 180, 216, 0.25);
   }
 
-  /* ─── Glassmorphism Floating Navbar ─── */
+  /* ─── White Transparent Glassmorphism Floating Navbar ─── */
   .glass-navbar {
-    background: rgba(3, 4, 94, 0.78);
+    background: rgba(255, 255, 255, 0.75);
     backdrop-filter: blur(20px) saturate(180%);
     -webkit-backdrop-filter: blur(20px) saturate(180%);
-    border: 1px solid rgba(255, 255, 255, 0.18);
-    box-shadow: 0 8px 32px 0 rgba(0, 72, 117, 0.25), inset 0 1px 1px 0 rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    box-shadow: 0 8px 32px 0 rgba(3, 4, 94, 0.08), inset 0 1px 1px 0 rgba(255, 255, 255, 0.8);
   }
 
   .dark .glass-navbar {
-    background: rgba(8, 12, 26, 0.82);
+    background: rgba(8, 12, 26, 0.78);
     backdrop-filter: blur(20px) saturate(180%);
     -webkit-backdrop-filter: blur(20px) saturate(180%);
-    border: 1px solid rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.15);
     box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5), inset 0 1px 1px 0 rgba(255, 255, 255, 0.15);
   }
 
   .glass-navbar-scrolled {
-    background: rgba(3, 4, 94, 0.92);
+    background: rgba(255, 255, 255, 0.92);
     backdrop-filter: blur(24px) saturate(200%);
     -webkit-backdrop-filter: blur(24px) saturate(200%);
-    border: 1px solid rgba(0, 180, 216, 0.4);
-    box-shadow: 0 12px 40px 0 rgba(0, 180, 216, 0.25), inset 0 1px 1px 0 rgba(255, 255, 255, 0.25);
+    border: 1px solid rgba(0, 119, 182, 0.25);
+    box-shadow: 0 12px 40px 0 rgba(0, 119, 182, 0.15), inset 0 1px 1px 0 rgba(255, 255, 255, 0.9);
   }
 
   .dark .glass-navbar-scrolled {
-    background: rgba(8, 12, 26, 0.94);
+    background: rgba(8, 12, 26, 0.92);
     backdrop-filter: blur(24px) saturate(200%);
     -webkit-backdrop-filter: blur(24px) saturate(200%);
-    border: 1px solid rgba(0, 180, 216, 0.4);
+    border: 1px solid rgba(0, 180, 216, 0.35);
     box-shadow: 0 12px 40px 0 rgba(0, 0, 0, 0.65), inset 0 1px 1px 0 rgba(255, 255, 255, 0.2);
   }
 
