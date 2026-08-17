@@ -87,9 +87,9 @@ export const mockServices: Service[] = [
       'Well Development & Yield Testing',
       'Submersible Pump Installation & Quality Sampling'
     ],
-    image: 'https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=800&q=80',
+    image: `${import.meta.env.BASE_URL}images/subeb-borehole-steel-tank-1.jpg`,
     gallery: [
-      'https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=600&q=80'
+      `${import.meta.env.BASE_URL}images/subeb-borehole-steel-tank-2.jpg`
     ]
   },
   {
@@ -137,7 +137,7 @@ export const mockServices: Service[] = [
     ],
     image: 'https://images.unsplash.com/photo-1585338107529-13afc5f02586?auto=format&fit=crop&w=800&q=80',
     gallery: [
-      'https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=600&q=80'
+      `${import.meta.env.BASE_URL}images/hero-2.jpg`
     ]
   },
   {
@@ -255,9 +255,9 @@ export const mockServices: Service[] = [
       'Foundation Casting & Laser Alignment',
       'Piping Hookup & System Calibration'
     ],
-    image: 'https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=800&q=80',
+    image: `${import.meta.env.BASE_URL}images/hero-3.jpg`,
     gallery: [
-      'https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=600&q=80'
+      `${import.meta.env.BASE_URL}images/hero-4.jpg`
     ]
   },
   {
@@ -394,7 +394,7 @@ export const mockProjects: Project[] = [
     servicesRendered: ['Pumping Systems', 'Mechanical Design & Fabrication', 'Installation Services'],
     equipmentUsed: ['Pre-insulated Chilled Water Pipe segments', 'Double-Suction Centrifugal Pumps', 'Inline Balancing Valves', 'Automated BMS Integrator Panels'],
     images: [
-      'https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=800&q=80'
+      `${import.meta.env.BASE_URL}images/achievers-farm-water-treatment.jpg`
     ]
   }
 ];
@@ -420,7 +420,7 @@ export const mockBlog: BlogPost[] = [
     publishedDate: 'May 12, 2026',
     category: 'Technical Guide',
     readTime: '7 min read',
-    image: 'https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=800&q=80'
+    image: `${import.meta.env.BASE_URL}images/fggs-jalingo-braithwaite-tank-1.jpg`
   }
 ];
 
