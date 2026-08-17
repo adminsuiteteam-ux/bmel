@@ -3,4 +3,4 @@ User-agent: *
 Allow: /
 
 # Direct search engine bots to the sitemap index
-Sitemap: http://www.brownfortemechanical.com/sitemap.xml
+Sitemap: https://www.brownfortemechanical.com/sitemap.xml

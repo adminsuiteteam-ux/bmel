@@ -13,12 +13,12 @@ export default function SEO({
   title,
   description,
   keywords = 'Brownforte Mechanical Engineering Limited, BMEL, borehole drilling Nigeria, water treatment plants Lagos, Braithwaite steel tanks, MEP contractor Nigeria, hydrogeological surveys, industrial water engineering, SUBEB water projects, FGGS Jalingo tank',
-  ogImage = 'http://www.brownfortemechanical.com/bmel-logo.png',
+  ogImage = 'https://www.brownfortemechanical.com/bmel-logo.png',
   ogType = 'website',
   canonicalUrl,
 }: SEOProps) {
   const currentUrl =
-    canonicalUrl || (typeof window !== 'undefined' ? window.location.href : 'http://www.brownfortemechanical.com/')
+    canonicalUrl || (typeof window !== 'undefined' ? window.location.href : 'https://www.brownfortemechanical.com/')
 
   const fullTitle = title.includes('BMEL') || title.includes('Brownforte')
     ? title
