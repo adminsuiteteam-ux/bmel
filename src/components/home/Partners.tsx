@@ -23,16 +23,7 @@ const partners: Partner[] = [
     logoUrl: 'https://upload.wikimedia.org/wikipedia/en/b/bb/Mota-Engil.svg',
     fallbackInitials: 'ME',
   },
-  {
-    name: 'JULIUS BERGER NIGERIA',
-    logoUrl: 'https://upload.wikimedia.org/wikipedia/en/0/08/Julius_Berger_Nigeria.png',
-    fallbackInitials: 'JB',
-  },
-  {
-    name: 'DANGOTE GROUP',
-    logoUrl: 'https://upload.wikimedia.org/wikipedia/en/0/0b/Dangote_Group_Logo.svg',
-    fallbackInitials: 'DG',
-  },
+
   {
     name: 'PAACHE CONSTRUCTION',
     logoUrl: undefined,
