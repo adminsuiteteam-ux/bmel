@@ -28,9 +28,9 @@ export default function AboutSection() {
               We specialize in borehole drilling, water treatment systems, plumbing installations, firefighting systems, swimming pool engineering, sewage treatment plants, irrigation systems, pumping solutions, and facility maintenance. Every project we undertake is driven by engineering excellence, quality workmanship, safety, and long-term reliability.
             </p>
 
-            <div className="bg-white p-5 rounded-xl border border-slate-200/80 shadow-sm mb-8 text-slate-700 italic font-heading text-sm sm:text-base border-l-4 border-l-amber">
-              "We believe engineering is more than installing equipment, it is about solving problems, protecting investments, and creating systems that serve people for decades."
-            </div>
+            <p className="text-slate-600 mb-8 leading-relaxed">
+              At Brownforte Mechanical Engineering Limited, we believe engineering is more than installing equipment, it is about solving problems, protecting investments, and creating systems that serve people for decades.
+            </p>
 
             <Link to="/about" className="btn-outline group inline-flex items-center gap-2">
               Discover Our Full Profile

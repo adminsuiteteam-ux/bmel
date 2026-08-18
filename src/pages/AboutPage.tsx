@@ -96,9 +96,9 @@ export default function AboutPage() {
             <p>
               {t('about.para3', 'Our team combines technical expertise with practical field experience to deliver solutions that meet international engineering standards while addressing the unique conditions of every project. From concept and design to installation, testing, commissioning, and maintenance, we ensure every system performs efficiently and consistently.')}
             </p>
-            <div className="bg-slate-50 border-l-4 border-amber p-6 rounded-r-xl my-8 text-slate-700 italic font-heading">
-              "{t('about.quote', 'At Brownforte Mechanical Engineering Limited, we believe engineering is more than installing equipment, it is about solving problems, protecting investments, and creating systems that serve people for decades.')}"
-            </div>
+            <p>
+              {t('about.para4', 'At Brownforte Mechanical Engineering Limited, we believe engineering is more than installing equipment, it is about solving problems, protecting investments, and creating systems that serve people for decades.')}
+            </p>
           </div>
 
           {/* Specializations Grid */}
