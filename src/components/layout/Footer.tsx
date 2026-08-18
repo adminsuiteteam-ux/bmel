@@ -55,7 +55,7 @@ export default function Footer() {
             <img
               src={`${import.meta.env.BASE_URL}bmel-logo.png`}
               alt="Brownforte Mechanical Engineering Limited"
-              className="h-10 sm:h-12 w-auto object-contain bg-white px-2.5 py-1.5 rounded-lg shadow-sm hover:scale-105 transition-all duration-300"
+              className="h-12 sm:h-16 lg:h-18 w-auto object-contain hover:scale-105 transition-all duration-300"
             />
           </Link>
           <p className="text-white/50 text-sm leading-relaxed mb-6">
