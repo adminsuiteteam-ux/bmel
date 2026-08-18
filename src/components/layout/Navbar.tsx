@@ -106,7 +106,7 @@ export default function Navbar() {
               <img
                 src={`${import.meta.env.BASE_URL}bmel-logo.png`}
                 alt="Brownforte Mechanical Engineering Limited"
-                className="h-10 sm:h-12 lg:h-14 w-auto object-contain group-hover:scale-105 transition-all duration-300"
+                className="h-8 sm:h-10 lg:h-11 w-auto object-contain group-hover:scale-105 transition-all duration-300"
               />
             </Link>
 
@@ -272,7 +272,7 @@ export default function Navbar() {
                     <img
                       src={`${import.meta.env.BASE_URL}bmel-logo.png`}
                       alt="Brownforte Mechanical Engineering Limited"
-                      className="h-10 sm:h-12 w-auto object-contain"
+                      className="h-8 sm:h-9 w-auto object-contain"
                     />
                   </Link>
                   <button
