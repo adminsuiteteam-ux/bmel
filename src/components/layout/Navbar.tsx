@@ -104,9 +104,9 @@ export default function Navbar() {
             {/* Logo */}
             <Link to="/" className="flex items-center group flex-shrink-0">
               <img
-                src={`${import.meta.env.BASE_URL}bmel-logo.svg`}
+                src={`${import.meta.env.BASE_URL}bmel-logo.png`}
                 alt="Brownforte Mechanical Engineering Limited"
-                className="h-8 sm:h-10 lg:h-11 w-auto object-contain group-hover:scale-105 transition-all duration-300"
+                className="h-9 sm:h-11 lg:h-12 w-auto object-contain group-hover:scale-105 transition-all duration-300 bg-white/95 px-2.5 py-1 rounded-lg shadow-sm"
               />
             </Link>
 
@@ -270,9 +270,9 @@ export default function Navbar() {
                 <div className="flex items-center justify-between p-5 border-b border-white/10">
                   <Link to="/" onClick={() => setMobileOpen(false)} className="flex items-center">
                     <img
-                      src={`${import.meta.env.BASE_URL}bmel-logo.svg`}
+                      src={`${import.meta.env.BASE_URL}bmel-logo.png`}
                       alt="Brownforte Mechanical Engineering Limited"
-                      className="h-9 w-auto object-contain"
+                      className="h-9 w-auto object-contain bg-white px-2 py-1 rounded-lg shadow-sm"
                     />
                   </Link>
                   <button
